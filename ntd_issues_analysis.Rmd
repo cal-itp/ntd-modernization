@@ -1,0 +1,547 @@
+---
+title: "NTD_issues_analysis"
+author: "Kim Engie"
+date: "2023-08-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+
+# install.packages("tidyverse")
+# install.packages("readxl")
+# install.packages("plotly")
+# install.packages("kableExtra")
+library(tidyverse)
+library(readxl)
+library(plotly)
+library(kableExtra)
+```
+
+### Introduction
+This document contains the detailed analysis of historical NTD issues, as part of the Slalom Consulting project on Caltrans NTD Reporting Modernization. For a more concise summary of results without the code snippets, please see the accompanying powerpoint files from this project.  
+  
+We analyze issues that were returned to Caltrans for resolution in 2020, 2021, and 2022 by their frequency, their issue type, and reporting agencies. We then derive the commonalities that could have triggered something being flagged by NTD. Finally, we curate the top 23 issues to target in a pre-submission validation tool, given these results. 
+  
+---
+   
+Step 1: load in the data - 3 years of NTD issues from 3 different spreadsheets.
+```{r, echo=T, results='hide', message=F}
+# getwd()
+issues_2022 <- read_excel("~/Dev/caltrans/View Issues 9R02 Export_26-Jun-2023 05-51-58 PM.xlsx", sheet = "Sub-Recipient Issues",
+                          skip = 1, .name_repair = "universal")
+issues_2021 <- read_excel("~/Dev/caltrans/View Issues 9R02 Export_1-Jun-2022 11-04-44 PM FINAL.xlsx", sheet = "Sub-Recipient Issues",
+                          skip = 1, .name_repair = "universal")
+issues_2020 <- read_excel("~/Dev/caltrans/All Issues 9R02 Export 2021-05-18 FINAL (Rd4).xlsx", sheet = "Sub-Recipient Issues",
+                          skip = 1, .name_repair = "universal")
+
+```
+
+
+After checking that all the columns are the same in each dataset, we combine everything into one dataset, adding a column for the year of the issue.
+
+```{r, echo=TRUE}
+issues_2020 <- issues_2020 %>%
+  mutate(year = as.integer(2020))
+issues_2021 <- issues_2021 %>%
+  mutate(year = as.integer(2021))
+issues_2022 <- issues_2022 %>%
+  mutate(year = as.integer(2022))
+
+issues <- bind_rows(issues_2020, issues_2021, issues_2022) %>%
+  relocate(year)
+
+```
+
+
+```{r, echo=F, include=FALSE}
+# Export to csv
+# write.csv(issues, "ntd_issues_2020-22.csv", row.names=FALSE)
+```
+
+
+```{r, echo=F}
+knitr::kable(issues %>% head(1),
+             format = "html",
+             caption = "The first row of the combined issues dataset") %>%
+  kable_styling("striped", full_width = F) %>% scroll_box(width = "100%")
+```
+
+
+
+
+
+### Breakdown of Issues by Year
+Three issues account for almost 25% of all validation flags in the past 3 years.
+1. RR20F-005: The cost per hour changed by 30% or more.
+2. A10-033: The number of *General Purpose Maintenance Facilities* differs from previous year.
+3. RR20F-146: The miles per vehicle changed by 20% or more
+
+```{r, echo=FALSE, warning=F, message=F}
+knitr::kable(issues %>% count(year), format="html",
+             caption = "Total Issues, 2020 - 2022") %>%
+  kable_styling("striped")
+```
+
+
+```{r, echo=FALSE, include=FALSE}
+issues_by_yr1 <- issues %>% filter(!is.na(Issue.Check.ID)) %>%
+  count(Issue.Check.ID, year) %>%
+group_by(Issue.Check.ID) %>%
+  mutate(
+    total_issues = sum(n)) %>%
+  ungroup() %>%
+  arrange(desc(total_issues)) %>%
+  mutate(
+    pct_total = round((total_issues/sum(n))*100,2)
+  )
+
+issues_by_yr2  <- issues_by_yr1 %>%
+left_join(
+  issues_by_yr1 %>%
+  group_by(Issue.Check.ID) %>%
+  summarize(pct_total = mean(pct_total)) %>%
+  ungroup() %>%
+  arrange(desc(pct_total)) %>%
+  mutate(cumulative_pct = cumsum(pct_total)),
+  by = c("Issue.Check.ID" = "Issue.Check.ID", "pct_total"="pct_total")
+)
+
+```
+
+```{r, include=F}
+issues_by_yr2 %>%
+  group_by(Issue.Check.ID) %>%
+  summarize(pct_total = mean(pct_total)) %>%
+  ungroup() %>%
+  arrange(desc(pct_total)) %>%
+  mutate(cum_pct = cumsum(pct_total))
+```
+  
+---
+  
+  
+```{r, message=F, warning=FALSE}
+g <-
+  ggplot(issues_by_yr2 , aes(x = reorder(Issue.Check.ID, cumulative_pct), y=n, #%>% head(75)
+                                           group = factor(year), fill = factor(year), label=n)) +
+  geom_bar(stat = "identity", color="white") +
+  scale_fill_brewer(palette = "Blues") +
+  geom_line(aes(x=reorder(Issue.Check.ID, cumulative_pct), y=cumulative_pct, group=1, label=cumulative_pct), stat="identity", color="grey", linetype="dotted") + #
+  scale_y_continuous(name="Count of Issues", sec.axis = sec_axis(~., name="Cumulative %")) +
+  # geom_text(aes(label=total_issues,
+  #               # position=position_dodge(0.9),
+  #               vjust = 0), colour = "black", size=2) +
+  # facet_wrap(~year) +
+  theme_classic() +
+  labs(x = "count", y = "") + #title="Issue count by Year (Top 25)", subtitle="with cumulative percentage per issue"
+  guides(fill=guide_legend(title=NULL)) +
+  theme(legend.position = c(.87, .25), legend.title = element_blank(),
+        axis.text.x=element_text(angle=90, vjust = 0.65, color="black", size = 6),
+        axis.text.y=element_text(size=8, color="darkgrey"),
+        axis.title.x = element_blank(), axis.title.y = element_text(color = "darkgrey", size=8),
+        axis.line.x = element_line(color = "grey"), axis.line.y = element_blank(),
+        axis.ticks = element_blank()
+        )
+
+
+ggplotly(g, height = 450, tooltip = c("label")) %>%
+  layout(title = list(text = paste0('Issue count by Year (top 25)',
+                                    '<br>',
+                                    '<sup>',
+                                    'With cumulative percentage per issue',
+                                    '</sup>')))
+
+```
+
+
+```{r, include=F}
+# Static graphic to include in PPT (same as above, but static & different color scheme)
+label_byyr <- issues_by_yr2 %>% group_by(Issue.Check.ID) %>% summarize(mylabel = mean(total_issues)) %>% arrange(desc(mylabel))
+
+ggplot(issues_by_yr2 , aes(x = reorder(Issue.Check.ID, cumulative_pct), y=n, #%>% head(75)
+                                           group = factor(year), fill = factor(year), label=n)) +
+  geom_bar(stat = "identity", color="white") +
+  scale_fill_brewer(palette = "Blues") +
+  geom_line(aes(x=reorder(Issue.Check.ID, cumulative_pct), y=cumulative_pct, group=1, label=cumulative_pct), stat="identity", color="grey", linetype="dotted") +
+  scale_y_continuous(name="Count of Issues", sec.axis = sec_axis(~., name="Cumulative %")) +
+  # geom_text(aes(label=total_issues,
+  #               # position=position_dodge(0.9),
+  #               vjust = 0), colour = "black", size=2) +
+  # facet_wrap(~year) +
+  theme_classic() +
+  labs(x = "count", y = "") + #title="Issue count by Year (Top 25)", subtitle="with cumulative percentage per issue"
+  guides(fill=guide_legend(title=NULL)) +
+  theme(legend.position = c(.87, .4), legend.title = element_blank(), legend.text = element_text(size = 7),
+        axis.text.x=element_text(angle=90, vjust = 0.65, color="black", size = 6),
+        axis.text.y=element_text(size=8, color="darkgrey"),
+        axis.title.x = element_blank(), axis.title.y = element_text(color = "darkgrey", size=8),
+        axis.line.x = element_line(color = "grey"), axis.line.y = element_blank(),
+        axis.ticks = element_blank()
+        )
+
+# TO SAVE
+# ggsave("issues_byyr.png", dpi = 300, width = 6, height = 3, units = "in") #
+
+```
+
+
+```{r, echo=F, message=F, warning=F}
+issues_yr_table <- issues %>% filter(!is.na(Issue.Check.ID)) %>%
+  group_by(Issue.Check.ID, year) %>%
+  summarize(n = n()) %>%
+  ungroup %>%
+  pivot_wider(names_from = year, values_from = n) %>%
+  mutate(total = rowSums(across(c("2020", "2021", "2022")), na.rm = TRUE)) %>%
+  arrange(desc(total))
+
+knitr::kable(
+  issues_yr_table,
+  format="html",
+             caption = "Yearly breakdown of Issues") %>%
+  kable_styling("striped", full_width = F) %>% scroll_box(width = "600px", height="500px")
+```
+
+
+
+```{r, include=FALSE}
+# #write to csv
+# write.csv(issues_yr_table, "ntd_issues_yearly_totals.csv", row.names=FALSE)
+```
+
+
+---
+
+
+#### BY AGENCY
+Validation flags are also clumped across certain agencies more than others.
+```{r, echo = FALSE, message=F}
+
+issues_agency_table <- issues %>% filter(!is.na(Issue.Check.ID)) %>%
+  group_by(Reporter, year) %>%
+  summarize(n = n()) %>%
+  ungroup %>%
+  pivot_wider(names_from = year, values_from = n) %>%
+  mutate(total = rowSums(across(c("2020", "2021", "2022")), na.rm = TRUE)) %>%
+  arrange(desc(total)) %>%
+  ungroup() %>%
+  mutate(cumulative_pct = round((cumsum(total)/sum(total))*100, 1)
+  )
+
+knitr::kable(
+  issues_agency_table,
+   format="html",
+             caption = "Issues per Agency") %>%
+  kable_styling("striped") %>% scroll_box(height="500px")
+```
+
+
+```{r, include=FALSE}
+# #write to csv
+# write.csv(issues_agency_table, "ntd_issues_agency_totals.csv", row.names=FALSE)
+```
+
+
+---
+
+```{r, warning=FALSE}
+p <-
+issues_agency_table %>%
+  pivot_longer(cols = c("2020","2021","2022"), names_to = "year", values_to = "n") %>%
+  mutate(Agency = str_remove(Reporter, "\\d{5} - ")) %>%
+  replace(is.na(.), 0) %>%
+  ggplot(aes(x=n, y=reorder(Agency, -cumulative_pct), fill = factor(year), label=n)) +
+  geom_bar(stat="identity") +
+  scale_fill_brewer(palette = "PuRd") +
+  # geom_line(aes(x=cumulative_pct, y=reorder(Agency, -cumulative_pct),  group=1, label=cumulative_pct), stat="identity", color="grey", linetype="dotted") +
+  # scale_x_continuous(name="", sec.axis = sec_axis(~., name="Cumulative %")) +
+  theme_classic() +
+  labs(x = "count", y = "") +
+  guides(fill=guide_legend(title=NULL)) +
+  theme(legend.position = c(.5, .25), legend.title = element_blank(),
+        axis.text.x=element_text(vjust = 0.65, color="black", size = 6),
+        axis.text.y=element_text(size=8, color="black"),
+        axis.title.x = element_blank(), axis.title.y = element_text(color = "darkgrey", size=8),
+        axis.line.x = element_line(color = "grey"), axis.line.y = element_blank(),
+        axis.ticks = element_blank()
+        )
+#
+ggplotly(p, height = 850, tooltip = c("label")) %>%
+  layout(title = list(text = paste0('Issue count by Reporting Agency')))
+```
+
+```{r, include=FALSE}
+### Static graphic for Powerpoint
+
+# For cleaner labels:
+reporting_agency = c("Tehama County", "City of Arvin", "Tuolumne County", "Morongo Basin", "San Benito County",
+                     "City of Rio Vista", "Alpine County", "Palo Verde Valley", "Amador Regional", "City of McFarland",
+                     "City of Escalon", "Sierra County", "Glenn Transit", "County of Sacramento", "Humboldt Transit",
+                     "Nevada County", "Mendocino Transit", "County of Siskiyou", "Town of Truckee",
+                     "Mountain Area Regional", "City of Solvang", "Eastern Sierra Transit", "California City",
+                     "Calaveras Transit", "City of Taft", "City of Shafter", "Wasco, City of", "Fresno County",
+                     "City of Dixon", "Tulare County Area", "Modoc", "City of Arcata", "Lake Transit", "Mariposa County",
+                     "Madera County", "City of Ridgecrest", "City of Eureka", "Redwood Coast", "Kern Regional",
+                     "City of Guadalupe", "City of Corcoran", "City of Dinuba", "City of Ojai", "City of Tehachapi",
+                     "Trinity County", "Lassen Transit", "City of Auburn", "Colusa County", "Plumas County", "San Diego",
+                     "SunLine Transit", "City of Chowchilla", "Imperial County", "Yosemite Area", "Greyhound",
+                     "Santa Clara Valley", "Monterey-Salinas", "City of Santa Maria", "County of Sonoma",
+                     "Antelope Valley", "Riverside Transit", "Yuba-Sutter Transit", "Livermore / Amador Valley",
+                     "Eastern Contra Costa Transit", "City of Porterville", "Kings County", "Stanislaus County",
+                     "City of Needles", "City of Woodlake", "San Mateo County", "San Joaquin Regional",
+                     "North County Transit", "Merced County", "Butte County", "Santa Barbara County",
+                     "Tulare County Regional", "Yurok Tribe", "County of Shasta")
+
+issues_agency_table %>%
+  cbind(reporting_agency) %>% relocate(reporting_agency, .after = Reporter) %>%
+  mutate(no. = row_number()) %>%
+  pivot_longer(cols = c("2020","2021","2022"), names_to = "year", values_to = "n") %>%
+  # mutate(Agency = str_remove(Reporter, "\\d{5} - ")) %>%
+  replace(is.na(.), 0) %>%
+  ggplot(aes(x=reorder(reporting_agency, no., mean), y=n, fill = factor(year))) +
+  geom_bar(stat="identity") +
+  scale_fill_brewer(palette = "PuRd") +
+  geom_line(aes(x=reorder(reporting_agency, -cumulative_pct), y=cumulative_pct, group=1, label=cumulative_pct), stat="identity", color="grey", linetype="dotted") +
+  scale_y_continuous(name="Count of Issues", sec.axis = sec_axis(~., name="Cumulative %")) +
+  theme_classic() +
+  labs(x = "count", y = "") +
+  guides(fill=guide_legend(title=NULL)) +
+  theme(legend.position = c(.87, .5), legend.title = element_blank(), legend.text = element_text(size=6),
+        axis.text.x=element_text(angle=90, hjust = 1, color="black", size = 6),
+        axis.text.y=element_text(size=8, color="darkgrey"),
+        axis.title.x = element_blank(), axis.title.y = element_text(color = "darkgrey", size=8),
+        axis.line.x = element_line(color = "grey"), axis.line.y = element_blank(),
+        axis.ticks = element_blank()
+        )
+
+```
+
+```{r, include=FALSE}
+# TO SAVE
+# ggsave("issues_byagency.png", dpi = 300, width = 7, height = 3.5, units = "in") #
+```
+
+
+
+---
+#### Unique Issues
+There are many, repeated errors to resolve, some clearly describing various transit types (e.g., DR - DO, DR - PT, MB, CB). Here we make a new "clean" description column by removing everything in brackets, for each Issue ID.
+* Streamline descriptions by removing all the numbers within brackets
+* tally
+
+```{r, include=F}
+# Add columns of streamlined descriptions
+# "descr_novalue" strips the numbers from the brackets
+# "descr_stripped" strips both numbers and letters, in other words vehicle types, from the brackets.
+issues_cleaned <- issues %>%
+  mutate(
+   descr_novalue = str_replace_all(Description, "\\{\\S*\\}", "\\{\\}"),
+   descr_stripped = str_replace_all(Description, "\\{(.*)\\}", "\\{\\}")
+  ) %>%
+  relocate(descr_stripped, .before = Description) %>%
+  relocate(descr_novalue, .before = Description)
+
+```
+
+```{r, include=F}
+# write to csv
+# write.csv(issues_cleaned, "ntd_issues_condensed.csv", row.names=FALSE)
+```
+
+
+```{r, echo=F, include=F}
+# TALLY
+knitr::kable(
+  streamlined_tally_transportdetail <- issues_cleaned %>% filter(!is.na(Issue.Check.ID)) %>%
+  count(Issue.Check.ID, descr_novalue) %>%
+  # group_by(Issue.Check.ID) %>%
+  # mutate(
+  #   total_per_issueID = sum(n)
+  # ) %>%
+  # ungroup() %>%
+  # arrange(desc(total_per_issueID))
+    arrange(desc(n)) %>%
+    mutate(pct_total = round((n/sum(n))*100,2),
+          cumulative_pct = round((cumsum(n) / sum(n))*100, 2),
+           no. = row_number()) %>%
+    relocate(no., .before = Issue.Check.ID),
+  format = "html",
+  caption = "Issues and their Generic Questions (with transport type details)") %>%
+  kable_styling("striped", full_width = T) %>% scroll_box(width = "100%", height="500px")
+```
+
+
+```{r, include=F}
+# write to csv
+# write.csv(streamlined_tally_transportdetail, "ntd_issues_transportdetail_streamlined_qs.csv", row.names=FALSE)
+
+```
+
+Further collapsed with the transport type stripped out.
+```{r, echo=F}
+# TALLY
+knitr::kable(
+  streamlined_tally <- issues_cleaned %>% filter(!is.na(Issue.Check.ID)) %>%
+  count(Issue.Check.ID, descr_stripped) %>%
+    arrange(desc(n)) %>%
+    mutate(pct_total = round((n/sum(n))*100,2),
+          cumulative_pct = round((cumsum(n) / sum(n))*100, 2),
+           no. = row_number()) %>%
+    relocate(no., .before = Issue.Check.ID),
+  format = "html",
+  caption = "Issues and their Generic Questions (combining transport type)") %>%
+  kable_styling("striped", full_width = T) %>% scroll_box(width = "100%", height="500px")
+
+
+```
+
+```{r, include=F}
+# write to csv
+# write.csv(streamlined_tally, "ntd_issues_streamlined_qs.csv", row.names=FALSE)
+```
+
+
+
+
+#### Deriving NTD flags
+This section contains the code for finding the min/max range of top validation flags. We inspect each of the top 23 by inputting the Issue ID below and inspecting the results.
+```{r, echo=T, results='hide'}
+error = "RR20F-143"
+single_issue <- issues %>% filter(Issue.Check.ID==error)
+```
+
+<!-- *Regex below:* -->
+<!-- Get the number in the last bracket. -->
+<!-- Regex looks behind for an open curly bracket ?<=\\{, looks ahead for a closing parenthesis ?=\\}, and grabs everything in the middle (numbers only) \\S*, in other words (?<=\\().+?(?=\\)) -->
+<!-- * to grab everything we use .+? -->
+<!-- * https://stackoverflow.com/questions/8613237/extract-info-inside-all-parenthesis-in-r -->
+```{r, echo=T, warning=F, message=F}
+# # If all numbers
+# min_max <- single_issue %>%
+#   mutate(
+#     numbers = str_extract_all(Description, "(?<=\\{)\\S*(?=\\})"),
+#     percent_chr = map_chr(numbers, 1),
+#     percent = as.double(str_remove(percent_chr, ","), na.rm=TRUE)
+#   ) %>%
+#   relocate(percent, .before = numbers)
+
+# # If sub-categories
+# min_max <- single_issue %>%
+#   mutate( 
+#     entries = str_extract_all(Description, "(?<=\\{)\\S*(?=\\})"), 
+#     category_chr = map_chr(entries, first),
+#     pct_chr = map_chr(entries, 2),
+#     percent = as.double(str_remove(pct_chr, ","))) %>%
+#   relocate(percent, .before = entries) %>%
+#   relocate(category_chr, .before = percent)
+
+# If one needs to calculate the percentage from 2 numbers
+min_max <- single_issue %>%
+   mutate(
+     numbers = str_extract_all(Description, "(?<=\\{)\\S*(?=\\})"),
+     thisyr = as.double(map_chr(numbers, 1), na.rm = TRUE),
+     lastyr = as.double(map_chr(numbers, 2), na.rm=TRUE),
+   percent = (thisyr/lastyr) - 1
+   ) %>%
+   relocate(percent, .before = numbers)
+```
+
+```{r, echo=T, results='hide', warning=FALSE}
+min_max %>%
+  # group_by(category_chr) %>%
+  summarize(min = min(percent),
+            max = max(percent),
+            min_absolute = min(abs(percent)),
+            max_absolute = max(abs(percent)),
+            )
+
+```
+
+
+
+#### Validation issues with the longest conversational trail
+This section investigates which issues are potentially the longest to resolve, inferred from whether they had the most back and forth in their comment history. These might not be the same issues that are greatest by volume, so we cross check for thoroughness.
+```{r, echo=T, warning=F, message=FALSE, results='hide'}
+comment_length <- issues_cleaned %>%
+  mutate(
+    n_comments = str_count(Comment.History, "GMT")
+  ) %>%
+  relocate(n_comments, .before = Comment.History)
+
+comment_length %>%
+  filter(!is.na(n_comments)) %>%
+  group_by(n_comments, Issue.Check.ID, descr_stripped) %>%
+  summarize(freq = n()) %>%
+  arrange(desc(n_comments))
+```
+
+We look into which issues have a disproportionate share of back-and-forth, by counting the timestamps in the comment history column and summarizing in a new "n_comments" column.
+```{r, echo=F, message=FALSE}
+lengthy_convos <-
+  comment_length %>%
+  filter(!is.na(n_comments)) %>%
+  group_by(n_comments, Issue.Check.ID, descr_stripped) %>%
+  summarize(freq = n()) %>%
+  relocate(freq, .after = n_comments) %>%
+  ungroup() %>%
+  arrange(desc(n_comments)) %>%
+  mutate(
+    pct_of_issues = round((freq/sum(freq))*100,2),
+    pct_of_comments = round((n_comments/sum(n_comments, na.rm = TRUE))*100,2),
+    cumpct_comments = round((cumsum(n_comments) / sum(n_comments, na.rm = T))*100, 2),
+    cumpct_issues = round((cumsum(freq) / sum(freq, na.rm = T))*100, 2),
+    no. = row_number()
+  ) %>%
+  ungroup()
+
+knitr::kable(
+  lengthy_convos,
+   format="html") %>%
+  kable_styling("striped") %>% scroll_box(height="500px")
+```
+
+### Final Recommendations: The Prioritized Validation Issue List
+Finally, we take a combination of the issues that are most numerous, and those that have the most comments to curate a list of 23 prioritized issues. These are the ones that were cross-checked manually lenthy_convos and streamlined_qs, and by human judgement can be done within project time.
+```{r, warning=FALSE}
+# Make new column with Yes or No for plotting
+prioritized <- streamlined_tally %>%
+  mutate(
+    no. = row_number(),
+    prioritized = if_else(no. %in% c(1:21, 48, 64), "yes", "no")
+  )
+
+
+p <- ggplot(prioritized, aes(x = reorder(Issue.Check.ID, no.), y=n,
+                                            fill = prioritized, label=descr_stripped)) + #group = factor(year),
+  geom_bar(stat = "identity", color="white") +
+  scale_fill_manual(values = c("grey85", "#0C62FB")) +
+  # geom_line(aes(x=reorder(Issue.Check.ID, no.), y=cumulative_pct, group=1, label=cumulative_pct), stat="identity", color="darkgrey", linetype="dotted") +
+  scale_y_continuous(name="Count of Issues") + #, sec.axis = sec_axis(~., name="Cumulative %")
+  # geom_text(aes(label=n,
+  #               position=position_dodge(0.9),
+  #               vjust = 0), colour = "white") +
+  theme_classic() +
+  # labs(x = "count") +
+  theme(legend.position = "none", legend.title = element_blank(),
+        axis.text.x=element_text(angle=90, vjust = 0.65, color="black", size = 6),
+        axis.text.y=element_text(size=8, color="darkgrey"),
+        axis.title.x = element_blank(), axis.title.y = element_text(color = "darkgrey", size=8),
+        axis.line.x = element_line(color = "grey"), axis.line.y = element_blank(),
+        axis.ticks = element_blank())
+
+ggplotly(p)
+
+```
+
+```{r}
+# ggsave("prioritized_issues.svg", dpi = 300, width = 5, height = 3, units = "in")
+```
+
+
+```{r}
+knitr::kable(
+  prioritized %>% filter(prioritized == "yes"),
+  format = "html",
+  caption = "The top 23 Prioritized NTD validation flags") %>%
+  kable_styling("striped", full_width = T) %>% scroll_box(width = "100%", height="500px")
+```
