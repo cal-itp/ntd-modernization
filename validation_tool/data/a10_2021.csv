@@ -1,0 +1,431 @@
+﻿Agency,City,State,Organization Type,Reporter Type,Mode,TOS,Under 200 Vehicles,200 to 300 Vehicles,Over 300 Vehicles,Heavy Maintenance Facilities,Total Facilities,Directly Operated Ownership Types:,Owned,Leased from a Public Entity,Leased from a Private Entity,Purchased Transportation Ownership Types:,Owned by PT Provider,Owned by Public Agency,Leased by PT Provider,Leased by Public Agency
+"Los Angeles County Metropolitan Transportation Authority , dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,4,24.52,0.97,1.94,31.43,,31.43,0,0,,0,0,0,0
+"Los Angeles County Metropolitan Transportation Authority , dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,VP,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+"Los Angeles County Metropolitan Transportation Authority , dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,LR,DO,17,0,0,0,17,,17,0,0,,0,0,0,0
+"Los Angeles County Metropolitan Transportation Authority , dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,3,0,0,0,3,,0,0,0,,0,0,3,0
+"Los Angeles County Metropolitan Transportation Authority , dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,HR,DO,2,0,0,0,2,,2,0,0,,0,0,0,0
+"Los Angeles County Metropolitan Transportation Authority , dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+"Los Angeles County Metropolitan Transportation Authority , dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,RB,DO,0,0.48,0.03,0.06,0.57,,0.57,0,0,,0,0,0,0
+"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,DO,2,1,0,1,4,,4,0,0,,0,0,0,0
+"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,TB,DO,2,0,0,0,2,,2,0,0,,0,0,0,0
+"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,LR,DO,1.6,0,0,0.8,2.4,,2.4,0,0,,0,0,0,0
+"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,SR,DO,0.4,0,0,0.2,0.6,,0.6,0,0,,0,0,0,0
+"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,CC,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+California Vanpool Authority,Hanford,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,VP,DO,1,0,0,0,1,,0,1,0,,0,0,0,0
+San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,1,1,0,0,2,,0,0,0,,0,2,0,0
+San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,2,0,0,0,2,,2,0,0,,0,0,0,0
+San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,LR,DO,0,1,0,0,1,,1,0,0,,0,0,0,0
+San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.8,0,0,0,0.8,,0,0,0,,0,0.8,0,0
+San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,PT,0.2,0,0,0,0.2,,0,0,0,,0,0.2,0,0
+Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,0,2,0,0,2,,2,0,0,,0,0,0,0
+Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0,1,0,0,1,,0,0,0,,0,1,0,0
+Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,VP,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0,2,0,0,2,,0,0,0,,0,2,0,0
+Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+Access Services  ,El Monte,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,6,0,0,0,6,,0,0,0,,0,0,6,0
+Access Services  ,El Monte,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+Santa Clara Valley Transportation Authority,San Jose,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,2,1,0,1,4,,4,0,0,,0,0,0,0
+Santa Clara Valley Transportation Authority,San Jose,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,3,0,0,0,3,,0,0,0,,0,3,0,0
+Santa Clara Valley Transportation Authority,San Jose,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,LR,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+Santa Clara Valley Transportation Authority,San Jose,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+San Francisco Bay Area Rapid Transit District,Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,HR,DO,1,2,0,1,4,,4,0,0,,0,0,0,0
+San Francisco Bay Area Rapid Transit District,Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,YR,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+San Francisco Bay Area Rapid Transit District,Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MG,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+Alameda-Contra Costa Transit District,Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,2.3,0.7,0,0.7,3.7,,3.7,0,0,,0,0,0,0
+Alameda-Contra Costa Transit District,Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,3,0,0,0,3,,0,0,0,,0,0,3,0
+Alameda-Contra Costa Transit District,Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,DO,0.6,0.2,0,0.2,1,,1,0,0,,0,0,0,0
+Alameda-Contra Costa Transit District,Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,RB,DO,0,0.1,0,0.1,0.2,,0.2,0,0,,0,0,0,0
+Alameda-Contra Costa Transit District,Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+San Diego Association of Governments,San Diego,CA,"MPO, COG or Other Planning Agency",Full Reporter,VP,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Los Angeles, dba: City of Los Angeles Department of Transportation",Los Angeles,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,2.43,0,0,0,2.43,,0,0,0,,0,1.96,0.47,0
+"City of Los Angeles, dba: City of Los Angeles Department of Transportation",Los Angeles,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,CB,PT,1.12,0,0,0,1.12,,0,0,0,,0,0.63,0.49,0
+"City of Los Angeles, dba: City of Los Angeles Department of Transportation",Los Angeles,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.45,0,0,0,0.45,,0,0,0,,0,0.45,0,0
+"City of Los Angeles, dba: City of Los Angeles Department of Transportation",Los Angeles,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+Foothill Transit,West Covina,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,1,1,0,0,2,,0,0,0,,0,2,0,0
+San Mateo County Transit District,San Carlos,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,1.3,0,0,0,1.3,,1.3,0,0,,0,0,0,0
+San Mateo County Transit District,San Carlos,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.7,0,0,0,0.7,,0,0,0,,0,0.7,0,0
+San Mateo County Transit District,San Carlos,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,2,0,0,0,2,,0,0,0,,0,0,2,0
+San Mateo County Transit District,San Carlos,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+"Sacramento Regional Transit District, dba: Sacramento RT",Sacramento,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,0.9,1,0,0,1.9,,1.9,0,0,,0,0,0,0
+"Sacramento Regional Transit District, dba: Sacramento RT",Sacramento,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,DO,0.1,0,0,0,0.1,,0.1,0,0,,0,0,0,0
+"Sacramento Regional Transit District, dba: Sacramento RT",Sacramento,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,LR,DO,1,0,0,1,2,,2,0,0,,0,0,0,0
+Metropolitan Transportation Commission,San Francisco,CA,"MPO, COG or Other Planning Agency",Full Reporter,VP,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+San Joaquin Council,Stockton,CA,"MPO, COG or Other Planning Agency",Full Reporter,VP,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Victor Valley Transit Authority,Hesperia,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,VP,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Victor Valley Transit Authority,Hesperia,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,1.01,0,0,0,1.01,,0,0,0,,0,1.01,0,0
+Victor Valley Transit Authority,Hesperia,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.84,0,0,0,0.84,,0,0,0,,0,0.84,0,0
+Victor Valley Transit Authority,Hesperia,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,PT,0.15,0,0,0,0.15,,0,0,0,,0,0.15,0,0
+Riverside Transit Agency,Riverside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+Riverside Transit Agency,Riverside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+Riverside Transit Agency,Riverside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Riverside Transit Agency,Riverside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+"Southern California Regional Rail Authority, dba: Metrolink",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CR,PT,1,0,0,1,2,,0,0,0,,0,2,0,0
+North County Transit District,Oceanside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0,1.5,0,0,1.5,,0,0,0,,0,1.5,0,0
+North County Transit District,Oceanside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CR,PT,1,0,0,0,1,,0,0,0,,0,0,0,1
+North County Transit District,Oceanside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0,0.5,0,0,0.5,,0,0,0,,0,0.5,0,0
+North County Transit District,Oceanside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,YR,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+"City of Fresno, dba: Fresno Area Express",Fresno,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+"City of Fresno, dba: Fresno Area Express",Fresno,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+Omnitrans,San Bernardino,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,2,0,0,0,2,,2,0,0,,0,0,0,0
+Omnitrans,San Bernardino,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,1.8,0,0,0,1.8,,0,0,0,,0,0.9,0,0.9
+Omnitrans,San Bernardino,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.2,0,0,0,0.2,,0,0,0,,0,0.1,0,0.1
+Long Beach Transit,Long Beach,CA,Other Publicly-Owned or Privately Chartered Corporation,Full Reporter,MB,DO,2,0,0,0,2,,2,0,0,,0,0,0,0
+"City of Santa Monica, dba: Big Blue Bus",Santa Monica,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,DO,0,0.96,0,0,0.96,,0.96,0,0,,0,0,0,0
+"City of Santa Monica, dba: Big Blue Bus",Santa Monica,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,TN,0,0,0,0,0,,0,0,0,,0,0,0,0
+Long Beach Transit,Long Beach,CA,Other Publicly-Owned or Privately Chartered Corporation,Full Reporter,DR,PT,0,1,0,0,1,,0,0,0,,0,0,1,0
+"City of Santa Monica, dba: Big Blue Bus",Santa Monica,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0,0.04,0,0,0.04,,0,0,0,,0,0.04,0,0
+"Golden Gate Bridge, Highway and Transportation District",San Francisco,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,2,0,0,1,3,,3,0,0,,0,0,0,0
+"Golden Gate Bridge, Highway and Transportation District",San Francisco,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,1,0,0,0
+"Golden Gate Bridge, Highway and Transportation District",San Francisco,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,FB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+"Central Contra Costa Transit Authority, dba: COUNTY CONNECTION",Concord,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,0.67,0,0,0,0.67,,0.67,0,0,,0,0,0,0
+"Central Contra Costa Transit Authority, dba: COUNTY CONNECTION",Concord,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+"Central Contra Costa Transit Authority, dba: COUNTY CONNECTION",Concord,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.03,0,0,0,0.03,,0,0,0,,0,0.03,0,0
+"Peninsula Corridor Joint Powers Board, dba: Caltrain",San Carlos,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CR,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+Golden Empire Transit District,Bakersfield,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,0.8,0,0,0,0.8,,0.8,0,0,,0,0,0,0
+Golden Empire Transit District,Bakersfield,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,DO,0.2,0,0,0,0.2,,0.2,0,0,,0,0,0,0
+Antelope Valley Transit Authority,Lancaster,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.7,0,0,0,0.7,,0,0,0,,0,0.7,0,0
+Antelope Valley Transit Authority,Lancaster,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+Antelope Valley Transit Authority,Lancaster,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+"City of Santa Clarita, dba: Santa Clarita Transit",Santa Clarita,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.4,0,0,0,0.4,,0,0,0,,0,0.4,0,0
+"City of Santa Clarita, dba: Santa Clarita Transit",Santa Clarita,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,CB,PT,0.4,0,0,0,0.4,,0,0,0,,0,0.4,0,0
+"City of Santa Clarita, dba: Santa Clarita Transit",Santa Clarita,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.2,0,0,0,0.2,,0,0,0,,0,0.2,0,0
+SunLine Transit Agency,Thousand Palms,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,1.37,0,0,0,1.37,,1.37,0,0,,0,0,0,0
+SunLine Transit Agency,Thousand Palms,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,DO,0.63,0,0,0,0.63,,0.63,0,0,,0,0,0,0
+SunLine Transit Agency,Thousand Palms,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,VP,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+"The Eastern Contra Costa Transit Authority, dba: Tri Delta Transit",Antioch,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.6,0,0,0,0.6,,0,0,0,,0,0.6,0,0
+"City of Torrance, dba: Torrance Transit System ",Torrance,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+Monterey-Salinas Transit,Monterey,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,2,0,0,0,2,,2,0,0,,0,0,0,0
+"City of Torrance, dba: Torrance Transit System ",Torrance,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+Monterey-Salinas Transit,Monterey,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0,0.5
+"The Eastern Contra Costa Transit Authority, dba: Tri Delta Transit",Antioch,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.4,0,0,0,0.4,,0,0,0,,0,0.4,0,0
+Monterey-Salinas Transit,Monterey,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0,0.5
+"The Eastern Contra Costa Transit Authority, dba: Tri Delta Transit",Antioch,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,TN,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Montebello, dba: Montebello Bus Lines",Montebello,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Montebello, dba: Montebello Bus Lines",Montebello,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+"City of Montebello, dba: Montebello Bus Lines",Montebello,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+San Joaquin Regional Transit District,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,1.06,0,0,0,1.06,,1.06,0,0,,0,0,0,0
+San Joaquin Regional Transit District,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.6,0,0,0,0.6,,0,0,0,,0,0.6,0,0
+San Joaquin Regional Transit District,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.14,0,0,0,0.14,,0,0,0,,0,0.14,0,0
+San Joaquin Regional Transit District,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+San Joaquin Regional Transit District,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,PT,0.2,0,0,0,0.2,,0,0,0,,0,0.2,0,0
+Santa Cruz Metropolitan Transit District,Santa Cruz,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,0.7,0,0,0,0.7,,0.7,0,0,,0,0,0,0
+Santa Cruz Metropolitan Transit District,Santa Cruz,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,DO,0.1,0,0,0,0.1,,0.1,0,0,,0,0,0,0
+Santa Cruz Metropolitan Transit District,Santa Cruz,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,DO,0.2,0,0,0,0.2,,0.2,0,0,,0,0,0,0
+Santa Barbara Metropolitan Transit District,Santa Barbara,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+Marin County Transit District,San Rafael,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,3,0,0,0,3,,0,0,0,,2,0,1,0
+Marin County Transit District,San Rafael,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,1,0,0,0
+"City of Modesto , dba: Modesto Area Express",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+"City of Modesto , dba: Modesto Area Express",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,1,0,0,0
+"City of Modesto , dba: Modesto Area Express",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+Gold Coast Transit District,Oxnard,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+Gold Coast Transit District,Oxnard,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Fresno County Rural Transit Agency,Fresno,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,PT,0,0,0,0,0.1,,0,0,0,,0,0,0,0.1
+Fresno County Rural Transit Agency,Fresno,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,PT,0,0,0,0,0.9,,0,0,0,,0,0,0,0.9
+"Transit Joint Powers Authority for Merced County, dba: Merced The Bus",Merced,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.83,0,0,0,0.83,,0,0,0,,0,0.83,0,0
+"Transit Joint Powers Authority for Merced County, dba: Merced The Bus",Merced,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.17,0,0,0,0.17,,0,0,0,,0,0.17,0,0
+San Bernardino County Transportation Authority,San Bernardino,CA,"MPO, COG or Other Planning Agency",Full Reporter,VP,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Kings County Area Public Transit Agency,Hanford,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,VP,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Kings County Area Public Transit Agency,Hanford,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.7,0,0,0,0.7,,0,0,0,,0,0.7,0,0
+Kings County Area Public Transit Agency,Hanford,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+Ventura County Transportation Commission,Camarillo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Ventura County Transportation Commission,Camarillo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Ventura County Transportation Commission,Camarillo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+"County of Sonoma , dba: Sonoma County Transit",Santa Rosa,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.6,0,0,0,0.6,,0,0,0,,0,0.6,0,0
+"County of Sonoma , dba: Sonoma County Transit",Santa Rosa,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.4,0,0,0,0.4,,0,0,0,,0,0.4,0,0
+Yolo County Transportation District,Woodland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.8,0,0,0,0.8,,0,0,0,,0,0.8,0,0
+City of Elk Grove,Elk Grove,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,CB,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+City of Elk Grove,Elk Grove,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.4,0,0,0,0.4,,0,0,0,,0,0.4,0,0
+Yolo County Transportation District,Woodland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.2,0,0,0,0.2,,0,0,0,,0,0.2,0,0
+City of Elk Grove,Elk Grove,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+Livermore / Amador Valley Transit Authority,Livermore,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+Livermore / Amador Valley Transit Authority,Livermore,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Kern Regional Transit,Bakersfield,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+San Luis Obispo Regional Transit Authority,San Luis Obispo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,DO,0.6,0,0,0,0.6,,0,0,0.6,,0,0,0,0
+San Luis Obispo Regional Transit Authority,San Luis Obispo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,DO,0.4,0,0,0,0.4,,0,0,0.4,,0,0,0,0
+Kern Regional Transit,Bakersfield,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Glendale,Glendale,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.8,0,0,0,0.8,,0,0,0,,0,0.8,0,0
+Butte County Association of Governments,Chico,CA,"MPO, COG or Other Planning Agency",Full Reporter,MB,PT,0.7,0,0,0,0.7,,0,0,0,,0,0.7,0,0
+Eastern Sierra Transit Authority,Bishop,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,DO,0,0,0,0,1.54,,0.56,0.98,0,,0,0,0,0
+Butte County Association of Governments,Chico,CA,"MPO, COG or Other Planning Agency",Full Reporter,DR,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+Eastern Sierra Transit Authority,Bishop,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,DO,0,0,0,0,0.25,,0.23,0.02,0,,0,0,0,0
+City of Glendale,Glendale,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.2,0,0,0,0.2,,0,0,0,,0,0.2,0,0
+Eastern Sierra Transit Authority,Bishop,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,CB,DO,0,0,0,0,0.21,,0.21,0,0,,0,0,0,0
+"City of Culver City, dba: Culver City Municipal Bus Lines",Culver City,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,DO,0.95,0,0,0,0.95,,0.95,0,0,,0,0,0,0
+"City of Pasadena, dba: Pasadena Transit",Pasadena,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.64,0,0,0,0.64,,0,0,0,,0,0,0.64,0
+"City of Pasadena, dba: Pasadena Transit",Pasadena,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.36,0,0,0,0.36,,0,0,0,,0,0,0.36,0
+"City of Culver City, dba: Culver City Municipal Bus Lines",Culver City,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,DO,0.05,0,0,0,0.05,,0.05,0,0,,0,0,0,0
+"City of Visalia  , dba: Visalia Transit",Visalia,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.74,0,0,0,0.74,,0,0,0,,0,0.74,0,0
+"City of Visalia  , dba: Visalia Transit",Visalia,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.23,0,0,0,0.23,,0,0,0,,0,0.23,0,0
+"City of Visalia  , dba: Visalia Transit",Visalia,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,CB,PT,0.03,0,0,0,0.03,,0,0,0,,0,0.03,0,0
+Napa Valley Transportation Authority,Napa,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,0,1
+"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,DO,1.6,0,0,0,1.6,,1.6,0,0,,0,0,0,0
+Napa Valley Transportation Authority,Napa,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,0,1
+"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Napa Valley Transportation Authority,Napa,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,PT,1,0,0,0,1,,0,0,0,,0,0,0,1
+"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,VP,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,CB,PT,0.2,0,0,0,0.2,,0,0,0,,0,0.2,0,0
+"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,DO,0.2,0,0,0,0.2,,0.2,0,0,,0,0,0,0
+"City of Fairfield, California, dba: Fairfield and Suisun Transit",Fairfield,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.4,0,0,0,0.4,,0,0,0,,0,0.4,0,0
+"City of Fairfield, California, dba: Fairfield and Suisun Transit",Fairfield,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,CB,PT,0.4,0,0,0,0.4,,0,0,0,,0,0.4,0,0
+"City of Fairfield, California, dba: Fairfield and Suisun Transit",Fairfield,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.2,0,0,0,0.2,,0,0,0,,0,0.2,0,0
+"City of Norwalk , dba: Norwalk Transit System ",Norwalk,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+Yuba-Sutter Transit Authority,Marysville,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.62,0,0,0,0.62,,0,0,0,,0,0.62,0,0
+Yuba-Sutter Transit Authority,Marysville,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.25,0,0,0,0.25,,0,0,0,,0,0.25,0,0
+"City of Norwalk , dba: Norwalk Transit System ",Norwalk,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Yuba-Sutter Transit Authority,Marysville,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,PT,0.13,0,0,0,0.13,,0,0,0,,0,0.13,0,0
+Riverside County Transportation Commission,Riverside,CA,"MPO, COG or Other Planning Agency",Full Reporter,VP,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Gardena, dba: GTrans",Gardena,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,DO,0.8,0,0,0,0.8,,0.8,0,0,,0,0,0,0
+"City of Gardena, dba: GTrans",Gardena,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,DO,0.2,0,0,0,0.2,,0.2,0,0,,0,0,0,0
+Anaheim Transportation Network,Anaheim,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.93,0,0,0,0.93,,0,0,0,,0,0.93,0,0
+"Stanislaus County , dba: Stanislaus Regional Transit",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1.46,0,0,0,1.46,,0,0,0,,1.46,0,0,0
+"Stanislaus County , dba: Stanislaus Regional Transit",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.49,0,0,0,0.49,,0,0,0,,0.49,0,0,0
+Anaheim Transportation Network,Anaheim,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.07,0,0,0,0.07,,0,0,0,,0,0.07,0,0
+"Stanislaus County , dba: Stanislaus Regional Transit",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,CB,PT,0.05,0,0,0,0.05,,0,0,0,,0.05,0,0,0
+Palos Verdes Peninsula Transit Authority,Palos Verdes Peninsula,CA,Independent Public Agency or Authority of Transit Service,Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Mendocino Transit Authority,Ukiah,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,DO,0,0,0,0,0.88,,0.88,0,0,,0,0,0,0
+Pomona Valley Transportation Authority,La Verne,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+Pomona Valley Transportation Authority,La Verne,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,2,0,0,0,2,,0,0,0,,0,0,2,0
+Palos Verdes Peninsula Transit Authority,Palos Verdes Peninsula,CA,Independent Public Agency or Authority of Transit Service,Reduced Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+Mendocino Transit Authority,Ukiah,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,DO,0,0,0,0,0.12,,0.12,0,0,,0,0,0,0
+City of Santa Rosa,Santa Rosa,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+City of Santa Rosa,Santa Rosa,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.9,0,0,0,0.9,,0,0,0,,0,0,0.9,0
+City of Santa Rosa,Santa Rosa,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.1,0,0,0,0.1,,0,0,0,,0,0,0.1,0
+Tulare County Area Transit,Visalia,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0.97,,0,0,0,,0,0.97,0,0
+Western Contra Costa Transit Authority,Pinole,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.4,0,0,0,0.4,,0,0,0,,0,0.4,0,0
+Solano County Transit,Vallejo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.46,0,0,0,0.46,,0,0,0,,0,0,0,0.46
+"City of Roseville, dba: Roseville Transit",Roseville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.39,0,0,0,0.39,,0,0,0,,0,0.39,0,0
+Solano County Transit,Vallejo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,PT,0.28,0,0,0,0.28,,0,0,0,,0,0,0,0.28
+"City of Roseville, dba: Roseville Transit",Roseville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,CB,PT,0.33,0,0,0,0.33,,0,0,0,,0,0.33,0,0
+"City of Roseville, dba: Roseville Transit",Roseville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.28,0,0,0,0.28,,0,0,0,,0,0.28,0,0
+Western Contra Costa Transit Authority,Pinole,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+Tulare County Area Transit,Visalia,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0.03,,0,0,0,,0,0.03,0,0
+Solano County Transit,Vallejo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.26,0,0,0,0.26,,0,0,0,,0,0,0,0.26
+Western Contra Costa Transit Authority,Pinole,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CB,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+Lake Transit Authority,Lower Lake,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,PT,0,0,0,0,0.7,,0,0,0,,0,0.7,0,0
+Lake Transit Authority,Lower Lake,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,PT,0,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+Altamont Corridor Express,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CR,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+"University of California, Davis, dba: ASUCD-Unitrans",Davis,CA,University,Full Reporter,MB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+"City of Redondo Beach, dba: Beach Cities Transit",Redondo Beach,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.7,0,0,0,0.7,,0,0,0,,0,0.7,0,0
+City of Huntington Park,Huntington Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+Redding Area Bus Authority,Redding,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0.5,0,0
+Tuolumne County Transit,Sonora,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Tuolumne County Transit,Sonora,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Redding Area Bus Authority,Redding,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0.5,0,0
+City of Huntington Park,Huntington Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+"City of Redondo Beach, dba: Beach Cities Transit",Redondo Beach,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+Easy Lift Transportation,Goleta,CA,Private-Non-Profit Corporation,Reduced Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Santa Maria, dba: Santa Maria Area Transit",Santa Maria,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+"City of Claremont, dba: Claremont Dial-a-Ride",Claremont,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Claremont, dba: Claremont Dial-a-Ride",Claremont,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+"City of Santa Maria, dba: Santa Maria Area Transit",Santa Maria,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+"City of Camarillo, dba: Camarillo Area Transit",Camarillo,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.9,0,0,0,0.9,,0,0,0,,0.9,0,0,0
+City of Madera,Madera,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0.5,0,0
+City of Madera,Madera,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0.5,0,0
+"City of Camarillo, dba: Camarillo Area Transit",Camarillo,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.1,0,0,0,0.1,,0,0,0,,0.1,0,0,0
+"City of Laguna Beach, dba: Laguna Beach Transit",Laguna Beach,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+"City of Thousand Oaks, dba: Thousand Oaks Transit",Thousand Oaks,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1.2,0,0,0,1.2,,0,0,0,,0,0.2,1,0
+"City of Thousand Oaks, dba: Thousand Oaks Transit",Thousand Oaks,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.8,0,0,0,0.8,,0,0,0,,0,0.8,0,0
+City of Burbank,Burbank,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+"City of Union City, dba: Union City Transit",Union City,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.7,0,0,0,0.7,,0,0,0,,0,0,0.7,0
+Amador Regional Transit System,Jackson,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,DO,0,0,0,0,0.41,,0.41,0,0,,0,0,0,0
+"City of Simi Valley, dba: Simi Valley Transit",Simi Valley,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,0.4,0,0,0,0.4,,0.4,0,0,,0,0,0,0
+"City of Simi Valley, dba: Simi Valley Transit",Simi Valley,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,DO,0.6,0,0,0,0.6,,0.6,0,0,,0,0,0,0
+Amador Regional Transit System,Jackson,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,DO,0,0,0,0,0.39,,0.39,0,0,,0,0,0,0
+City of Burbank,Burbank,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+"City of Union City, dba: Union City Transit",Union City,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.3,0,0,0,0.3,,0,0,0,,0,0,0.3,0
+Amador Regional Transit System,Jackson,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,CB,DO,0,0,0,0,0.2,,0.2,0,0,,0,0,0,0
+Imperial County Transportation Commission,El Centro,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,MB,PT,0.8,0,0,0,0.8,,0,0,0,,0,0,0.8,0
+City of Cerritos,Cerritos,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Los Angeles County Department of Public Works - East L.A.,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+"Mountain Area Regional Transit Authority, dba: Mountain Transit",Big Bear Lake,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,DO,0,0,0,0,1.23,,1.23,0,0,,0,0,0,0
+El Dorado County Transit Authority,Diamond Springs,CA,Independent Public Agency or Authority of Transit Service,Reduced Reporter,MB,DO,0.2,0,0,0,0.2,,0.2,0,0,,0,0,0,0
+Los Angeles County Department of Public Works - East L.A.,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Cerritos,Cerritos,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Imperial County Transportation Commission,El Centro,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,PT,0.2,0,0,0,0.2,,0,0,0,,0,0,0.2,0
+El Dorado County Transit Authority,Diamond Springs,CA,Independent Public Agency or Authority of Transit Service,Reduced Reporter,DR,DO,0.4,0,0,0,0.4,,0.4,0,0,,0,0,0,0
+El Dorado County Transit Authority,Diamond Springs,CA,Independent Public Agency or Authority of Transit Service,Reduced Reporter,CB,DO,0.4,0,0,0,0.4,,0.4,0,0,,0,0,0,0
+"Mountain Area Regional Transit Authority, dba: Mountain Transit",Big Bear Lake,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,CB,DO,0,0,0,0,0.36,,0.36,0,0,,0,0,0,0
+"Mountain Area Regional Transit Authority, dba: Mountain Transit",Big Bear Lake,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,DO,0,0,0,0,0.41,,0.41,0,0,,0,0,0,0
+City of San Luis Obispo,San Luis Obispo,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+City of Riverside,Riverside,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+City of Calabasas,Calabasas,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Vacaville,Vacaville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.7,0,0,0,0.7,,0,0,0,,0,0.7,0,0
+City of Carson,Carson,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Alhambra, dba: Alhambra Community Transit  aka ACT",Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+City of Carson,Carson,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,TN,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Alhambra, dba: Alhambra Community Transit  aka ACT",Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+City of Vacaville,Vacaville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+City of Calabasas,Calabasas,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Glendora,Glendora,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Porterville, dba: Porterville Transit",Porterville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0.5,0,0
+Humboldt Transit Authority,Eureka,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,CB,DO,0,0,0,0,0.35,,0.35,0,0,,0,0,0,0
+City of South Gate,South Gate,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Arcadia, dba: Arcadia Transit",Arcadia,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+Tehama County,Gerber,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0.25,,0,0,0,,0,0.25,0,0
+Tehama County,Gerber,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0.75,,0,0,0,,0,0.75,0,0
+"City of Arcadia, dba: Arcadia Transit",Arcadia,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+City of South Gate,South Gate,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,1,0,0,0
+"City of Porterville, dba: Porterville Transit",Porterville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0.5,0,0
+Humboldt Transit Authority,Eureka,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,DO,0,0,0,0,0.65,,0.65,0,0,,0,0,0,0
+City of Glendora,Glendora,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Tracy,Tracy,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.84,0,0,0,0.84,,0,0,0,,0,0,0.84,0
+County of Sacramento Municipal Services Agency Department of Transportation,Sacramento,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+Morongo Basin Transit Authority,Joshua Tree,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,DO,0,0,0,0,0.76,,0.76,0,0,,0,0,0,0
+City of Downey,Downey,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Downey,Downey,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Morongo Basin Transit Authority,Joshua Tree,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,DO,0,0,0,0,0.11,,0.11,0,0,,0,0,0,0
+County of Sacramento Municipal Services Agency Department of Transportation,Sacramento,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,CB,PT,0,0,0,0,0.4,,0,0,0,,0,0,0.4,0
+City of Tracy,Tracy,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.16,0,0,0,0.16,,0,0,0,,0,0,0.16,0
+Morongo Basin Transit Authority,Joshua Tree,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,CB,DO,0,0,0,0,0.13,,0.13,0,0,,0,0,0,0
+County of Sacramento Municipal Services Agency Department of Transportation,Sacramento,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0.1,,0,0,0,,0,0,0.1,0
+"City of Lakewood , dba: DASH Transit",Lakewood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+"City of Petaluma, dba: Petaluma Transit",Petaluma,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.6,0,0,0,0.6,,0,0,0,,0,0.6,0,0
+"City of El Monte , dba: City of El Monte Transportation Division",El Monte,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+"City of El Monte , dba: City of El Monte Transportation Division",El Monte,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+"City of Petaluma, dba: Petaluma Transit",Petaluma,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.4,0,0,0,0.4,,0,0,0,,0,0.4,0,0
+"City of El Monte , dba: City of El Monte Transportation Division",El Monte,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,DO,0.75,0,0,0,0.75,,0.75,0,0,,0,0,0,0
+"City of El Monte , dba: City of El Monte Transportation Division",El Monte,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,0.25,0,0,0,0.25,,0.25,0,0,,0,0,0,0
+"City of Turlock, dba: Turlock Transit",Turlock,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0.5,0,0
+"City of Commerce, dba: City of Commerce Municipal Buslines",Commerce,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,DO,0.9,0,0,0,0.9,,0.9,0,0,,0,0,0,0
+Nevada County Transit Services,Nevada City,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+Nevada County Transit Services,Nevada City,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Commerce, dba: City of Commerce Municipal Buslines",Commerce,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,DO,0.1,0,0,0,0.1,,0.1,0,0,,0,0,0,0
+"City of Turlock, dba: Turlock Transit",Turlock,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0.5,0,0
+Yosemite Area Regional Transportation System,Merced,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Dixon ,Dixon,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,1,,1,0,0,,0,0,0,0
+City of Whittier,Whittier,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+Los Angeles County Department of Public Works - Whittier,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+"City of Lompoc, dba: City of Lompoc - Lompoc Transit",Lompoc,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.7,0,0,0,0.7,,0,0,0,,0,0.7,0,0
+City of Bell,Bell,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Tulare, dba: Tulare Intermodal Express",Tulare,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,MB,PT,0.7,0,0,0,0.7,,0,0,0,,0,0.7,0,0
+San Benito County LTA,Hollister,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,PT,0,0,0,0,0.48,,0,0,0,,0,0.48,0,0
+"City of Lodi, dba: GrapeLine",Lodi,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0.5,0,0
+City of Corona,Corona,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,35,0,0,0,35,,0,0,0,,0,0,35,0
+City of Corona,Corona,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,65,0,0,0,65,,0,0,0,,0,0,65,0
+"City of Lodi, dba: GrapeLine",Lodi,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0.5,0,0
+San Benito County LTA,Hollister,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,CB,PT,0,0,0,0,0.37,,0,0,0,,0,0.37,0,0
+"City of Tulare, dba: Tulare Intermodal Express",Tulare,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+"City of Lompoc, dba: City of Lompoc - Lompoc Transit",Lompoc,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.3,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+City of Bell,Bell,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0,0.5,0,0,0.5,,0,0,0,,0,0,0.5,0
+City of Bell,Bell,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0,0.5,0,0,0.5,,0,0,0,,0,0,0.5,0
+San Benito County LTA,Hollister,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,PT,0,0,0,0,0.15,,0,0,0,,0,0.15,0,0
+Santa Barbara County Association of Governments,Santa Barbara,CA,"MPO, COG or Other Planning Agency",Reduced Reporter,CB,PT,1,0,0,0,1,,0,0,0,,1,0,0,0
+City of Shafter,Shafter,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Eureka , dba: Eureka Transit Service",Eureka,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Eureka , dba: Eureka Transit Service",Eureka,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Sonoma-Marin Area Rail Transit District,Petaluma,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,CR,DO,3,0,0,0,3,,3,0,0,,0,0,0,0
+Mariposa County Transit,Mariposa,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,1,,1,0,0,,0,0,0,0
+City of Inglewood,Inglewood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,0.9,0,0,0,0.9,,0.9,0,0,,0,0,0,0
+"City of Baldwin Park, dba: Baldwin Park Transit",Baldwin Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0.5,0,0,0
+Madera County,Madera,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Delano,Delano,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,DO,0.5,0,0,0,0.5,,0.5,0,0,,0,0,0,0
+City of West Covina,West Covina,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0.5,0,0,0
+City of West Covina,West Covina,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0.5,0,0,0
+Madera County,Madera,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,CB,PT,0,0,0,0,1,,0,0,0,,1,0,0,0
+City of Delano,Delano,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,0.5,0,0,0,0.5,,0.5,0,0,,0,0,0,0
+"City of Baldwin Park, dba: Baldwin Park Transit",Baldwin Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0.5,0,0,0
+City of Inglewood,Inglewood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,DO,0.1,0,0,0,0.1,,0.1,0,0,,0,0,0,0
+"Paratransit, Inc.",Sacramento,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,DR,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+"County of Siskiyou, dba: Siskiyou County Transit",Yreka,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,DO,0,0,0,0,1,,1,0,0,,0,0,0,0
+"City of Compton  , dba: Compton Renaissance Transit Service",Compton,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,1,0,0,0
+City of Rosemead,Rosemead,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.4,0,0,0,0.4,,0,0,0,,0,0,0.4,0
+City of West Hollywood,West Hollywood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+City of Rosemead,Rosemead,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.6,0,0,0,0.6,,0,0,0,,0,0,0.6,0
+City of West Hollywood,West Hollywood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+"City of Compton  , dba: Compton Renaissance Transit Service",Compton,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+Calaveras Transit Agency,San Andreas,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,PT,0,0,0,0,1,,0,0,0,,0,0,0,1
+City of Azusa,Azusa,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Corcoran,Corcoran,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,1,,1,0,0,,0,0,0,0
+Colusa County Transit Agency,Colusa,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,1,,1,0,0,,0,0,0,0
+City of Cudahy,Cudahy,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+Redwood Coast Transit Authority,Crescent City,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,PT,0,0,0,0,0.94,,0,0,0,,0,0.94,0,0
+City of Maywood,Maywood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Manteca, dba: Manteca Transit",Manteca,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Palo Verde Valley Transit Agency,Blythe,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Lassen Transit Service Agency,Susanville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,CB,PT,0,0,0,0,0.4,,0,0,0,,0,0.4,0,0
+Town of Truckee,Truckee,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0.7,,0,0,0,,0,0.7,0,0
+Town of Truckee,Truckee,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+"City of Manteca, dba: Manteca Transit",Manteca,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Maywood,Maywood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Palo Verde Valley Transit Agency,Blythe,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,CB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Lassen Transit Service Agency,Susanville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+City of Cudahy,Cudahy,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Lassen Transit Service Agency,Susanville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0.3,,0,0,0,,0,0.3,0,0
+Redwood Coast Transit Authority,Crescent City,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,PT,0,0,0,0,0.06,,0,0,0,,0,0.06,0,0
+Los Angeles County Department of Public Works - South Whittier,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Artesia,Artesia,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,TX,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Auburn,Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+Yurok Tribe,Klamath,CA,Tribe,Reduced Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Dinuba,Dinuba,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0.9,,0,0,0,,0,0.9,0,0
+City of Bell Gardens,Bell,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+City of Solvang,Solvang,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Dinuba,Dinuba,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0.1,,0,0,0,,0,0.1,0,0
+City of Bell Gardens,Bell,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+City of Solvang,Solvang,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Yurok Tribe,Klamath,CA,Tribe,Reduced Reporter,FB,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+"San Francisco Bay Area Water Emergency Transportation Authority, dba: San Francisco Bay Ferry",San Francisco,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,FB,PT,2,0,0,0,2,,0,0,0,,0,2,0,0
+Trinity County,Weaverville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,DO,0,0,0,0,1,,1,0,0,,0,0,0,0
+City of Beverly Hills,Beverly Hills,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Lynwood,Lynwood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,1,0,0,0
+City of South Pasadena,South Pasadena,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+Plumas County Transportation Commission,Quincy,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Ridgecrest, dba: Ridgerunner",Ridgecrest,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,DO,0,0,0,0,1,,1,0,0,,0,0,0,0
+City of Monrovia,Monrovia,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1,0,0,0,1,,0,0,0,,1,0,0,0
+"City of La Mirada , dba: La Mirada Transit ",La Mirada,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+City of Monterey Park,Monterey Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+City of Moorpark,Moorpark,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,1,0,0,0
+Sierra County Transportation Commission,Downieville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Avalon,Avalon,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+Glenn Transit Service,Willows,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,DR,PT,0,0,0,0,0.1,,0,0,0,,0,0.1,0,0
+Glenn Transit Service,Willows,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,MB,PT,0,0,0,0,0.9,,0,0,0,,0,0.9,0,0
+City of Avalon,Avalon,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,1,0,0
+City of Bellflower,Bellflower,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+City of Bellflower,Bellflower,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,0.5,0,0,0,0.5,,0,0,0,,0,0,0.5,0
+City of Monterey Park,Monterey Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,1,0,0,0
+"City of Rio Vista, dba: Rio Vista Delta Breeze",Rio Vista,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,1,,0,0,0,,0,1,0,0
+City of Taft,Taft,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,1,,0,0,1,,0,0,0,0
+County of Ventura,Ventura,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Agoura Hills,Agoura Hills,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Covina,Covina,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Woodlake,Woodlake,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Atascadero, dba: Atascadero Dial A Ride",Atascadero,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Blue Lake Rancheria,Blue Lake,CA,Tribe,Reduced Reporter,MB,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Arvin,Arvin,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+Modoc Transportation Agency,Alturas,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Modoc Transportation Agency,Alturas,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Arvin,Arvin,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+Los Angeles County Dept. of Public Works - Willowbrook et al.,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Arcata,Arcata,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Malibu,Malibu,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Chowchilla,Chowchilla,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Santa Fe Springs,Santa Fe Springs,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+City of California City,California City,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,1,,1,0,0,,0,0,0,0
+Elk Valley Rancheria,Crescent City,CA,Tribe,Reduced Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+"City of Davis, dba: Davis Community Transit",Davis,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,1,0,0,0,1,,0,1,0,,0,0,0,0
+Los Angeles County Dept. of Public Works - Florence-Firestone,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Ojai,Ojai,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,DO,0,0,0,0,1,,1,0,0,,0,0,0,0
+Morongo Band of Mission Indians,Banning,CA,Tribe,Reduced Reporter,DR,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+"City of Manhattan Beach , dba: City of Manhattan Beach Dial-A-Ride",Manhattan Beach,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+City of Tehachapi,Tehachapi,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+"Wasco, City of",Wasco,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+Los Angeles County Dept. of Public Works - King Medical Center Shuttle Service,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Los Angeles County Dept. of Public Works - Willowbrook Shuttle,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Escalon,Escalon,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0.1,,0,0,0,,0.1,0,0,0
+City of Guadalupe,Guadalupe,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+City of Escalon,Escalon,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0.9,,0,0,0,,0.9,0,0,0
+City of Guadalupe,Guadalupe,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+North Fork Rancheria of Mono Indians of California,North Fork,CA,Tribe,Reduced Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+Alpine County Local Transportation Commission,Markleeville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+Los Angeles County Dept. of Public Works - Lennox Shuttle,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of McFarland,Mcfarland,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,DR,DO,0,0,0,0,0,,0,0,0,,0,0,0,0
+Los Angeles County Dept. of Public Works - Athens Shuttle Service,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Los Angeles County Department of Public Works - East Valinda,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+Chemehuevi Indian Tribe,Havasu Lake,CA,Tribe,Reduced Reporter,FB,DO,1,0,0,0,1,,1,0,0,,0,0,0,0
+"City of Needles, dba: Needles Area Transit",Needles,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,MB,PT,0,0,0,0,0,,0,0,0,,0,0,0,0
+Los Angeles County Department of Public Works - Avocado Heights,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,MB,PT,1,0,0,0,1,,0,0,0,,0,0,1,0
+City of Pico Rivera,Pico Rivera,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,DR,PT,0,1,0,0,1,,0,0,0,,1,0,0,0
