@@ -29,7 +29,7 @@ schema = DataFrameSchema(
         ),
         "State": Column(
             dtype="object",
-            checks=[Check.eq('CA')],
+            checks=None,
             nullable=False,
             unique=False,
             coerce=False,
@@ -38,7 +38,7 @@ schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Organization Type": Column(
+        "OrganizationType": Column(
             dtype="object",
             checks=None,
             nullable=False,
@@ -49,9 +49,23 @@ schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Reporter Type": Column(
+        "ReporterType": Column(
             dtype="object",
             checks=None,
+            nullable=False,
+            unique=False,
+            coerce=False,
+            required=True,
+            regex=False,
+            description=None,
+            title=None,
+        ),
+        "year": Column(
+            dtype="int64",
+            checks=[
+                Check.greater_than_or_equal_to(min_value=2020.0),
+                Check.less_than_or_equal_to(max_value=2021.0),
+            ],
             nullable=False,
             unique=False,
             coerce=False,
@@ -85,7 +99,7 @@ schema = DataFrameSchema(
         "ownerships": Column(
             dtype="object",
             checks=None,
-            nullable=False,
+            nullable=True,
             unique=False,
             coerce=False,
             required=True,
@@ -93,7 +107,7 @@ schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Under 200 Vehicles": Column(
+        "Under200Vehicles": Column(
             dtype="float64",
             checks=[
                 Check.greater_than_or_equal_to(min_value=0.0),
@@ -107,11 +121,11 @@ schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "200 to 300 Vehicles": Column(
+        "200to300Vehicles": Column(
             dtype="float64",
             checks=[
                 Check.greater_than_or_equal_to(min_value=0.0),
-                Check.less_than_or_equal_to(max_value=24.52),
+                Check.less_than_or_equal_to(max_value=24.6),
             ],
             nullable=False,
             unique=False,
@@ -121,11 +135,11 @@ schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Over 300 Vehicles": Column(
+        "Over300Vehicles": Column(
             dtype="float64",
             checks=[
                 Check.greater_than_or_equal_to(min_value=0.0),
-                Check.less_than_or_equal_to(max_value=0.97),
+                Check.less_than_or_equal_to(max_value=0.98),
             ],
             nullable=False,
             unique=False,
@@ -135,11 +149,11 @@ schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Heavy Maintenance Facilities": Column(
+        "HeavyMaintenanceFacilities": Column(
             dtype="float64",
             checks=[
                 Check.greater_than_or_equal_to(min_value=0.0),
-                Check.less_than_or_equal_to(max_value=1.94),
+                Check.less_than_or_equal_to(max_value=1.96),
             ],
             nullable=False,
             unique=False,
@@ -149,10 +163,10 @@ schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Total Facilities": Column(
+        "TotalFacilities": Column(
             dtype="float64",
             checks=[
-                Check.greater_than_or_equal_to(min_value=0.03),
+                Check.greater_than_or_equal_to(min_value=0.0),
                 Check.less_than_or_equal_to(max_value=65.0),
             ],
             nullable=False,
@@ -169,7 +183,7 @@ schema = DataFrameSchema(
         dtype="int64",
         checks=[
             Check.greater_than_or_equal_to(min_value=0.0),
-            Check.less_than_or_equal_to(max_value=429.0),
+            Check.less_than_or_equal_to(max_value=438.0),
         ],
         nullable=False,
         coerce=False,

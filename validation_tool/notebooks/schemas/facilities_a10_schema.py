@@ -37,7 +37,7 @@ a10_schema = DataFrameSchema(
             description="Checking that the state is CA.",
             title="State = CA check",
         ),
-        "Organization Type": Column(
+        "OrganizationType": Column(
             dtype="object",
             checks=None,
             nullable=False,
@@ -48,9 +48,23 @@ a10_schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Reporter Type": Column(
+        "ReporterType": Column(
             dtype="object",
             checks=None,
+            nullable=False,
+            unique=False,
+            coerce=False,
+            required=True,
+            regex=False,
+            description=None,
+            title=None,
+        ),
+        "year": Column(
+            dtype="int64",
+            checks=[
+                Check.greater_than_or_equal_to(min_value=2020.0),
+                Check.less_than_or_equal_to(max_value=2021.0),
+            ],
             nullable=False,
             unique=False,
             coerce=False,
@@ -92,7 +106,7 @@ a10_schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Under 200 Vehicles": Column(
+        "Under200Vehicles": Column(
             dtype="float64",
             checks=None,
             nullable=False,
@@ -103,7 +117,7 @@ a10_schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "200 to 300 Vehicles": Column(
+        "200to300Vehicles": Column(
             dtype="float64",
             checks=None,
             nullable=False,
@@ -114,7 +128,7 @@ a10_schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Over 300 Vehicles": Column(
+        "Over300Vehicles": Column(
             dtype="float64",
             checks=None,
             nullable=False,
@@ -125,7 +139,7 @@ a10_schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Heavy Maintenance Facilities": Column(
+        "HeavyMaintenanceFacilities": Column(
             dtype="float64",
             checks=None,
             nullable=False,
@@ -136,7 +150,7 @@ a10_schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Total Facilities": Column(
+        "TotalFacilities": Column(
             dtype="float64",
             checks=[Check(lambda x: round(x.sum()) % 1 == 0) 
             ],
@@ -154,9 +168,9 @@ a10_schema = DataFrameSchema(
     checks=None,
     # [
     #     # Check whether total gen purpose facilities (all but heavy maintenance) is > 1. If so throw error. 
-    #     Check(lambda x: x[['Under 200 Vehicles', 
-    #                         '200 to 300 Vehicles',
-    #                         'Over 300 Vehicles']].sum(axis=1) < 1)
+    #     Check(lambda x: x[['Under200Vehicles', 
+    #                         '200to300Vehicles',
+    #                         'Over300Vehicles']].sum(axis=1) < 1)
     #                              ],
     dtype=None,
     coerce=True,

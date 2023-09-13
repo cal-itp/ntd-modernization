@@ -1,0 +1,440 @@
+,Agency,City,State,OrganizationType,ReporterType,year,Mode,TOS,ownerships,Under200Vehicles,200to300Vehicles,Over300Vehicles,HeavyMaintenanceFacilities,TotalFacilities
+0,"Los Angeles County Metropolitan Transportation Authority, dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,4.0,24.6,0.98,1.96,31.54
+1,"Los Angeles County Metropolitan Transportation Authority, dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,VP,PT,,0.0,0.0,0.0,0.0,0.0
+2,"Los Angeles County Metropolitan Transportation Authority, dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,LR,DO,Owned,14.0,0.0,0.0,0.0,14.0
+3,"Los Angeles County Metropolitan Transportation Authority, dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Leased by PT Provider,3.0,0.0,0.0,0.0,3.0
+4,"Los Angeles County Metropolitan Transportation Authority, dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,HR,DO,Owned,2.0,0.0,0.0,0.0,2.0
+5,"Los Angeles County Metropolitan Transportation Authority, dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,RB,DO,Owned,0.0,0.4,0.02,0.04,0.46
+6,Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,VP,PT,,0.0,0.0,0.0,0.0,0.0
+7,Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+8,Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,0.0,1.9,0.0,0.0,1.9
+9,Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.0,1.9,0.0,0.0,1.9
+10,Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.0,1.0,0.0,0.0,1.0
+11,Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,DO,Owned,0.0,0.1,0.0,0.0,0.1
+12,Orange County Transportation Authority,Orange,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,PT,Owned by Public Agency,0.0,0.1,0.0,0.0,0.1
+13,Access Services,El Monte,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Leased by PT Provider,6.0,0.0,0.0,0.0,6.0
+14,Access Services,El Monte,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+15,"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency (MUNI)",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,DO,Owned,2.0,1.0,0.0,1.0,4.0
+16,"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency (MUNI)",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,TB,DO,Owned,2.0,0.0,0.0,0.0,2.0
+17,"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency (MUNI)",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,LR,DO,Owned,1.6,0.0,0.0,0.8,2.4
+18,"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency (MUNI)",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+19,"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency (MUNI)",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,CC,DO,Owned,1.0,0.0,0.0,0.0,1.0
+20,"City and County of San Francisco, dba: San Francisco Municipal Transportation Agency (MUNI)",San Francisco,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,SR,DO,Owned,0.4,0.0,0.0,0.2,0.6
+21,San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,1.0,1.0,0.0,0.0,2.0
+22,San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,2.0,0.0,0.0,0.0,2.0
+23,San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+24,San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.8,0.0,0.0,0.0,0.8
+25,San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,LR,DO,Owned,0.0,1.0,0.0,0.0,1.0
+26,San Diego Metropolitan Transit System,San Diego,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,PT,Owned by Public Agency,0.2,0.0,0.0,0.0,0.2
+27,"California Vanpool Authority, dba: CalVans",Hanford,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,VP,DO,Leased from a Public Entity,1.0,0.0,0.0,0.0,1.0
+28,"Alameda-Contra Costa Transit District, dba: AC Transit",Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,2.3,0.8,0.0,0.8,3.9
+29,"Alameda-Contra Costa Transit District, dba: AC Transit",Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Leased by PT Provider,3.0,0.0,0.0,0.0,3.0
+30,"Alameda-Contra Costa Transit District, dba: AC Transit",Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,DO,Owned,0.6,0.2,0.0,0.2,1.0
+31,"Alameda-Contra Costa Transit District, dba: AC Transit",Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+32,"Alameda-Contra Costa Transit District, dba: AC Transit",Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,DO,Owned,0.1,0.0,0.0,0.0,0.1
+33,San Diego Association of Governments,San Diego,CA,"MPO, COG or Other Planning Agency",Full Reporter,2020,VP,PT,,0.0,0.0,0.0,0.0,0.0
+34,Santa Clara Valley Transportation Authority,San Jose,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,2.0,1.0,0.0,1.0,4.0
+35,Santa Clara Valley Transportation Authority,San Jose,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,3.0,0.0,0.0,0.0,3.0
+36,Santa Clara Valley Transportation Authority,San Jose,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,LR,DO,Owned,1.0,0.0,0.0,0.0,1.0
+37,Santa Clara Valley Transportation Authority,San Jose,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+38,Santa Clara Valley Transportation Authority,San Jose,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+39,San Francisco Bay Area Rapid Transit District,Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,HR,DO,Owned,1.0,2.0,0.0,1.0,4.0
+40,San Francisco Bay Area Rapid Transit District,Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,YR,DO,Owned,1.0,0.0,0.0,0.0,1.0
+41,San Francisco Bay Area Rapid Transit District,Oakland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MG,PT,Owned by Public Agency,1.0,0.0,0.0,0.0,1.0
+42,"San Mateo County Transit District, dba: SamTrans",San Carlos,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,1.3,0.0,0.0,0.0,1.3
+43,"San Mateo County Transit District, dba: SamTrans",San Carlos,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Leased by PT Provider,3.0,0.0,0.0,0.0,3.0
+44,"San Mateo County Transit District, dba: SamTrans",San Carlos,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.7,0.0,0.0,0.0,0.7
+45,"San Mateo County Transit District, dba: SamTrans",San Carlos,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+46,"City of Los Angeles, dba: Los Angeles Department of Transportation",Los Angeles,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+47,"Sacramento Regional Transit District, dba: Sacramento RT",Sacramento,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,0.9,1.0,0.0,0.0,1.9
+48,"Sacramento Regional Transit District, dba: Sacramento RT",Sacramento,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,DO,Owned,0.1,0.0,0.0,0.0,0.1
+49,"Sacramento Regional Transit District, dba: Sacramento RT",Sacramento,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,LR,DO,Owned,1.0,0.0,0.0,1.0,2.0
+50,Victor Valley Transit Authority,Hesperia,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,VP,PT,,0.0,0.0,0.0,0.0,0.0
+51,Victor Valley Transit Authority,Hesperia,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,1.01,0.0,0.0,0.0,1.01
+52,Victor Valley Transit Authority,Hesperia,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.84,0.0,0.0,0.0,0.84
+53,Victor Valley Transit Authority,Hesperia,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,PT,Owned by Public Agency,0.15,0.0,0.0,0.0,0.15
+54,Foothill Transit,West Covina,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,1.0,1.0,0.0,0.0,2.0
+55,Riverside Transit Agency,Riverside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+56,Riverside Transit Agency,Riverside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+57,Riverside Transit Agency,Riverside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+58,Riverside Transit Agency,Riverside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+59,Riverside Transit Agency,Riverside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+60,Riverside Transit Agency,Riverside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+61,Omnitrans,San Bernardino,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,2.0,0.0,0.0,0.0,2.0
+62,Omnitrans,San Bernardino,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,1.8,0.0,0.0,0.0,1.8
+63,Omnitrans,San Bernardino,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.2,0.0,0.0,0.0,0.2
+64,North County Transit District,Oceanside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.0,1.5,0.0,0.0,1.5
+65,North County Transit District,Oceanside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.5,0.0,0.0,0.5
+66,North County Transit District,Oceanside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CR,PT,,1.0,0.0,0.0,0.0,1.0
+67,North County Transit District,Oceanside,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,YR,PT,Owned by Public Agency,1.0,0.0,0.0,0.0,1.0
+68,Long Beach Transit,Long Beach,CA,Other Publicly-Owned or Privately Chartered Corporation,Full Reporter,2020,MB,DO,Owned,2.0,0.0,0.0,0.0,2.0
+69,Long Beach Transit,Long Beach,CA,Other Publicly-Owned or Privately Chartered Corporation,Full Reporter,2020,DR,PT,Leased by PT Provider,0.0,1.0,0.0,0.0,1.0
+70,"Southern California Regional Rail Authority, dba: Metrolink",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CR,PT,Owned by Public Agency,1.0,0.0,0.0,1.0,2.0
+71,"City of Santa Monica, dba: Big Blue Bus",Santa Monica,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,DO,Owned,0.0,0.97,0.0,0.0,0.97
+72,"City of Santa Monica, dba: Big Blue Bus",Santa Monica,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,TN,,0.0,0.0,0.0,0.0,0.0
+73,"City of Santa Monica, dba: Big Blue Bus",Santa Monica,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.03,0.0,0.0,0.03
+74,Metropolitan Transportation Commission,San Francisco,CA,"MPO, COG or Other Planning Agency",Full Reporter,2020,VP,PT,,0.0,0.0,0.0,0.0,0.0
+75,"City of Fresno, dba: Fresno Area Express",Fresno,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+76,"City of Fresno, dba: Fresno Area Express",Fresno,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,1.0,0.0,0.0,0.0,1.0
+77,"Golden Gate Bridge, Highway and Transportation District",San Francisco,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,2.0,0.0,0.0,1.0,3.0
+78,"Golden Gate Bridge, Highway and Transportation District",San Francisco,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+79,"Golden Gate Bridge, Highway and Transportation District",San Francisco,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,FB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+80,"Central Contra Costa Transit Authority, dba: COUNTY CONNECTION",Concord,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,0.67,0.0,0.0,0.0,0.67
+81,"Central Contra Costa Transit Authority, dba: COUNTY CONNECTION",Concord,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+82,"Central Contra Costa Transit Authority, dba: COUNTY CONNECTION",Concord,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.03,0.0,0.0,0.0,0.03
+83,"Peninsula Corridor Joint Powers Board, dba: Caltrain",San Carlos,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CR,PT,Owned by Public Agency,1.0,0.0,0.0,0.0,1.0
+84,"Peninsula Corridor Joint Powers Board, dba: Caltrain",San Carlos,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Leased by PT Provider,2.0,0.0,0.0,0.0,2.0
+85,San Joaquin Council,Stockton,CA,"MPO, COG or Other Planning Agency",Full Reporter,2020,VP,PT,,0.0,0.0,0.0,0.0,0.0
+86,"Paratransit, Inc.",Sacramento,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,DO,Owned,0.92,0.0,0.0,0.0,0.92
+87,"Paratransit, Inc.",Sacramento,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+88,"Paratransit, Inc.",Sacramento,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.08,0.0,0.0,0.0,0.08
+89,San Joaquin Regional Transit District,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,1.06,0.0,0.0,0.0,1.06
+90,San Joaquin Regional Transit District,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.6,0.0,0.0,0.0,0.6
+91,San Joaquin Regional Transit District,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+92,San Joaquin Regional Transit District,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.14,0.0,0.0,0.0,0.14
+93,San Joaquin Regional Transit District,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,PT,Owned by Public Agency,0.2,0.0,0.0,0.0,0.2
+94,Monterey-Salinas Transit,Monterey,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,2.0,0.0,0.0,0.0,2.0
+95,Monterey-Salinas Transit,Monterey,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,,0.5,0.0,0.0,0.0,0.5
+96,Monterey-Salinas Transit,Monterey,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,,0.5,0.0,0.0,0.0,0.5
+97,"City of Montebello, dba: Montebello Bus Lines",Montebello,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+98,"City of Montebello, dba: Montebello Bus Lines",Montebello,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+99,"City of Montebello, dba: Montebello Bus Lines",Montebello,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+100,Santa Cruz Metropolitan Transit District,Santa Cruz,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,0.7,0.0,0.0,0.0,0.7
+101,Santa Cruz Metropolitan Transit District,Santa Cruz,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,DO,Owned,0.1,0.0,0.0,0.0,0.1
+102,Santa Cruz Metropolitan Transit District,Santa Cruz,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,DO,Owned,0.2,0.0,0.0,0.0,0.2
+103,SunLine Transit Agency,Thousand Palms,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,1.37,0.0,0.0,0.0,1.37
+104,SunLine Transit Agency,Thousand Palms,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,DO,Owned,0.63,0.0,0.0,0.0,0.63
+105,SunLine Transit Agency,Thousand Palms,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,VP,PT,,0.0,0.0,0.0,0.0,0.0
+106,"The Eastern Contra Costa Transit Authority, dba: Tri Delta Transit",Antioch,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.6,0.0,0.0,0.0,0.6
+107,"The Eastern Contra Costa Transit Authority, dba: Tri Delta Transit",Antioch,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.4,0.0,0.0,0.0,0.4
+108,"The Eastern Contra Costa Transit Authority, dba: Tri Delta Transit",Antioch,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,TN,,0.0,0.0,0.0,0.0,0.0
+109,Santa Barbara Metropolitan Transit District,Santa Barbara,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+110,Golden Empire Transit District,Bakersfield,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,0.8,0.0,0.0,0.0,0.8
+111,Antelope Valley Transit Authority,Lancaster,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.7,0.0,0.0,0.0,0.7
+112,Antelope Valley Transit Authority,Lancaster,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+113,Golden Empire Transit District,Bakersfield,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,DO,Owned,0.2,0.0,0.0,0.0,0.2
+114,Antelope Valley Transit Authority,Lancaster,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+115,"City of Santa Clarita, dba: Santa Clarita Transit",Santa Clarita,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,0.4,0.0,0.0,0.0,0.4
+116,"City of Santa Clarita, dba: Santa Clarita Transit",Santa Clarita,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,CB,PT,Owned by Public Agency,0.4,0.0,0.0,0.0,0.4
+117,"City of Santa Clarita, dba: Santa Clarita Transit",Santa Clarita,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,0.2,0.0,0.0,0.0,0.2
+118,Marin County Transit District,San Rafael,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+119,"City of Torrance, dba: Torrance Transit System ",Torrance,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+120,"City of Torrance, dba: Torrance Transit System ",Torrance,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+121,Riverside County Transportation Commission,Riverside,CA,"MPO, COG or Other Planning Agency",Full Reporter,2020,VP,PT,,0.0,0.0,0.0,0.0,0.0
+122,Fresno County Rural Transit Agency,Fresno,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.5
+123,Fresno County Rural Transit Agency,Fresno,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.5
+124,Anaheim Transportation Network,Anaheim,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.99,0.0,0.0,0.0,0.99
+125,Anaheim Transportation Network,Anaheim,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.01,0.0,0.0,0.0,0.01
+126,Gold Coast Transit District,Oxnard,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+127,Gold Coast Transit District,Oxnard,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+128,"County of Sonoma, dba: Sonoma County Transit",Santa Rosa,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,0.6,0.0,0.0,0.0,0.6
+129,"County of Sonoma, dba: Sonoma County Transit",Santa Rosa,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,0.4,0.0,0.0,0.0,0.4
+130,Livermore / Amador Valley Transit Authority,Livermore,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,1.0,0.0,0.0,0.0,1.0
+131,"City of Modesto, dba: Modesto Area Express",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,1.0,0.0,0.0,0.0,1.0
+132,"City of Modesto, dba: Modesto Area Express",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+133,Livermore / Amador Valley Transit Authority,Livermore,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+134,"City of Modesto, dba: Modesto Area Express",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+135,Western Contra Costa Transit Authority,Pinole,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.4,0.0,0.0,0.0,0.4
+136,Western Contra Costa Transit Authority,Pinole,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+137,Western Contra Costa Transit Authority,Pinole,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+138,San Bernardino County Transportation Authority,San Bernardino,CA,"MPO, COG or Other Planning Agency",Full Reporter,2020,VP,PT,,0.0,0.0,0.0,0.0,0.0
+139,"Transit Joint Powers Authority for Merced County, dba: Merced The Bus",Merced,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.82,0.0,0.0,0.0,0.82
+140,"Transit Joint Powers Authority for Merced County, dba: Merced The Bus",Merced,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.18,0.0,0.0,0.0,0.18
+141,"Yolo County Transportation District, dba: Yolobus",Woodland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.8,0.0,0.0,0.0,0.8
+142,"Yolo County Transportation District, dba: Yolobus",Woodland,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.2,0.0,0.0,0.0,0.2
+143,"City of Gardena, dba: GTrans",Gardena,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,DO,Owned,0.8,0.0,0.0,0.0,0.8
+144,San Luis Obispo Regional Transit Authority,San Luis Obispo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,DO,Leased from a Private Entity,0.6,0.0,0.0,0.0,0.6
+145,San Luis Obispo Regional Transit Authority,San Luis Obispo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,DO,Leased from a Private Entity,0.4,0.0,0.0,0.0,0.4
+146,"City of Gardena, dba: GTrans",Gardena,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,DO,Owned,0.2,0.0,0.0,0.0,0.2
+147,"City of Elk Grove, dba: e-tran",Elk Grove,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,CB,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+148,"City of Elk Grove, dba: e-tran",Elk Grove,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,0.4,0.0,0.0,0.0,0.4
+149,"City of Elk Grove, dba: e-tran",Elk Grove,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+150,Napa Valley Transportation Authority,Napa,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,,1.0,0.0,0.0,0.0,1.0
+151,Napa Valley Transportation Authority,Napa,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,,1.0,0.0,0.0,0.0,1.0
+152,Napa Valley Transportation Authority,Napa,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,PT,,1.0,0.0,0.0,0.0,1.0
+153,"City of Culver City, dba: Culver City Municipal Bus Lines (CityBus)",Culver City,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,DO,Owned,0.95,0.0,0.0,0.0,0.95
+154,"City of Culver City, dba: Culver City Municipal Bus Lines (CityBus)",Culver City,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,DO,Owned,0.05,0.0,0.0,0.0,0.05
+155,Ventura County Transportation Commission,Camarillo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+156,Ventura County Transportation Commission,Camarillo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+157,Ventura County Transportation Commission,Camarillo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+158,Eastern Sierra Transit Authority,Bishop,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,DO,,0.0,0.0,0.0,0.0,0.0
+159,Butte County Association of Governments,Chico,CA,"MPO, COG or Other Planning Agency",Full Reporter,2020,MB,PT,Owned by Public Agency,0.7,0.0,0.0,0.0,0.7
+160,Butte County Association of Governments,Chico,CA,"MPO, COG or Other Planning Agency",Full Reporter,2020,DR,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+161,Eastern Sierra Transit Authority,Bishop,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+162,Eastern Sierra Transit Authority,Bishop,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,CB,DO,,0.0,0.0,0.0,0.0,0.0
+163,"City of Visalia, dba: Visalia Transit",Visalia,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,0.74,0.0,0.0,0.0,0.74
+164,Kern Regional Transit,Bakersfield,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.93
+165,"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,DO,Owned,1.6,0.0,0.0,0.0,1.6
+166,Kern Regional Transit,Bakersfield,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.07
+167,"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,VP,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+168,"City of Visalia, dba: Visalia Transit",Visalia,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,0.23,0.0,0.0,0.0,0.23
+169,"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+170,"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,CB,PT,Owned by Public Agency,0.2,0.0,0.0,0.0,0.2
+171,"City of Visalia, dba: Visalia Transit",Visalia,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,CB,PT,Owned by Public Agency,0.03,0.0,0.0,0.0,0.03
+172,"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+173,"County of Placer, dba: Placer County Department of Public Works",Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,DO,Owned,0.2,0.0,0.0,0.0,0.2
+174,"City of Fairfield, California, dba: Fairfield and Suisun Transit",Fairfield,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,0.4,0.0,0.0,0.0,0.4
+175,"City of Fairfield, California, dba: Fairfield and Suisun Transit",Fairfield,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,CB,PT,Owned by Public Agency,0.4,0.0,0.0,0.0,0.4
+176,"City of Fairfield, California, dba: Fairfield and Suisun Transit",Fairfield,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,0.2,0.0,0.0,0.0,0.2
+177,Solano County Transit,Vallejo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,,0.46,0.0,0.0,0.0,0.46
+178,Solano County Transit,Vallejo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,PT,,0.28,0.0,0.0,0.0,0.28
+179,Solano County Transit,Vallejo,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,,0.26,0.0,0.0,0.0,0.26
+180,"University of California, Davis, dba: Unitrans",Davis,CA,University,Full Reporter,2020,MB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+181,City of Santa Rosa,Santa Rosa,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+182,Pomona Valley Transportation Authority,La Verne,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Leased by PT Provider,2.0,0.0,0.0,0.0,2.0
+183,Pomona Valley Transportation Authority,La Verne,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+184,City of Santa Rosa,Santa Rosa,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Leased by PT Provider,0.9,0.0,0.0,0.0,0.9
+185,City of Santa Rosa,Santa Rosa,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Leased by PT Provider,0.1,0.0,0.0,0.0,0.1
+186,Altamont Corridor Express,Stockton,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CR,PT,Owned by Public Agency,1.0,0.0,0.0,0.0,1.0
+187,Yuba-Sutter Transit Authority,Marysville,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.56,0.0,0.0,0.0,0.56
+188,Yuba-Sutter Transit Authority,Marysville,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CB,PT,Owned by Public Agency,0.15,0.0,0.0,0.0,0.15
+189,Yuba-Sutter Transit Authority,Marysville,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.29,0.0,0.0,0.0,0.29
+190,City of Glendale,Glendale,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Leased by PT Provider,0.8,0.0,0.0,0.0,0.8
+191,City of Glendale,Glendale,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Leased by PT Provider,0.2,0.0,0.0,0.0,0.2
+192,"City of Pasadena, dba: Pasadena Transit",Pasadena,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Leased by PT Provider,0.64,0.0,0.0,0.0,0.64
+193,"City of Pasadena, dba: Pasadena Transit",Pasadena,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Leased by PT Provider,0.36,0.0,0.0,0.0,0.36
+194,"City of Norwalk, dba: Norwalk Transit System ",Norwalk,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+195,"City of Norwalk, dba: Norwalk Transit System ",Norwalk,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+196,Lake Transit Authority,Lower Lake,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.8
+197,"Stanislaus County, dba: Stanislaus Regional Transit",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,1.46,0.0,0.0,0.0,1.46
+198,El Dorado County Transit Authority,Diamond Springs,CA,Independent Public Agency or Authority of Transit Service,Reduced Reporter,2020,DR,DO,Owned,0.4,0.0,0.0,0.0,0.4
+199,"Stanislaus County, dba: Stanislaus Regional Transit",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by PT Provider,0.49,0.0,0.0,0.0,0.49
+200,El Dorado County Transit Authority,Diamond Springs,CA,Independent Public Agency or Authority of Transit Service,Reduced Reporter,2020,CB,DO,Owned,0.4,0.0,0.0,0.0,0.4
+201,El Dorado County Transit Authority,Diamond Springs,CA,Independent Public Agency or Authority of Transit Service,Reduced Reporter,2020,MB,DO,Owned,0.2,0.0,0.0,0.0,0.2
+202,Lake Transit Authority,Lower Lake,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.2
+203,"Stanislaus County, dba: Stanislaus Regional Transit",Modesto,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,CB,PT,Owned by PT Provider,0.05,0.0,0.0,0.0,0.05
+204,Palos Verdes Peninsula Transit Authority,Palos Verdes Peninsula,CA,Independent Public Agency or Authority of Transit Service,Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+205,"City of Santa Maria, dba: Santa Maria Area Transit",Santa Maria,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,0.7,0.0,0.0,0.0,0.7
+206,"City of Claremont, dba: Claremont Dial-a-Ride",Claremont,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+207,Imperial County Transportation Commission,El Centro,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Leased by PT Provider,0.8,0.0,0.0,0.0,0.8
+208,Imperial County Transportation Commission,El Centro,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Leased by PT Provider,0.2,0.0,0.0,0.0,0.2
+209,"City of Claremont, dba: Claremont Dial-a-Ride",Claremont,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+210,"City of Santa Maria, dba: Santa Maria Area Transit",Santa Maria,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+211,Palos Verdes Peninsula Transit Authority,Palos Verdes Peninsula,CA,Independent Public Agency or Authority of Transit Service,Reduced Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+212,Easy Lift Transportation,Goleta,CA,Private-Non-Profit Corporation,Reduced Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+213,Redding Area Bus Authority,Redding,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.5,0.0,0.0,0.0,0.5
+214,Redding Area Bus Authority,Redding,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.5,0.0,0.0,0.0,0.5
+215,Mendocino Transit Authority,Ukiah,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,DO,Owned,0.0,0.0,0.0,0.0,0.77
+216,Tulare County Area Transit,Visalia,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,1.0
+217,City of Madera,Madera,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by Public Agency,0.5,0.0,0.0,0.0,0.5
+218,City of Madera,Madera,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by Public Agency,0.5,0.0,0.0,0.0,0.5
+219,Tulare County Area Transit,Visalia,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,1.0
+220,Mendocino Transit Authority,Ukiah,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,DO,Owned,0.0,0.0,0.0,0.0,0.23
+221,"City of Laguna Beach, dba: Laguna Beach Transit",Laguna Beach,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+222,City of Riverside,Riverside,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,DO,Owned,1.0,0.0,0.0,0.0,1.0
+223,City of Burbank,Burbank,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+224,"City of Roseville, dba: Roseville Transit",Roseville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by Public Agency,0.43,0.0,0.0,0.0,0.43
+225,City of Burbank,Burbank,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,Owned,1.0,0.0,0.0,0.0,1.0
+226,"City of Roseville, dba: Roseville Transit",Roseville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,CB,PT,Owned by Public Agency,0.35,0.0,0.0,0.0,0.35
+227,"City of Roseville, dba: Roseville Transit",Roseville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by Public Agency,0.22,0.0,0.0,0.0,0.22
+228,Kings County Area Public Transit Agency,Hanford,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,MB,PT,Owned by Public Agency,0.7,0.0,0.0,0.0,0.7
+229,Kings County Area Public Transit Agency,Hanford,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,DR,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+230,Tuolumne County Transit,Sonora,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,DO,Leased from a Private Entity,0.0,0.0,0.0,0.0,0.5
+231,Tuolumne County Transit,Sonora,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,DO,Leased from a Private Entity,0.0,0.0,0.0,0.0,0.5
+232,"City of Camarillo, dba: Camarillo Area Transit",Camarillo,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by PT Provider,0.9,0.0,0.0,0.0,0.9
+233,"City of Camarillo, dba: Camarillo Area Transit",Camarillo,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,0.1,0.0,0.0,0.0,0.1
+234,"City of Union City, dba: Union City Transit",Union City,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,0.7,0.0,0.0,0.0,0.7
+235,San Benito County LTA,Hollister,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.64
+236,"City of Union City, dba: Union City Transit",Union City,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,0.3,0.0,0.0,0.0,0.3
+237,San Benito County LTA,Hollister,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.15
+238,San Benito County LTA,Hollister,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,CB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.21
+239,"City of Simi Valley, dba: Simi Valley Transit",Simi Valley,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,Owned,0.4,0.0,0.0,0.0,0.4
+240,City of Huntington Park,Huntington Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+241,"Mountain Area Regional Transit Authority, dba: Mountain Transit",Big Bear Lake,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,DO,Owned,0.0,0.0,0.0,0.0,1.14
+242,City of Huntington Park,Huntington Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by Public Agency,0.0,1.0,0.0,0.0,1.0
+243,"City of Simi Valley, dba: Simi Valley Transit",Simi Valley,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,DO,Owned,0.6,0.0,0.0,0.0,0.6
+244,"Mountain Area Regional Transit Authority, dba: Mountain Transit",Big Bear Lake,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,CB,DO,Owned,0.0,0.0,0.0,0.0,0.48
+245,"Mountain Area Regional Transit Authority, dba: Mountain Transit",Big Bear Lake,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,DO,Owned,0.0,0.0,0.0,0.0,0.38
+246,"City of Vacaville, dba: City Coach",Vacaville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by Public Agency,0.7,0.0,0.0,0.0,0.7
+247,City of Cerritos,Cerritos,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+248,Los Angeles County Department of Public Works - East L.A.,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+249,"City of Lodi, dba: GrapeLine",Lodi,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by Public Agency,0.5,0.0,0.0,0.0,0.5
+250,"City of Lodi, dba: GrapeLine",Lodi,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by Public Agency,0.5,0.0,0.0,0.0,0.5
+251,Los Angeles County Department of Public Works - East L.A.,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+252,City of Cerritos,Cerritos,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+253,"City of Vacaville, dba: City Coach",Vacaville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+254,"City of San Luis Obispo, dba: SLO Transit",San Luis Obispo,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,1.0,0.0,0.0,0.0,1.0
+255,City of Calabasas,Calabasas,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+256,City of Downey,Downey,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+257,"City of Petaluma, dba: Petaluma Transit",Petaluma,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,0.6,0.0,0.0,0.0,0.6
+258,Nevada County Transit Services,Nevada City,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+259,City of Alhambra,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+260,City of Carson,Carson,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+261,City of Carson,Carson,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+262,Nevada County Transit Services,Nevada City,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,DO,,0.0,0.0,0.0,0.0,0.0
+263,City of Alhambra,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+264,"City of Petaluma, dba: Petaluma Transit",Petaluma,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,0.4,0.0,0.0,0.0,0.4
+265,City of Downey,Downey,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+266,City of Calabasas,Calabasas,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+267,"City of Redondo Beach, dba: Beach Cities Transit",Redondo Beach,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,0.7,0.0,0.0,0.0,0.7
+268,City of Monterey Park,Monterey Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+269,"City of Commerce, dba: City of Commerce Municipal Buslines",Commerce,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,DO,Owned,0.9,0.0,0.0,0.0,0.9
+270,Humboldt Transit Authority,Eureka,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,CB,DO,Owned,0.0,0.0,0.0,0.0,0.35
+271,City of South Gate,South Gate,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+272,City of Corona,Corona,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,0.65,0.0,0.0,0.0,0.65
+273,"City of Arcadia, dba: Arcadia Transit",Arcadia,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+274,Tehama County,Gerber,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.3
+275,Tehama County,Gerber,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.7
+276,"City of Arcadia, dba: Arcadia Transit",Arcadia,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+277,City of Corona,Corona,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,0.35,0.0,0.0,0.0,0.35
+278,Humboldt Transit Authority,Eureka,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,DO,Owned,0.0,0.0,0.0,0.0,0.65
+279,City of South Gate,South Gate,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+280,"City of Redondo Beach, dba: Beach Cities Transit",Redondo Beach,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+281,City of Monterey Park,Monterey Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,Owned,1.0,0.0,0.0,0.0,1.0
+282,"City of Commerce, dba: City of Commerce Municipal Buslines",Commerce,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,DO,Owned,0.1,0.0,0.0,0.0,0.1
+283,Santa Barbara County Association of Governments,Santa Barbara,CA,"MPO, COG or Other Planning Agency",Reduced Reporter,2020,CB,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+284,San Luis Obispo Council of Governments,San Luis Obispo,CA,"MPO, COG or Other Planning Agency",Reduced Reporter,2020,VP,PT,,0.0,0.0,0.0,0.0,0.0
+285,City of Glendora,Glendora,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+286,"City of Tracy, dba: TRACER",Tracy,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,0.81,0.0,0.0,0.0,0.81
+287,City of Porterville,Porterville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by Public Agency,0.75,0.0,0.0,0.0,0.75
+288,County of Sacramento Municipal Services Agency Department of Transportation,Sacramento,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,Leased by PT Provider,0.0,0.0,0.0,0.0,0.5
+289,Morongo Basin Transit Authority,Joshua Tree,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,DO,,0.0,0.0,0.0,0.0,0.0
+290,"City of El Monte, dba: City of El Monte Transportation Division",El Monte,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+291,"City of El Monte, dba: City of El Monte Transportation Division",El Monte,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+292,Morongo Basin Transit Authority,Joshua Tree,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+293,County of Sacramento Municipal Services Agency Department of Transportation,Sacramento,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,CB,PT,Leased by PT Provider,0.0,0.0,0.0,0.0,0.4
+294,City of Porterville,Porterville,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by Public Agency,0.25,0.0,0.0,0.0,0.25
+295,"City of Tracy, dba: TRACER",Tracy,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,0.19,0.0,0.0,0.0,0.19
+296,City of Glendora,Glendora,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+297,"City of El Monte, dba: City of El Monte Transportation Division",El Monte,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,DO,Owned,0.75,0.0,0.0,0.0,0.75
+298,Morongo Basin Transit Authority,Joshua Tree,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,CB,DO,,0.0,0.0,0.0,0.0,0.0
+299,"City of El Monte, dba: City of El Monte Transportation Division",El Monte,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,Owned,0.25,0.0,0.0,0.0,0.25
+300,County of Sacramento Municipal Services Agency Department of Transportation,Sacramento,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,Leased by PT Provider,0.0,0.0,0.0,0.0,0.1
+301,Sonoma-Marin Area Rail Transit District,Petaluma,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2020,CR,DO,Owned,3.0,0.0,0.0,0.0,3.0
+302,"City of Lakewood, dba: DASH Transit",Lakewood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,Owned,1.0,0.0,0.0,0.0,1.0
+303,City of Whittier,Whittier,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by Public Agency,1.0,0.0,0.0,0.0,1.0
+304,Amador Regional Transit System,Jackson,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,DO,Owned,0.0,0.0,0.0,0.0,0.41
+305,Amador Regional Transit System,Jackson,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,DO,Owned,0.0,0.0,0.0,0.0,0.39
+306,Amador Regional Transit System,Jackson,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,CB,DO,Owned,0.0,0.0,0.0,0.0,0.2
+307,Los Angeles County Department of Public Works - Whittier,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+308,Yosemite Area Regional Transportation System,Merced,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+309,"City of Lompoc, dba: Lompoc Transit",Lompoc,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by Public Agency,0.7,0.0,0.0,0.0,0.7
+310,City of Bell,Bell,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+311,"City of Tulare, dba: Tulare Intermodal Express",Tulare,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,0.7,0.0,0.0,0.0,0.7
+312,"City of Turlock, dba: Turlock Transit",Turlock,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,MB,PT,Owned by Public Agency,0.5,0.0,0.0,0.0,0.5
+313,"City of Turlock, dba: Turlock Transit",Turlock,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,0.5,0.0,0.0,0.0,0.5
+314,"City of Tulare, dba: Tulare Intermodal Express",Tulare,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+315,"City of Lompoc, dba: Lompoc Transit",Lompoc,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by Public Agency,0.3,0.0,0.0,0.0,0.3
+316,City of Bell,Bell,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,0.0,0.5,0.0,0.0,0.5
+317,City of Bell,Bell,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,0.0,0.5,0.0,0.0,0.5
+318,"City of Shafter, dba: Shafter Dial-A-Ride",Shafter,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+319,"County of Siskiyou, dba: Siskiyou County Transit",Yreka,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,DO,Owned,0.0,0.0,0.0,0.0,1.0
+320,"City of Dixon, dba: Readi-Ride",Dixon,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,Owned,0.0,0.0,0.0,0.0,1.0
+321,City of Inglewood,Inglewood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,Owned,0.9,0.0,0.0,0.0,0.9
+322,City of West Hollywood,West Hollywood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,0.25,0.0,0.0,0.0,0.25
+323,"City of Eureka, dba: Eureka Transit Service",Eureka,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+324,City of West Hollywood,West Hollywood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,0.75,0.0,0.0,0.0,0.75
+325,"City of Eureka, dba: Eureka Transit Service",Eureka,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+326,City of Inglewood,Inglewood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,DO,Owned,0.1,0.0,0.0,0.0,0.1
+327,"Mariposa County Transit, dba: Mari-Go",Mariposa,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,Owned,0.0,0.0,0.0,0.0,1.0
+328,Redwood Coast Transit Authority,Crescent City,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.9
+329,"City of Baldwin Park, dba: Baldwin Park Transit",Baldwin Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,0.5,0.0,0.0,0.0,0.5
+330,"Madera County, dba: Madera County Connection Transit",Madera,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,CB,PT,Leased by PT Provider,0.0,0.0,0.0,0.0,1.0
+331,City of West Covina,West Covina,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by PT Provider,0.5,0.0,0.0,0.0,0.5
+332,City of Delano,Delano,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,Owned,0.5,0.0,0.0,0.0,0.5
+333,"Madera County, dba: Madera County Connection Transit",Madera,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+334,City of West Covina,West Covina,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,0.5,0.0,0.0,0.0,0.5
+335,City of Delano,Delano,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,DO,Owned,0.5,0.0,0.0,0.0,0.5
+336,Redwood Coast Transit Authority,Crescent City,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.1
+337,"City of Baldwin Park, dba: Baldwin Park Transit",Baldwin Park,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by PT Provider,0.5,0.0,0.0,0.0,0.5
+338,"City of La Mirada, dba: La Mirada Transit ",La Mirada,CA,"City, County or Local Government Unit or Department of Transportation",Full Reporter,2020,DR,PT,Owned by Public Agency,1.0,0.0,0.0,0.0,1.0
+339,"City of Compton, dba: Compton Renaissance Transit Service",Compton,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+340,"City of Compton, dba: Compton Renaissance Transit Service",Compton,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,Owned,1.0,0.0,0.0,0.0,1.0
+341,"City of Corcoran, dba: Corcoran Area Transit",Corcoran,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,Owned,0.0,0.0,0.0,0.0,1.0
+342,Colusa County Transit Agency,Colusa,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,Owned,0.0,0.0,0.0,0.0,1.0
+343,City of Azusa,Azusa,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+344,Calaveras Transit Agency,San Andreas,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,1.0
+345,City of Arvin,Arvin,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,DO,,0.0,0.0,0.0,0.0,0.0
+346,Palo Verde Valley Transit Agency,Blythe,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+347,City of Cudahy,Cudahy,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+348,City of Maywood,Maywood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+349,"City of Manteca, dba: Manteca Transit",Manteca,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+350,Town of Truckee,Truckee,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.3
+351,Town of Truckee,Truckee,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.7
+352,"City of Manteca, dba: Manteca Transit",Manteca,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+353,City of Maywood,Maywood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+354,Palo Verde Valley Transit Agency,Blythe,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,CB,PT,,0.0,0.0,0.0,0.0,0.0
+355,City of Cudahy,Cudahy,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+356,City of Arvin,Arvin,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+357,Los Angeles County Department of Public Works - South Whittier,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+358,City of Artesia,Artesia,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,TX,,0.0,0.0,0.0,0.0,0.0
+359,"City of Ridgecrest, dba: Ridgerunner",Ridgecrest,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,DO,Owned,0.0,0.0,0.0,0.0,1.0
+360,City of Auburn,Auburn,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,DO,,0.0,0.0,0.0,0.0,0.0
+361,Lassen Transit Service Agency,Susanville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,CB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.4
+362,City of Dinuba,Dinuba,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.09
+363,City of Bell Gardens,Bell,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+364,City of Solvang,Solvang,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+365,City of Rosemead,Rosemead,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,0.6,0.0,0.0,0.0,0.6
+366,City of Rosemead,Rosemead,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,0.4,0.0,0.0,0.0,0.4
+367,City of Dinuba,Dinuba,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.91
+368,City of Bell Gardens,Bell,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+369,City of Solvang,Solvang,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+370,Lassen Transit Service Agency,Susanville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.3
+371,Lassen Transit Service Agency,Susanville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.3
+372,Sierra County Transportation Commission,Downieville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+373,City of Manhattan Beach,Manhattan Beach,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,Owned,1.0,0.0,0.0,0.0,1.0
+374,Trinity County,Weaverville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,DO,Owned,0.0,0.0,0.0,0.0,1.0
+375,"City of Davis, dba: Davis Community Transit",Davis,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,Leased from a Public Entity,1.0,0.0,0.0,0.0,1.0
+376,City of Beverly Hills,Beverly Hills,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+377,City of Covina,Covina,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+378,City of Lynwood,Lynwood,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+379,Yurok Tribe,Klamath,CA,Tribe,Reduced Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+380,City of Avalon,Avalon,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by Public Agency,0.5,0.0,0.0,0.0,0.5
+381,City of Bellflower,Bellflower,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+382,City of Avalon,Avalon,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by Public Agency,0.5,0.0,0.0,0.0,0.5
+383,Glenn Transit Service,Willows,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,DR,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.1
+384,City of Bellflower,Bellflower,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,0.5,0.0,0.0,0.0,0.5
+385,Glenn Transit Service,Willows,CA,Independent Public Agency or Authority of Transit Service,Rural Reporter,2020,MB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,0.9
+386,Yurok Tribe,Klamath,CA,Tribe,Reduced Reporter,2020,FB,DO,,0.0,0.0,0.0,0.0,0.0
+387,"City of Rio Vista, dba: Rio Vista Delta Breeze",Rio Vista,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,Owned by Public Agency,0.0,0.0,0.0,0.0,1.0
+388,City of California City,California City,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,Owned,0.0,0.0,0.0,0.0,1.0
+389,Los Angeles County Dept. of Public Works - Willowbrook et al.,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+390,City of Woodlake,Woodlake,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+391,City of South Pasadena,South Pasadena,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+392,Blue Lake Rancheria,Blue Lake,CA,Tribe,Reduced Reporter,2020,MB,DO,,0.0,0.0,0.0,0.0,0.0
+393,City of Arcata,Arcata,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,DO,,0.0,0.0,0.0,0.0,0.0
+394,City of Santa Fe Springs,Santa Fe Springs,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,DO,Owned,1.0,0.0,0.0,0.0,1.0
+395,"City of Taft, dba: Taft Area Transit",Taft,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,Owned,0.0,0.0,0.0,0.0,1.0
+396,Plumas County Transportation Commission,Quincy,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+397,"City of Atascadero, dba: Atascadero Dial-a-Ride",Atascadero,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+398,City of Guadalupe,Guadalupe,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+399,Modoc Transportation Agency,Alturas,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+400,Modoc Transportation Agency,Alturas,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+401,City of Guadalupe,Guadalupe,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+402,"City of Chowchilla, dba: Chowchilla Area Transit ",Chowchilla,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+403,City of Monrovia,Monrovia,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+404,North Fork Rancheria of Mono Indians of California,North Fork,CA,Tribe,Reduced Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+405,City of Agoura Hills,Agoura Hills,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+406,City of Tehachapi,Tehachapi,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+407,City of Lawndale,Lawndale,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+408,Los Angeles County Dept. of Public Works - Florence-Firestone,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+409,City of Pico Rivera,Pico Rivera,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Owned by PT Provider,0.0,1.0,0.0,0.0,1.0
+410,"Wasco, City of",Wasco,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+411,Alpine County Local Transportation Commission,Markleeville,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+412,Los Angeles County Dept. of Public Works - King Medical Center Shuttle Service,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+413,City of Ojai,Ojai,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,DO,Owned,0.0,0.0,0.0,0.0,1.0
+414,Chemehuevi Indian Tribe,Havasu Lake,CA,Tribe,Reduced Reporter,2020,FB,DO,Owned,1.0,0.0,0.0,0.0,1.0
+415,Los Angeles County Dept. of Public Works - Willowbrook Shuttle,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+416,Elk Valley Rancheria,Crescent City,CA,Tribe,Reduced Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+417,City of Moorpark,Moorpark,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+418,City of Malibu,Malibu,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,DR,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+419,Susanville Indian Rancheria,Susanville,CA,Tribe,Reduced Reporter,2020,MB,DO,Owned,0.75,0.0,0.0,0.0,0.75
+420,"City of Escalon, dba: eTrans",Escalon,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,PT,Owned by PT Provider,0.0,0.0,0.0,0.0,0.1
+421,Susanville Indian Rancheria,Susanville,CA,Tribe,Reduced Reporter,2020,DR,DO,Owned,0.25,0.0,0.0,0.0,0.25
+422,"City of Escalon, dba: eTrans",Escalon,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,Owned by PT Provider,0.0,0.0,0.0,0.0,0.9
+423,Los Angeles County Department of Public Works - East Valinda,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+424,Los Angeles County Department of Public Works - Avocado Heights,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Leased by PT Provider,1.0,0.0,0.0,0.0,1.0
+425,"City of Needles, dba: Needles Area Transit",Needles,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+426,City of McFarland,Mc Farland,CA,"City, County or Local Government Unit or Department of Transportation",Rural Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+427,Los Angeles County Dept. of Public Works - Athens Shuttle Service,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+428,Morongo Band of Mission Indians,Banning,CA,Tribe,Reduced Reporter,2020,DR,DO,Owned,1.0,0.0,0.0,0.0,1.0
+429,Los Angeles County Dept. of Public Works - Lennox Shuttle,Alhambra,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Reporter,2020,MB,PT,Owned by PT Provider,1.0,0.0,0.0,0.0,1.0
+430,City of Sierra Madre,Sierra Madre,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Asset Reporter,2020,MB,DO,,0.0,0.0,0.0,0.0,0.0
+431,City of La Habra Heights,La Habra Heights,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Asset Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+432,City of San Fernando,San Fernando,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Asset Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+433,City of El Segundo,El Segundo,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Asset Reporter,2020,MB,DO,,0.0,0.0,0.0,0.0,0.0
+434,Playa Vista Parks and Landscape Corp.,Playa Vista,CA,Other,Reduced Asset Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0
+435,City of Hawaiian Gardens,Hawaiian Gardens,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Asset Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+436,City of Sierra Madre,Sierra Madre,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Asset Reporter,2020,DR,PT,,0.0,0.0,0.0,0.0,0.0
+437,City of South El Monte,South El Monte,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Asset Reporter,2020,DR,DO,,0.0,0.0,0.0,0.0,0.0
+438,City of Hawaiian Gardens,Hawaiian Gardens,CA,"City, County or Local Government Unit or Department of Transportation",Reduced Asset Reporter,2020,MB,PT,,0.0,0.0,0.0,0.0,0.0

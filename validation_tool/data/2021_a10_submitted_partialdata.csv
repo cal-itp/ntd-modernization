@@ -1,4 +1,4 @@
-,Agency,City,State,Organization Type,Reporter Type,year,Mode,TOS,ownerships,Under 200 Vehicles,200 to 300 Vehicles,Over 300 Vehicles,Heavy Maintenance Facilities,Total Facilities
+,Agency,City,State,OrganizationType,ReporterType,year,Mode,TOS,ownerships,Under200Vehicles,200to300Vehicles,Over300Vehicles,HeavyMaintenanceFacilities,TotalFacilities
 0,"Los Angeles County Metropolitan Transportation Authority , dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2021,MB,DO,Owned,4.0,24.52,0.97,1.94,31.43
 1,"Los Angeles County Metropolitan Transportation Authority , dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2021,LR,DO,Owned,17.0,0.0,0.0,0.0,17.0
 2,"Los Angeles County Metropolitan Transportation Authority , dba: Metro",Los Angeles,CA,Independent Public Agency or Authority of Transit Service,Full Reporter,2021,MB,PT,Leased by PT Provider,3.0,0.0,0.0,0.0,3.0
