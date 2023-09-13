@@ -183,10 +183,15 @@ def main():
         # Add some readme text to the output file for context
         worksheet2 = workbook.add_worksheet("readme")
         worksheet2.write('A1', "Read Me", title_format)
-        worksheet2.write('A2', "This file runs 3 validation checks on submitted 2023-A-10 form data, based on historical NTD validation errors.")
-        worksheet2.write('A3', '1. "Whole Number Facilities": Check that sum of total facilities for each agency, across all modes, is a whole number.')
-        worksheet2.write('A4', '2. "Non-zero Facilities" check: Check that the sum of all total facilities is not zero.')
-        worksheet2.write('A5', '3. "General Purpose Facility check": Check whether total gen purpose facilities (all but heavy maintenance) is > 1. If so mark as "failure".')
+        worksheet2.write('A2', "This file runs 6 validation checks on submitted 2023-A-10 form data, based on historical NTD validation errors.")
+        worksheet2.write('A4', "Total Facilities checks", subtitle_format)
+        worksheet2.write('A5', '1. "Whole Number Facilities": Check that sum of total facilities for each agency, across all modes, is a whole number.')
+        worksheet2.write('A6', '2. "Non-zero Facilities" check: Check that the sum of all total facilities is not zero.')
+        worksheet2.write('A8', "General Purpose Facilities checks (all except \"heavy maintenance\")", subtitle_format)
+        worksheet2.write('A9', '3. "Gen  Purpose Facilities": Check whether total gen purpose facilities (all but heavy maintenance) is > 1. If so mark as "failure".')
+        worksheet2.write('A10', '4. "Multiple Gen Purpose Facilities": if > 1 reported, ask for narrative justification.')
+        worksheet2.write('A11', '5. "Comparison to last yr: Gen Purpose Facilities": Fail if the total differs from last year')
+        worksheet2.write('A12', '6. "Non-zero Gen Purpose Facilities": fail if this is reported as 0')
 
         print("Validation of A-10 form is complete!")
 
