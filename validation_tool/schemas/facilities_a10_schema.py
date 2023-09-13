@@ -1,6 +1,8 @@
 from pandera import DataFrameSchema, Column, Check, Index, MultiIndex
 
-schema = DataFrameSchema(
+## Validation schema for the A-10 sample data
+
+a10_schema = DataFrameSchema(
     columns={
         "Agency": Column(
             dtype="object",
@@ -32,7 +34,7 @@ schema = DataFrameSchema(
             coerce=False,
             required=True,
             regex=False,
-            description="The state must be CA.",
+            description="Checking that the state is CA.",
             title="State = CA check",
         ),
         "Organization Type": Column(
@@ -79,132 +81,92 @@ schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "Owned_Total Facilities": Column(
-            dtype="float64",
-            checks=[
-                Check.greater_than_or_equal_to(min_value=0.0),
-                Check(lambda x: x % 1 == 0),
-            ],
-            nullable=True,
-            unique=False,
-            coerce=False,
-            required=True,
-            regex=False,
-            description=None,
-            title=["0 or more check", "int check"]
-        ),
-        "Leased from a Public Entity_Total Facilities": Column(
-            dtype="float64",
-            checks=[
-                Check.greater_than_or_equal_to(min_value=0.0),
-                Check(lambda x: x % 1 == 0),
-            ],
-            nullable=True,
-            unique=False,
-            coerce=False,
-            required=True,
-            regex=False,
-            description=None,
-            title=["0 or more check", "int check"]
-        ),
-        "Leased from a Private Entity_Total Facilities": Column(
-            dtype="float64",
-            checks=[
-                Check.greater_than_or_equal_to(min_value=0.0),
-                Check(lambda x: x % 1 == 0),
-            ],
+        "ownerships": Column(
+            dtype="object",
+            checks=None,
             nullable=False,
             unique=False,
             coerce=False,
             required=True,
             regex=False,
             description=None,
-            title=["0 or more check", "int check"]
+            title=None,
         ),
-        "Owned by PT Provider_Total Facilities": Column(
+        "Under 200 Vehicles": Column(
             dtype="float64",
-            checks=[
-                Check.greater_than_or_equal_to(min_value=0.0),
-                Check(lambda x: x % 1 == 0),
-            ],
+            checks=None,
             nullable=False,
             unique=False,
             coerce=False,
             required=True,
             regex=False,
             description=None,
-            title=["0 or more check", "int check"]
+            title=None,
         ),
-        "Owned by Public Agency_Total Facilities": Column(
+        "200 to 300 Vehicles": Column(
             dtype="float64",
-            checks=[
-                Check.greater_than_or_equal_to(min_value=0.0),
-                Check(lambda x: x % 1 == 0),
-            ],
+            checks=None,
             nullable=False,
             unique=False,
             coerce=False,
             required=True,
             regex=False,
             description=None,
-            title=["0 or more check", "int check"]
+            title=None,
         ),
-        "Leased by PT Provider_Total Facilities": Column(
+        "Over 300 Vehicles": Column(
             dtype="float64",
-            checks=[
-                Check.greater_than_or_equal_to(min_value=0.0),
-                Check(lambda x: x % 1 == 0),
-            ],
+            checks=None,
             nullable=False,
             unique=False,
             coerce=False,
             required=True,
             regex=False,
             description=None,
-            title=["0 or more check", "int check"]
+            title=None,
         ),
-        "Leased by Public Agency_Total Facilities": Column(
+        "Heavy Maintenance Facilities": Column(
             dtype="float64",
-            checks=[
-                Check.greater_than_or_equal_to(min_value=0.0),
-                Check(lambda x: x % 1 == 0),
-            ],
+            checks=None,
             nullable=False,
             unique=False,
             coerce=False,
             required=True,
             regex=False,
             description=None,
-            title=["0 or more check", "int check"]
+            title=None,
+        ),
+        "Total Facilities": Column(
+            dtype="float64",
+            checks=[Check(lambda x: round(x.sum()) % 1 == 0) 
+            ],
+            nullable=False,
+            unique=False,
+            coerce=False,
+            required=True,
+            regex=False,
+            description="whole number check",
+            title="whole number check",
         ),
     },
     ### Checks at the DataFrameSchema-level
-            # Check that total across all modes is not zero - should be some facilities reported.
-    checks=[Check(lambda x: x[['Owned_Total Facilities', 
-                                 'Leased from a Private Entity_Total Facilities',
-                                 'Leased from a Public Entity_Total Facilities',
-                                 'Owned by Public Agency_Total Facilities',
-                                 'Owned by PT Provider_Total Facilities', 
-                                 'Leased by PT Provider_Total Facilities', 
-                                 'Leased by Public Agency_Total Facilities']].sum(axis=1) > 0),
-            # Check that total across all modes is a whole number.
-            Check(lambda x: x[['Owned_Total Facilities', 
-                                 'Leased from a Private Entity_Total Facilities',
-                                 'Leased from a Public Entity_Total Facilities',
-                                 'Owned by Public Agency_Total Facilities',
-                                 'Owned by PT Provider_Total Facilities', 
-                                 'Leased by PT Provider_Total Facilities', 
-                                 'Leased by Public Agency_Total Facilities']].sum(axis=1) % 1 == 0),
-                                 ],
-    # dtype=None,
-    # coerce=True,
-    # strict=False,
-    # name=None,
-    # ordered=False,
-    # unique=None,
+            
+    checks=None,
+    # [
+    #     # Check whether total gen purpose facilities (all but heavy maintenance) is > 1. If so throw error. 
+    #     Check(lambda x: x[['Under 200 Vehicles', 
+    #                         '200 to 300 Vehicles',
+    #                         'Over 300 Vehicles']].sum(axis=1) < 1)
+    #                              ],
+    dtype=None,
+    coerce=True,
+    strict=True,
+    name="all total > 0",
+    ordered=False,
+    unique=None,
     report_duplicates="all",
-    # unique_column_names=False,
-    # add_missing_columns=False,
-    title="all total > 0",
-    description="all total > 0",
+    unique_column_names=False,
+    add_missing_columns=False,
+    title="general facilities > 1",
+    description="general facilities > 1",
 )
