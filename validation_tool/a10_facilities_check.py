@@ -18,19 +18,22 @@ def get_arguments():
     """Get the data as input arguments (for now)"""
     parser = ArgumentParser(description="VOMS inventory check")
     parser.add_argument('--a10_data', default="data/2021_a10_submitted_partialdata.csv")
+    parser.add_argument('--a10_lastyr_data', default = "data/2020_a10_submitted_partialdata.csv")
 
     args = parser.parse_args()
     return args
 
 
-def facility_checks(df):
+def facility_checks(df, this_year, last_year):
     a10_agencies = df['Agency'].unique()
 
     output = []
     for agency in a10_agencies:
         
         if len(df[df['Agency']==agency]) > 0:
-            total_fac = round(df[df['Agency']==agency]['Total Facilities'].sum())
+            
+            ##Total facilities checks
+            total_fac = round(df[(df['Agency']==agency) & ((df['year']==this_year))]['Total Facilities'].sum())
             
             # whole number check
             if total_fac % 1 == 0:
@@ -66,26 +69,61 @@ def facility_checks(df):
                             "Description": description}
             output.append(output_line)
             
-            # Check on # of general purpose facilities (all except "heavy maintenance")
+            ## General purpose facilities checks (all except "heavy maintenance")
             total_gen_fac = round(df[df['Agency']==agency]
                             [['Under 200 Vehicles', 
                                 '200 to 300 Vehicles',
                                 'Over 300 Vehicles']].sum().sum())
-            if round(total_gen_fac) <= 1:
+            
+            # check on whether there's >1 gen purpose fac and/or none reported
+        if (round(total_gen_fac) <= 1) & (round(total_gen_fac) != 0):
+            result = "pass"
+            description = ""
+            check_name = "Gen Purpose Facilities"
+        elif round(total_gen_fac) > 1:
+            result = "fail"
+            description = "You reported > 1 general purpose facility. Please verify whether this is correct."
+            check_name = "Multiple Gen Purpose Facilities"
+        elif round(total_gen_fac) == 0:
+            result = "fail"
+            description = "You reported no general purpose facilities. Please verify whether this is correct."
+            check_name = "Non-zero Gen Purpose Facilities"
+        else:
+            pass
+        
+        output_line = {"Organization": agency,
+                       "name_of_check" : check_name,
+                        "value_checked": f"Gen Purpose Facilities: {total_gen_fac}",
+                        "check_status": result,
+                        "Description": description}
+        output.append(output_line)
+        
+        # Check whether data for both years is present, if so perform prior yr comparison.
+        if (len(df[(df['Agency']==agency) & (df['year']==this_year)]) > 0) & (len(df[(df['Agency']==agency) & (df['year']==last_year)]) > 0): 
+            
+            last_yr_gen_fac = round(df[(df['Agency']==agency) & (df['year']==last_year)]
+                                     [['Under 200 Vehicles', 
+                                        '200 to 300 Vehicles',
+                                        'Over 300 Vehicles']].sum().sum())
+             
+            if round(total_gen_fac) == round(last_yr_gen_fac):
                 result = "pass"
                 description = ""
-                check_name = "General Purpose Facility check"
+                check_name = "Comparison to last yr: Gen Purpose Facilities"
             else:
                 result = "fail"
-                description = "You reported > 1 general purpose facility. Please verify that this is correct."
-                check_name = "General Purpose Facility check"
-            
+                description = "Num. of general purpose facilities differs that last year - please verify or clarify."
+                check_name = "Comparison to last yr: Gen Purpose Facilities"
+
             output_line = {"Organization": agency,
-                        "name_of_check" : check_name,
-                            "value_checked": f"General Purpose Facilities: {total_gen_fac}",
+                           "name_of_check" : check_name,
+                            "value_checked": f"{total_gen_fac} in {this_year}, {last_yr_gen_fac} in {last_year} (Gen Purpose Facilities)", 
                             "check_status": result,
                             "Description": description}
             output.append(output_line)
+
+        else:
+             pass
         
     facility_checks = pd.DataFrame(output).sort_values(by="Organization")
     return facility_checks
@@ -95,9 +133,15 @@ def main():
     #Load data:
     args = get_arguments()
     df = pd.read_csv(args.a10_data, index_col = 0)
+    df_lastyr = pd.read_csv(args.a10_lastyr_data, index_col = 0)
+
+    # this_year = datetime.datetime.now().year # uncomment after this year's reporting starts
+    this_year = 2021
+    last_year = this_year - 1
+
     
     # Run validation checks
-    a10_checks = facility_checks(df)
+    a10_checks = facility_checks(df, this_year, last_year)
 
     # Write results to an Excel file
     with pd.ExcelWriter("reports/a10_facility_check_report.xlsx") as writer:
