@@ -120,7 +120,7 @@ def check_totals(a30_data, a30_agencies, inventory_data, rr20_data):
         output_line = {"Organization": agency,
                     "n_a30_vehicles": a30_n,
                     "n_rr20_VOMS": rr20_n,
-                    "n_inventory_vehicles": inv_n,
+                    "n_active_inventory": inv_n,
                     "check_result": result,
                     "Description": description}
         output.append(output_line)
