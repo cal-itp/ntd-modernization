@@ -109,13 +109,13 @@ def check_totals(a30_data, a30_agencies, inventory_data, rr20_data):
 
         if (a30_n <= inv_n) & (rr20_n <= inv_n) & (a30_n >= rr20_n):
             result = "pass"
-            description = "VOMS & A-30 vehicles reported are equal to or lower than active inventory."
+            description = "VOMS & A-30 vehicles reported are equal to and/or lower than active inventory."
         elif (a30_n > inv_n):
-            result = "fail"
+            result = "warning"
             description = "More A-30 vehicles reported than in active inventory."
         elif (a30_n < rr20_n):
             result = "fail"
-            description = "Total VOMS is greater than total A-30 vehicles reported."
+            description = "Total VOMS is greater than total A-30 vehicles reported. Please clarify"
 
         output_line = {"Organization": agency,
                     "n_a30_vehicles": a30_n,
