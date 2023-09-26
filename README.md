@@ -7,7 +7,7 @@ The `ntd_issues_analysis.Rmd` R Markdown file analyzes errors Caltrans received 
   
 ---
 ### Pre-submission Validator
-The folder `validator_tool` contains code for prototyping a presubmission validation tool to anticipate issues in submitting NTD reports, based on 2020-22 issues. *The location of the final code still TBD.* 
+The folder `validation_tool` contains code for prototyping a presubmission validation tool to anticipate issues in submitting NTD reports, based on 2020-22 issues. *The location of the final code still TBD.* 
 
 *  `*.py` files: To run validations, run these files - instructions to run each, and which forms they validate, are in comments at top of the file. 
 * `reports` folder: Excel files that the `*.py` files produce. These are meant for business users, to have a record of which sub-recipients passed/failed different validation checks in their submitted data. Business users will follow up with subrecipients. 
