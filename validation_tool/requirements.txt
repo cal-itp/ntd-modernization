@@ -1,0 +1,16 @@
+gcsfs==2023.9.2
+google-api-core==2.11.1
+google-auth==2.21.0
+google-auth-oauthlib==1.1.0
+google-cloud-bigquery==3.11.4
+google-cloud-core==2.3.3
+google-cloud-storage==2.11.0
+google-crc32c==1.5.0
+google-resumable-media==2.6.0
+googleapis-common-protos==1.59.1
+numpy==1.25.0
+oauthlib==3.2.2
+pandas==1.4.4
+pandera==0.16.1
+pandocfilters==1.5.0
+XlsxWriter==3.0.3
