@@ -40,7 +40,7 @@ dfdict = {"rr20_exp_by_mode": rr20_exp_by_mode,
           
 for k,v in dfdict.items():
     table_id = f"cal-itp-data-infra.blackcat_raw.2022_{k}" # Set table_id 
-    
+
     # Remove spaces and slashes from col names - - they are illegal in BQ
     v.columns = v.columns.str.replace(' ', '')
     v.columns = v.columns.str.replace('/', '_')
