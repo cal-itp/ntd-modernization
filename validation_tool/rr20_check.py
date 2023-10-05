@@ -1,19 +1,21 @@
 from argparse import ArgumentParser
 import pandas as pd
 import datetime
-import gcsfs
+import logging
 
-'''Script for checking RR-20 NTD reprt. 
+'''Script for checking RR-20 NTD report. 
 Grabs data from GCS buckets for "this year" and "last year". Right now "this year" is manually set to 2022 for testing, will rewrite once 2023 data is live.
-Writes validated data into a folder called "gs://calitp-ntd-report-validation/validation_reports_2023"
+Will write validated data into two places:
+- a folder called "gs://calitp-ntd-report-validation/validation_reports_2023"
+- BigQuery tables
 
-To run from command line with the default datasources,, navigate to folder and type: 
+To run from command line with the default datasources, navigate to folder and type: 
 python rr20_check.py'''
 
 def get_arguments(this_year, last_year):
     GCS_FILE_PATH_LASTYR = f"gs://calitp-ntd-report-validation/blackcat_ntd_reports_{last_year}_raw"
     GCS_FILE_PATH_RAW = f"gs://calitp-ntd-report-validation/blackcat_ntd_reports_{this_year}_raw"
-    GCS_FILE_PATH_PARSED = "gs://calitp-ntd-report-validation/blackcat_ntd_reports_2023_parsed" # f"gs://calitp-ntd-report-validation/blackcat_ntd_reports_{this_year}_parsed"
+    GCS_FILE_PATH_PARSED = f"gs://calitp-ntd-report-validation/blackcat_ntd_reports_{this_year}_parsed" # f"gs://calitp-ntd-report-validation/blackcat_ntd_reports_{this_year}_parsed"
 
     """Get the data as input arguments (for now)"""
     parser = ArgumentParser(description="RR-20 ratios check")
@@ -35,12 +37,35 @@ def load_excel_data(filename, sheetname):
     return df
 
 
-def make_ratio_cols(df, numerator, denominator, col_name):
+def write_to_log(logfilename):
+    '''
+    Creates a logger object that outputs to a log file, to the filename specified,
+    and also streams to console.
+    '''
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    formatter = logging.Formatter(f'%(asctime)s:%(levelname)s: %(message)s',
+                                  datefmt='%y-%m-%d %H:%M:%S')
+    file_handler = logging.FileHandler(logfilename)
+    file_handler.setFormatter(formatter)
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(formatter)
+
+    if not logger.hasHandlers():
+        logger.addHandler(file_handler)
+        logger.addHandler(stream_handler)
+
+    return logger
+
+
+def make_ratio_cols(df, numerator, denominator, col_name, logger):
     if col_name is not None:
         # If a user specify a column name, use it
         # Raise error if the column already exists
         if col_name in df.columns:
+            logger.info(f"Dataframe already has column '{col_name}'")
             raise ValueError(f"Dataframe already has column '{col_name}'")
+            
         else:
             _col_name = col_name
             
@@ -50,7 +75,7 @@ def make_ratio_cols(df, numerator, denominator, col_name):
                 )
     return df
 
-def rr20_ratios(df, variable, threshold, this_year, last_year):
+def rr20_ratios(df, variable, threshold, this_year, last_year, logger):
     agencies = df['Organization Legal Name'].unique()
     output = []
     for agency in agencies:
@@ -95,12 +120,12 @@ def rr20_ratios(df, variable, threshold, this_year, last_year):
                                    "Description": description}
                     output.append(output_line)
         else:
-            print(f"There is no data for {agency}")
+            logger.info(f"There is no data for {agency}")
     checks = pd.DataFrame(output).sort_values(by="Organization")
     return checks
 
 
-def check_single_number(df, variable, threshold, this_year, last_year):
+def check_single_number(df, variable, threshold, this_year, last_year, logger):
     agencies = df['Organization Legal Name'].unique()
     output = []
     for agency in agencies:
@@ -148,15 +173,19 @@ def check_single_number(df, variable, threshold, this_year, last_year):
                             "Description": description}
                     output.append(output_line)
         else:
-            print(f"There is no data for {agency}")
+            logger.info(f"There is no data for {agency}")
     checks = pd.DataFrame(output).sort_values(by="Organization")
     return checks
 
 
 def main():
+    # Set up the logger object
+    logger = write_to_log('rr20_checks_log.log')
+
     #Load data:
-    this_year=2022 #datetime.datetime.now().year #for testing purposes
+    this_year=datetime.datetime.now().year #for testing purposes
     last_year = this_year-1
+    this_date=datetime.datetime.now().date().strftime('%Y-%m-%d') #for suffix on various files
     
     args = get_arguments(this_year, last_year)
     rr20_service =  load_excel_data(args.rr20_service_data, "Service Data")
@@ -165,6 +194,10 @@ def main():
     rr20_exp_by_mode_lastyr = load_excel_data(args.rr20_expenditure_data_lastyr, "Expenses By Mode")
     orgs = pd.read_csv(args.subrecipients)
     
+    #### Extra airflow job and function will save the above datasets into the "raw" folder. Skipping for now.###
+    # test - the 1st load in. Subsequent loads will check whether something exists first.
+
+
     # Combine datasets into one, on which to run validation checks. Filter down to only subrecipients.
     data = (rr20_service.merge(orgs, left_on ='Organization Legal Name', right_on = 'Organization', 
                             indicator=True).query('_merge == "both"').drop(columns=['_merge', 'Organization'])
@@ -177,23 +210,27 @@ def main():
     numeric_columns = allyears.select_dtypes(include=['number']).columns
     allyears[numeric_columns] = allyears[numeric_columns].fillna(0)
 
-
 #### Extra airflow job and function will save the above datasets into the "parsed" folder. Skipping for now.###
+    # # test
+    # data_numeric_columns = data.select_dtypes(include=['number']).columns
+    # data[data_numeric_columns] = data[data_numeric_columns].fillna(0)
+    # GCS_FILE_PATH_PARSED2022 = "gs://calitp-ntd-report-validation/blackcat_ntd_reports_2023_parsed"
+    # data.to_csv(f'{GCS_FILE_PATH_PARSED2022}/rr20_service_2023.csv', ignore_index=True) # now write to parsed
 
     # Calculate needed ratios
-    allyears = make_ratio_cols(allyears, 'Total Annual Expenses By Mode', 'Annual VRH', 'cost_per_hr')
-    allyears = make_ratio_cols(allyears, 'Annual VRM', 'VOMX', 'miles_per_veh')
+    allyears = make_ratio_cols(allyears, 'Total Annual Expenses By Mode', 'Annual VRH', 'cost_per_hr', logger)
+    allyears = make_ratio_cols(allyears, 'Annual VRM', 'VOMX', 'miles_per_veh', logger)
 
     # Run validation checks
-    cph_checks = rr20_ratios(allyears, 'cost_per_hr', .30, this_year, last_year)
-    mpv_checks = rr20_ratios(allyears, 'miles_per_veh', .20, this_year, last_year)
-    vrm_checks = check_single_number(allyears, 'Annual VRM', .30, this_year, last_year)
+    cph_checks = rr20_ratios(allyears, 'cost_per_hr', .30, this_year, last_year, logger)
+    mpv_checks = rr20_ratios(allyears, 'miles_per_veh', .20, this_year, last_year, logger)
+    vrm_checks = check_single_number(allyears, 'Annual VRM', .30, this_year, last_year, logger)
 
     # Combine checks into one table
     rr20_checks = pd.concat([cph_checks, mpv_checks, vrm_checks], ignore_index=True).sort_values(by="Organization")
 
-    GCS_FILE_PATH_VALIDATED = "gs://calitp-ntd-report-validation/validation_reports_2023" # f"gs://calitp-ntd-report-validation/validation_reports_{this_year}"
-    with pd.ExcelWriter(f"{GCS_FILE_PATH_VALIDATED}/rr20_check_report.xlsx") as writer:
+    GCS_FILE_PATH_VALIDATED = "gs://calitp-ntd-report-validation/validation_reports_{this_year}" 
+    with pd.ExcelWriter(f"{GCS_FILE_PATH_VALIDATED}/rr20_check_report_{this_date}.xlsx") as writer:
         rr20_checks.to_excel(writer, sheet_name="rr20_checks_full", index=False, startrow=2)
 
         workbook = writer.book
@@ -229,7 +266,7 @@ def main():
         worksheet.set_column(5, 6, 53) #col E-G width
         worksheet.freeze_panes('B4')
 
-    print("RR-20 ratios check is complete!")
+    logger.info(f"RR-20 ratios check for {this_date} is complete!")
 
 if __name__ == "__main__":
     main()
