@@ -11,11 +11,14 @@ This script:
 - searches for and grabs the most recent raw data file; using their filename suffix (the date downloaded from BlackCat) 
 - Lists out the subrecipients in the latest file
 - loops over them and adds their data to BigQuery's raw data tables - IF the data is not already there. Checks are included
- - before upload into BigQuery, a `date_uploaded` file is added to each dataset
+- before upload into BigQuery, a `date_uploaded` file is added to each dataset
+
+To run:
+python check_raw_data.py --form_to_check <form-number>
  '''
 
 def get_arguments(this_year):
-    GCS_FILE_PATH_PARSED = "gs://calitp-ntd-report-validation/blackcat_ntd_reports_{this_year}_parsed"
+    GCS_FILE_PATH_PARSED = f"gs://calitp-ntd-report-validation/blackcat_ntd_reports_{this_year}_parsed"
 
     parser = ArgumentParser(description="Filter and grab most recent raw data file, load into BigQuery")
     parser.add_argument('--subrecipients', default=f"{GCS_FILE_PATH_PARSED}/organizations.csv")
@@ -25,11 +28,33 @@ def get_arguments(this_year):
     return args
 
 
+def write_to_log(logfilename):
+    '''
+    Creates a logger object that outputs to a log file, to the filename specified,
+    and also streams to console.
+    '''
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    formatter = logging.Formatter(f'%(asctime)s:%(levelname)s: %(message)s',
+                                  datefmt='%y-%m-%d %H:%M:%S')
+    file_handler = logging.FileHandler(logfilename)
+    file_handler.setFormatter(formatter)
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(formatter)
+
+    if not logger.hasHandlers():
+        logger.addHandler(file_handler)
+        logger.addHandler(stream_handler)
+
+    return logger
+
+
 def get_latest_excel(this_year, form_to_check, bucket, subdir):
     # Dict code table to decipher a) forms to files - this lists the BEGINNING of the form name
     form_to_file_dict = {
         "RR-20": f"NTD_Annual_Report_Rural_{this_year}",
-        "A-30": f"A_30_Revenue_Vehicle_Report_{this_year}"
+        "A-30": f"A_30_Revenue_Vehicle_Report_{this_year}",
+        "A-10": f"NTD_Stations_and_Maintenace_Facilities_A10_{this_year}"
     }
     file_prefix = form_to_file_dict.get(form_to_check)
     all_files = []
@@ -54,26 +79,6 @@ def load_excel_data(filepath, sheetname):
                         index_col=None)
     return df
 
-def write_to_log(logfilename):
-    '''
-    Creates a logger object that outputs to a log file, to the filename specified,
-    and also streams to console.
-    '''
-    logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO)
-    formatter = logging.Formatter(f'%(asctime)s:%(levelname)s: %(message)s',
-                                  datefmt='%y-%m-%d %H:%M:%S')
-    file_handler = logging.FileHandler(logfilename)
-    file_handler.setFormatter(formatter)
-    stream_handler = logging.StreamHandler()
-    stream_handler.setFormatter(formatter)
-
-    if not logger.hasHandlers():
-        logger.addHandler(file_handler)
-        logger.addHandler(stream_handler)
-
-    return logger
-
 
 def compare_datasets(form_to_check, form_to_sheets_dict, this_year, latest_file, org, logger, bucket_name):
     excelsheets = form_to_sheets_dict.get(form_to_check) #get Excel sheetnames depending on form
@@ -84,34 +89,15 @@ def compare_datasets(form_to_check, form_to_sheets_dict, this_year, latest_file,
         bq_sheet_ref = sheet.replace(" ", "_").replace("/", "_").replace(".", "_").replace("-", "").replace('\W+', '').lower()
         logger.info(f"Checking data for {org} from {bq_form_ref}_{bq_sheet_ref}")
         incoming_df = load_excel_data(f"gs://{bucket_name}/{latest_file}",sheetname=sheet)
-        incoming_org_data = incoming_df[incoming_df['Organization Legal Name']== org]
+        incoming_org_data = incoming_df[incoming_df['Organization Legal Name']== org].copy()
         
-        # Now we have only 1 org's data. Add in 'date_uploaded' column and make schema for BigQuery.
-        incoming_org_data['date_uploaded'] = pd.to_datetime(datetime.datetime.now().date())
-
-        # Make dict of colname: BQ type before uploading, or get some errors loading
-        # Remove spaces and slashes from col names - - they are illegal in BQ
-        incoming_org_data.columns = (incoming_org_data.columns.str.replace(' ', '_')
-                                    .str.replace('/', '_').str.replace('.', '_')
-                                     .str.replace('-', '')
-                                     .str.replace('#', 'num')
-                                    .str.replace('\W+', '') #other things, just strip out
+        # Now we have only 1 org's data. Remove spaces and slashes from col names - - they are illegal in BQ
+        incoming_org_data.columns = (incoming_org_data.columns.str.replace(' ', '_', regex=True)
+                                    .str.replace('/', '_').str.replace('.', '_', regex=True)
+                                     .str.replace('-', '', regex=True)
+                                     .str.replace('#', 'num', regex=True)
+                                    .str.replace('\W+', '', regex=True) #other things, just strip out
                                     )
-        columns = incoming_org_data.columns.values
-        schema_dict = {}
-        for x in columns:
-            if incoming_org_data[x].dtypes == 'float64':
-                schema_dict[x] = "FLOAT64"
-            elif incoming_org_data[x].dtypes == 'int64':
-                schema_dict[x] = "INT64"
-            elif incoming_org_data[x].dtypes == 'object':
-                schema_dict[x] =  "STRING"
-            elif incoming_org_data[x].dtypes == 'datetime64[ns]':
-                schema_dict[x] =  "DATETIME"
-
-        schema = []
-        for k2, v2 in schema_dict.items():
-            schema.append(bigquery.SchemaField(k2, v2)) 
         
         # Check what data is already in BQ
         existing_data_query = f"""SELECT * from blackcat_raw.{this_year}_{bq_form_ref}_{bq_sheet_ref}
@@ -123,9 +109,13 @@ def compare_datasets(form_to_check, form_to_sheets_dict, this_year, latest_file,
         logger.info(f"Found {len(bq_data)} rows in {bq_form_ref}_{bq_sheet_ref} for {org}")
         
         table_id = f"cal-itp-data-infra.blackcat_raw.{this_year}_{bq_form_ref}_{bq_sheet_ref}"
-        table = bigquery.Table(table_id, schema=schema)
+        table = bigquery.Table(table_id) 
+        job_config = bigquery.LoadJobConfig(
+            create_disposition="CREATE_IF_NEEDED",
+            write_disposition="WRITE_APPEND"
+        )
                 
-        if len(bq_data) > 0:
+        if (len(bq_data) > 0) and (len(incoming_org_data) > 0 ):
             # Get the data with the latest upload date only - because this table serves as running storage for every report submittal.
             upload_dates = bq_data['date_uploaded'].unique()
             upload_dates.sort()
@@ -134,23 +124,27 @@ def compare_datasets(form_to_check, form_to_sheets_dict, this_year, latest_file,
 
             try:
                 logger.info("Checking for existing data")
-                incoming_compare = incoming_org_data.drop(['date_uploaded'], axis=1)
                 pd.testing.assert_frame_equal(bq_compare.sort_values(by=bq_compare.columns.tolist())
                                               .reset_index(drop=True), 
-                                          incoming_compare.sort_values(by=incoming_compare.columns.tolist())
+                                          incoming_org_data.sort_values(by=incoming_org_data.columns.tolist())
                                               .reset_index(drop=True), 
                                           check_dtype=False)
                 logger.info(f"{org} data in {bq_form_ref}_{bq_sheet_ref} is already in BigQuery, not writing.")
                 pass
             except Exception as ex:
                 logger.info(f"Data tables are not the same, with {type(ex).__name__}: {ex}.")
-             
-                job_service = client.load_table_from_dataframe(incoming_org_data, table_id)  # API request to load data
+
+                incoming_org_data.loc[:, 'date_uploaded'] = pd.to_datetime(datetime.datetime.now().date()) # Add in 'date_uploaded' column 
+                job_service = client.load_table_from_dataframe(incoming_org_data, table_id, job_config=job_config)  # API request to load data
                 job_service.result()  # Wait for the job to complete.
                 table = client.get_table(table_id) 
-        else:        
+        elif len(incoming_org_data) == 0:
+            logger.info(f"No incoming data for {table_id}, skipping.")
+            pass
+        else:
             logger.info(f"Did not find existing data in {table_id} for {org}, loading new raw data.")
-            job_service = client.load_table_from_dataframe(incoming_org_data, table_id)  # API request to load data
+            incoming_org_data.loc[:, 'date_uploaded'] = pd.to_datetime(datetime.datetime.now().date()) # Add in 'date_uploaded' column 
+            job_service = client.load_table_from_dataframe(incoming_org_data, table_id, job_config=job_config)  # API request to load data
             job_service.result()  # Wait for the job to complete.
             table = client.get_table(table_id)     
         
@@ -166,18 +160,19 @@ def main():
     bucket = storage_client.get_bucket(bucket_name)
     this_year=datetime.datetime.now().year 
     args = get_arguments(this_year)
-    subdir = f"gs://calitp-ntd-report-validation/blackcat_ntd_reports_{this_year}_raw"
+    subdir = f"blackcat_ntd_reports_{this_year}_raw"
     
     #Get incoming raw data -  get latest file that start with the filename for each particular report (e.g., "NTD_Annual_Report_Rural_2023_.xlsx" for the RR-20)
     latest_filename = get_latest_excel(this_year, args.form_to_check, bucket, subdir) 
-    logger.info(f"Checking incoming data from {latest_filename}.") 
+    logger.info(f"The most recent file found is {latest_filename}! Checking it's incoming data.") 
 
     # Get a worksheet name from the latest filename above - so we can get the subrecipients to load data from.
         # if we're checking the RR-20, pull from the 2nd sheet (skip the 1st contacts info since it doesn't reflect who actually submitted something)
         # all other forms have only 1 worksheet so just grab that one.
     form_to_sheets_dict = {
         "RR-20": ['Basics.Contacts', 'Modes', 'Expenses By Mode', 'Revenues By Mode', 'Financials - 2', 'Service Data', 'Safety', 'Other Resources'],
-        "A-30": ['A-30 (Rural) RVI']
+        "A-30": ['A-30 (Rural) RVI'],
+        "A-10": ['PurchaseTranspFacOwnTypes', 'DirectlyOperatedFacOwnTypes']
     }
     if args.form_to_check == "RR-20":
         sheet = form_to_sheets_dict.get(args.form_to_check)[1]
@@ -189,14 +184,15 @@ def main():
     orgs = pd.read_csv(args.subrecipients)
     orgs_submitting = orgs['Organization'].unique() 
     orgs_submitting = [x.strip(' ') for x in orgs_submitting] # I see some whitespaces
-
-    # Check and load the data!
+    # Get list of orgs in the NTD report submittal 
     orgs_in_file = latest_raw_data['Organization Legal Name'].unique()
 
+    # Check and load the data!
     for org in orgs_in_file:
         if org in orgs_submitting:
             compare_datasets(args.form_to_check, form_to_sheets_dict, 
-                             this_year, latest_raw_data, org, logger, bucket_name)
+                             this_year, latest_filename, org, logger, bucket_name)
+            
     logger.info("Completed loading the most recent NTD reports from BlackCat!")
 
 
