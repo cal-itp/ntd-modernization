@@ -9,8 +9,12 @@ Will write validated data into two places:
 - a folder called "gs://calitp-ntd-report-validation/validation_reports_2023"
 - BigQuery tables
 
-To run from command line with the default datasources, navigate to folder and type: 
-python rr20_service_check.py'''
+To run from command line navigate to folder.  
+* To run with the default datasources, type: python rr20_service_check.py
+* To specify datasources type: python rr20_service_check.py 
+                                ---rr20_service_data <filepath> 
+                                --rr20_expenditure_data <filepath>             
+'''
 
 def get_arguments(this_year, last_year):
     GCS_FILE_PATH_LASTYR = f"gs://calitp-ntd-report-validation/blackcat_ntd_reports_{last_year}_raw"
@@ -63,9 +67,7 @@ def check_missing_servicedata(df):
     
     mask = df['Annual VRM'].isnull() | df['Annual VRH'].isnull() | df['Annual UPT'].isnull() | df['Annual UPT'].isnull() | df["VOMX"].isnull()
     orgs_missing_data = df[mask]['Organization Legal Name'].unique()
-    print(f"missing = {orgs_missing_data}")
     orgs_not_missing_data = list(set(agencies) - set(orgs_missing_data))
-    print(f"Not missing = {orgs_not_missing_data}")
     
     output = []
     for x in agencies:
@@ -119,21 +121,23 @@ def rr20_ratios(df, variable, threshold, this_year, last_year, logger):
     agencies = df['Organization Legal Name'].unique()
     output = []
     for agency in agencies:
-
-        if len(df[df['Organization Legal Name']==agency]) > 0:
+        agency_df = df[df['Organization Legal Name']==agency]
+        logger.info(f"Checking {agency} for {variable} info.")
+        if len(agency_df) > 0:
             
             # Check whether data for both years is present
-            if (len(df[(df['Organization Legal Name']==agency) & (df['Fiscal Year']==this_year)]) > 0) \
-                & (len(df[(df['Organization Legal Name']==agency) & (df['Fiscal Year']==last_year)]) > 0): 
+            if (len(agency_df[agency_df['Fiscal Year']==this_year]) > 0) \
+                & (len(agency_df[agency_df['Fiscal Year']==last_year]) > 0): 
 
-                for mode in df[df['Organization Legal Name'] == agency]['Mode'].unique():
-                    value_thisyr = (round(df[(df['Organization Legal Name'] == agency) 
-                                          & (df['Mode']==mode)
-                                          & (df['Fiscal Year'] == this_year)]
+                for mode in agency_df[(agency_df['Fiscal Year']==this_year)]['Mode'].unique():
+                    value_thisyr = (round(agency_df[(agency_df['Mode']==mode)
+                                          & (agency_df['Fiscal Year'] == this_year)]
                                   [variable].unique()[0], 2))
-                    value_lastyr = (round(df[(df['Organization Legal Name'] == agency) 
-                                          & (df['Mode']==mode)
-                                          & (df['Fiscal Year'] == last_year)]
+                    if len(agency_df[(agency_df['Mode']==mode) & (agency_df['Fiscal Year'] == last_year)][variable]) == 0:
+                        value_lastyr = 0
+                    else:
+                        value_lastyr = (round(agency_df[(agency_df['Mode']==mode)
+                                          & (agency_df['Fiscal Year'] == last_year)]
                                   [variable].unique()[0], 2))
                     
                     if (value_lastyr == 0) and (abs(value_thisyr - value_lastyr) >= threshold):
@@ -141,7 +145,7 @@ def rr20_ratios(df, variable, threshold, this_year, last_year, logger):
                         check_name = f"{variable}"
                         mode = mode
                         description = (f"The {variable} for {mode} has changed from last year by > = {threshold*100}%, please provide a narrative justification.")
-                    elif abs((value_lastyr - value_thisyr)/value_lastyr) >= threshold:
+                    elif (value_lastyr != 0) and abs((value_lastyr - value_thisyr)/value_lastyr) >= threshold:
                         result = "fail"
                         check_name = f"{variable}"
                         mode = mode
@@ -171,16 +175,23 @@ def check_single_number(df, variable, this_year, last_year, logger, threshold=No
     for agency in agencies:
 
         if len(df[df['Organization Legal Name']==agency]) > 0:
-        # Check whether data for both years is present, if so perform prior yr comparison.
+            logger.info(f"Checking {agency} for {variable} info.")
+            # Check whether data for both years is present, if so perform prior yr comparison.
             if (len(df[(df['Organization Legal Name']==agency) & (df['Fiscal Year']==this_year)]) > 0) \
                 & (len(df[(df['Organization Legal Name']==agency) & (df['Fiscal Year']==last_year)]) > 0): 
 
-                for mode in df[df['Organization Legal Name'] == agency]['Mode'].unique():
+                for mode in df[(df['Organization Legal Name'] == agency) & (df['Fiscal Year']==this_year)]['Mode'].unique():
                     value_thisyr = (round(df[(df['Organization Legal Name'] == agency) 
                                           & (df['Mode']==mode)
                                           & (df['Fiscal Year'] == this_year)]
                                   [variable].unique()[0], 2))
-                    value_lastyr = (round(df[(df['Organization Legal Name'] == agency) 
+                    # If there's no data for last yr:
+                    if len(df[(df['Organization Legal Name'] == agency) 
+                                          & (df['Mode']==mode)
+                                          & (df['Fiscal Year'] == last_year)][variable]) == 0:
+                        value_lastyr = 0
+                    else:
+                        value_lastyr = (round(df[(df['Organization Legal Name'] == agency) 
                                           & (df['Mode']==mode)
                                           & (df['Fiscal Year'] == last_year)]
                                   [variable].unique()[0], 2))
@@ -203,7 +214,7 @@ def check_single_number(df, variable, this_year, last_year, logger, threshold=No
                         check_name = f"{variable}"
                         mode = mode
                         description = (f"The {variable} for {mode} was 0 last year and has changed by > = {threshold*100}%, please provide a narrative justification.")
-                    elif abs((value_lastyr - value_thisyr)/value_lastyr) >= threshold:
+                    elif (value_lastyr != 0) and abs((value_lastyr - value_thisyr)/value_lastyr) >= threshold:
                         result = "fail"
                         check_name = f"{variable}"
                         mode = mode
@@ -282,14 +293,13 @@ def main():
     mpv_checks = rr20_ratios(allyears, 'miles_per_veh', .20, this_year, last_year, logger)
     vrm_checks = check_single_number(allyears, 'Annual VRM', this_year, last_year, logger, threshold=.30)
     frpt_checks = rr20_ratios(allyears, 'fare_rev_per_trip', .25, this_year, last_year, logger)
-    fare_rev_checks = check_single_number(allyears, 'fare_rev_per_trip', this_year, last_year, logger)
     rev_speed_checks = rr20_ratios(allyears, 'rev_speed', .15, this_year, last_year, logger)
     tph_checks = rr20_ratios(allyears, 'trips_per_hr', .30, this_year, last_year, logger)
     voms0_check = check_single_number(allyears, 'VOMX', this_year, last_year, logger)
 
     # Combine checks into one table
     rr20_checks = pd.concat([missingdata_check, cph_checks, mpv_checks, vrm_checks, 
-                             frpt_checks, fare_rev_checks, rev_speed_checks, 
+                             frpt_checks, rev_speed_checks, 
                              tph_checks, voms0_check], ignore_index=True).sort_values(by="Organization")
 
     GCS_FILE_PATH_VALIDATED = "gs://calitp-ntd-report-validation/validation_reports_{this_year}" 
