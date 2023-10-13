@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 import pandas as pd
+import datetime
 
 '''This file loads 3 datasets (A-30, RR-20 Service data, Revenue Vehicle Inventory) that originate from Black Cat.
 To run from command line, navigate to folder: 
@@ -92,12 +93,14 @@ def partial_vin_checklist(a30_data, a30_agencies, inventory_data):
 
 
 def check_totals(a30_data, a30_agencies, inventory_data, rr20_data):
-    """COmpare total reported vehicles across RR-20, A-30, inventory list"""
+    """Compare total reported vehicles across RR-20, A-30, inventory list"""
 
     output = []
     for agency in a30_agencies:
         if len(a30_data[a30_data['Organization']==agency]) > 0:
             a30_n = a30_data[a30_data['Organization']==agency]['VIN'].nunique()
+        else:
+            pass
             
         if len(inventory_data[inventory_data['Organization'] == agency]) > 0:
             inv_n = inventory_data[(inventory_data['Organization'] == agency) \
@@ -107,29 +110,31 @@ def check_totals(a30_data, a30_agencies, inventory_data, rr20_data):
             rr20_n = rr20_data[rr20_data['Organization Legal Name']==agency]['VOMX'].sum()
             rr20_n = round(rr20_n)
 
-        if (a30_n <= inv_n) & (rr20_n <= inv_n) & (a30_n >= rr20_n):
-            result = "pass"
-            description = "VOMS & A-30 vehicles reported are equal to and/or lower than active inventory."
-        elif (a30_n > inv_n):
-            result = "warning"
-            description = "More A-30 vehicles reported than in active inventory."
-        elif (a30_n < rr20_n):
-            result = "fail"
-            description = "Total VOMS is greater than total A-30 vehicles reported. Please clarify"
+            if (a30_n <= inv_n) & (rr20_n <= inv_n) & (a30_n >= rr20_n):
+                result = "pass"
+                description = "VOMS & A-30 vehicles reported are equal to and/or lower than active inventory."
+            elif (a30_n > inv_n):
+                result = "warning"
+                description = "More A-30 vehicles reported than in active inventory."
+            elif (a30_n < rr20_n):
+                result = "fail"
+                description = "Total VOMS is greater than total A-30 vehicles reported. Please clarify"
 
-        output_line = {"Organization": agency,
-                    "n_a30_vehicles": a30_n,
-                    "n_rr20_VOMS": rr20_n,
-                    "n_active_inventory": inv_n,
-                    "check_result": result,
-                    "Description": description}
-        output.append(output_line)
+            output_line = {"Organization": agency,
+                        "n_a30_vehicles": a30_n,
+                        "n_rr20_VOMS": rr20_n,
+                        "n_active_inventory": inv_n,
+                        "check_result": result,
+                        "Description": description}
+            output.append(output_line)
     totals_checklist = pd.DataFrame(output)
     
     return totals_checklist
 
 
 def main():
+    this_year=datetime.datetime.now().year
+    this_date=datetime.datetime.now().date().strftime('%Y-%m-%d') #for suffix on various files
     #Load data:
     args = get_arguments()
     rev_vehicle_inventory = load_excel_data(args.rev_vehicle_inventory_data, "Revenue Vehicles")
@@ -146,7 +151,8 @@ def main():
 
     # Write them all to one Excel file, in different sheets:
     ## We also add a few more columns for Liaisions to manually track agency responses.
-    with pd.ExcelWriter("reports/voms_check_report.xlsx") as writer:
+    GCS_FILE_PATH_VALIDATED = f"gs://calitp-ntd-report-validation/validation_reports_{this_year}" 
+    with pd.ExcelWriter(f"{GCS_FILE_PATH_VALIDATED}/voms_check_report_{this_date}.xlsx") as writer:
    
         full_vin_checklist.to_excel(writer, sheet_name="vin_check_full", index=False, startrow=2)
         mismatched_vin_checklist.to_excel(writer, sheet_name="vin_check_fails_only", index=False, startrow=2)
