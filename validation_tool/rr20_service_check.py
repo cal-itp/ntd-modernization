@@ -302,8 +302,8 @@ def main():
                              frpt_checks, rev_speed_checks, 
                              tph_checks, voms0_check], ignore_index=True).sort_values(by="Organization")
 
-    GCS_FILE_PATH_VALIDATED = "gs://calitp-ntd-report-validation/validation_reports_{this_year}" 
-    with pd.ExcelWriter(f"{GCS_FILE_PATH_VALIDATED}/rr20_check_report_{this_date}.xlsx") as writer:
+    GCS_FILE_PATH_VALIDATED = f"gs://calitp-ntd-report-validation/validation_reports_{this_year}" 
+    with pd.ExcelWriter(f"{GCS_FILE_PATH_VALIDATED}/rr20_service_check_report_{this_date}.xlsx") as writer:
         rr20_checks.to_excel(writer, sheet_name="rr20_checks_full", index=False, startrow=2)
 
         workbook = writer.book
