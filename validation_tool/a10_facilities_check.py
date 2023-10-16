@@ -4,7 +4,7 @@ import pandas as pd
 '''This file loads one dataset (A-10 form) that originates from Black Cat.
 To run from command line, navigate to folder: 
 * To run with the default datasources, type: python a10_facilities_check.py
-* To specify data source file, type: python a10_facilities_check.py --a10_data <filepath> 
+* To specify data source file, type: python a10_facilities_check.py --a10_data <filepath> --a10_lastyr_data <filepath> 
                                 
 Performs 3 checks:
 * Check 1. Check that sum of total facilities for each agency, across all modes, is a whole number.
