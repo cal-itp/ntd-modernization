@@ -6,9 +6,8 @@ import logging
 
 '''Script for checking RR-20 NTD report for Financial Data. 
 Grabs data from GCS buckets for "this year" and "last year". 
-Will write validated data into two places:
+Writes validated data into:
 - a folder called "gs://calitp-ntd-report-validation/validation_reports_2023"
-- BigQuery tables
 
 To run from command line with the default datasources, navigate to folder and type: 
 python rr20_financials_check.py'''

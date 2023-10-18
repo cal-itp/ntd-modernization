@@ -14,6 +14,8 @@ One-time load of various files from Google Could storage into Big Query. This wi
   * BlackCat 2022 NTD reports: python data_to_BQ.py --year 2022 --gcs_subdir "blackcat_ntd_reports_2022_raw" --filename "NTD_Annual_Report_Rural_2022.xlsx"
   * 2023 Revenue Vehicle Inventory: python data_to_BQ.py --year 2023 --gcs_subdir "blackcat_ntd_reports_2023_raw" --filename "RevenueVehicles_2023-10-04.xlsx" --worksheet "Revenue Vehicles"
   * list of subrecipients submitting to NTD: python data_to_BQ.py --year 2023 --gcs_subdir "blackcat_ntd_reports_2023_parsed" --filename "organizations.xlsx" --worksheet "organizations"
+  * A-30 reports, initial load: python data_to_BQ.py --year 2023 --gcs_subdir "blackcat_ntd_reports_2023_raw" --filename "A_30_Revenue_Vehicle_Report_2023_2023-10-04.xlsx" --worksheet "A-30 (Rural) RVI"
+  * A-10 reports, initial load: python data_to_BQ.py --year 2023 --gcs_subdir "blackcat_ntd_reports_2023_raw" --filename "NTD_Stations_and_Maintenace_Facilities_A10_2023_2023-10-17.xlsx"
 '''
 
 def get_arguments():
@@ -22,7 +24,7 @@ def get_arguments():
     parser.add_argument('--year', default=2023)
     parser.add_argument('--gcs_subdir')
     parser.add_argument('--filename')
-    parser.add_argument('--worksheet', default = "Financials - 2")
+    parser.add_argument('--worksheet', nargs='?',default=None)
     args = parser.parse_args()
     return args
 
@@ -62,6 +64,7 @@ def load_new_table(dfdict, year, client, logger):
         # Remove spaces and slashes from col names - - they are illegal in BQ
         v.columns = v.columns.str.replace(' ', '_', regex=True)
         v.columns = v.columns.str.replace('/', '_', regex=True)
+        v.columns = v.columns.str.replace('.', '_', regex=True)
         v.columns = v.columns.str.replace('\W+', '', regex=True)
         columns = v.columns.values
         
@@ -111,7 +114,7 @@ def main():
     client = bigquery.Client()
     filepath = f"gs://calitp-ntd-report-validation/{args.gcs_subdir}/{args.filename}"
     
-    #------------- 2022 RR-20 data. Ran once, then coomented out this block.
+    #------------- 2022 RR-20 data. Ran once, then commented out this block.
 #     # Get data from GCS - RR020 from 2022
 #     rr20_exp_by_mode = load_excel_data(filepath, sheetname="Expenses By Mode")
 #     rr20_rev_by_mode = load_excel_data(filepath, sheetname="Revenues By Mode")
@@ -134,22 +137,38 @@ def main():
 #     load_new_table(dfdict, 2022, client, logger) #loading RR-20 tables
     
 
-    #------------- 2023 Vehicle Inventory. Ran once, then coomented out this block.
-    # # Get data from GCS - Revenue Vehicle Inventory from 2023
-    # rev_veh_inv = load_excel_data(filepath, sheetname=args.worksheet)
-    # rev_veh_inv.loc[:, 'date_uploaded'] = pd.to_datetime(datetime.datetime.now().date()) # Add in 'date_uploaded' column 
-    # dfdict_veh_inv = {"revenue_vehicle_inventory": rev_veh_inv}
+    #------------- 2023 Vehicle Inventory. Ran once, then commented out this block.
+    # Get data from GCS - Revenue Vehicle Inventory from 2023
+    rev_veh_inv = load_excel_data(filepath, sheetname=args.worksheet)
+    rev_veh_inv.loc[:, 'date_uploaded'] = pd.to_datetime(datetime.datetime.now().date()) # Add in 'date_uploaded' column 
+    dfdict_veh_inv = {"inventory_revenue_vehicles": rev_veh_inv}
     
-    # load_new_table(dfdict_veh_inv, 2023, client, logger)
+    load_new_table(dfdict_veh_inv, 2023, client, logger)
 
-    #------------- 2023 List of subrecipients submitting to NTD. Ran once, if new data is added, will comment out this block.
-    # Get data from GCS - 
-    orgs = load_excel_data(filepath, sheetname=args.worksheet)
-    orgs.loc[:, 'date_uploaded'] = pd.to_datetime(datetime.datetime.now().date()) # Add in 'date_uploaded' column 
-    dfdict_orgs= {"organizations": orgs}
+    #------------- 2023 List of subrecipients submitting to NTD. Ran once, then commented out this block.
+    # # Get data from GCS - 
+    # orgs = load_excel_data(filepath, sheetname=args.worksheet)
+    # orgs.loc[:, 'date_uploaded'] = pd.to_datetime(datetime.datetime.now().date()) # Add in 'date_uploaded' column 
+    # dfdict_orgs= {"organizations": orgs}
     
-    load_new_table(dfdict_orgs, 2023, client, logger)
+    # load_new_table(dfdict_orgs, 2023, client, logger)
 
+    #------------- 2023 A-30. Ran once, then commented out this block.
+    # a30 = load_excel_data(filepath, sheetname=args.worksheet)
+    # a30.loc[:, 'date_uploaded'] = pd.to_datetime(datetime.datetime.now().date()) # Add in 'date_uploaded' column 
+    # dfdict_a30= {"a30_a30_rural_rvi": a30}
+    
+    # load_new_table(dfdict_a30, 2023, client, logger)
+
+    #------------- 2023 A-10. Ran once, if new data is added, will comment out this block.
+    # a10_PurchaseTranspFacOwnTypes = load_excel_data(filepath, sheetname="PurchaseTranspFacOwnTypes")
+    # a10_PurchaseTranspFacOwnTypes.loc[:, 'date_uploaded'] = pd.to_datetime(datetime.datetime.now().date()) # Add in 'date_uploaded' column 
+    # a10_DirectlyOperatedFacOwnTypes = load_excel_data(filepath, sheetname="DirectlyOperatedFacOwnTypes")
+    # a10_DirectlyOperatedFacOwnTypes.loc[:, 'date_uploaded'] = pd.to_datetime(datetime.datetime.now().date()) # Add in 'date_uploaded' column 
+    # dfdict_a10= {"a10_purchasetranspfacowntypes": a10_PurchaseTranspFacOwnTypes,
+    #              "a10_directlyoperatedfacowntypes": a10_DirectlyOperatedFacOwnTypes}
+    
+    # load_new_table(dfdict_a10, 2023, client, logger)
 
 
 if __name__ == "__main__":
