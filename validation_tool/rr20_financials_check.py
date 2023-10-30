@@ -259,9 +259,9 @@ def main():
     v_cap_expenses = rr20f_001c(allyears, this_year, logger)
     
     # Run validation check against vehicle inventory
-    veh_inv_query = f"""SELECT * FROM `cal-itp-data-infra.blackcat_raw.{this_year}_revenue_vehicle_inventory`"""
+    veh_inv_query = f"""SELECT * FROM `cal-itp-data-infra.blackcat_raw.{this_year}_inventory_revenue_vehicles`"""
     veh_inv = client.query(veh_inv_query).to_dataframe()
-    logger.info(f"Got {this_year} data from blackcat_raw.{this_year}_revenue_vehicle_inventory, with {len(veh_inv)} rows.")
+    logger.info(f"Got {this_year} data from blackcat_raw.{this_year}_inventory_revenue_vehicles, with {len(veh_inv)} rows.")
 
     numeric_columns = rr20_financial.select_dtypes(include=['number']).columns
     rr20_financial[numeric_columns] = rr20_financial[numeric_columns].fillna(0)
