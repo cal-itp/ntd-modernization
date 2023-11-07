@@ -16,8 +16,15 @@ This script:
 To run:
 python check_raw_data.py --form_to_check <form-number>
 
-To run this data for revenue vehicle inventory, type:
-python check_raw_data.py --form_to_check "Inventory" --incoming_org_col_name "Organization" --bq_org_col_name "Organization"
+Specific commands to run this data for each form:
+For revenue vehicle inventory, type:
+    python check_raw_data.py --form_to_check "Inventory" --incoming_org_col_name "Organization" --bq_org_col_name "Organization"
+For RR-20, type:
+    python check_raw_data.py --form_to_check "RR-20"
+For A-30, type:
+    python check_raw_data.py --form_to_check "A-30" --incoming_org_col_name "Organization"  --bq_org_col_name "Organization"
+For A-10, type:
+    python check_raw_data.py --form_to_check "A-10"
  '''
 
 def get_arguments(this_year):
