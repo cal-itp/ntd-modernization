@@ -1,43 +1,30 @@
 from argparse import ArgumentParser
+from google.cloud import bigquery
 import pandas as pd
 import datetime
 import logging
 
 '''Script for checking RR-20 NTD report for Service Data. 
-Grabs data from GCS buckets for "this year" and "last year". 
+Grabs data from BigQuery "raw" tables for "this year" and "last year". 
 Will write validated data into two places:
 - a folder called "gs://calitp-ntd-report-validation/validation_reports_2023"
 - BigQuery tables
 
-To run from command line navigate to folder.  
-* To run with the default datasources, type: python rr20_service_check.py
-* To specify datasources type: python rr20_service_check.py 
-                                ---rr20_service_data <filepath> 
-                                --rr20_expenditure_data <filepath>             
+To run from command line navigate to folder. Type: 
+python rr20_service_check.py           
 '''
 
-def get_arguments(this_year, last_year):
-    GCS_FILE_PATH_LASTYR = f"gs://calitp-ntd-report-validation/blackcat_ntd_reports_{last_year}_raw"
-    GCS_FILE_PATH_RAW = f"gs://calitp-ntd-report-validation/blackcat_ntd_reports_{this_year}_raw"
-    GCS_FILE_PATH_PARSED = f"gs://calitp-ntd-report-validation/blackcat_ntd_reports_{this_year}_parsed"
 
-    """Get the data as input arguments (for now)"""
-    parser = ArgumentParser(description="RR-20 service data checks")
-    parser.add_argument('--this_year', default=(datetime.datetime.now().year)) 
-    parser.add_argument('--last_year', default=(this_year-1))
-    parser.add_argument('--subrecipients', default=f"{GCS_FILE_PATH_PARSED}/organizations.csv")
-    parser.add_argument('--rr20_service_data', default=f"{GCS_FILE_PATH_RAW}/NTD_Annual_Report_Rural_{this_year}.xlsx")
-    parser.add_argument('--rr20_service_data_lastyr', default=f"{GCS_FILE_PATH_LASTYR}/NTD_Annual_Report_Rural_{last_year}.xlsx")
-    parser.add_argument('--rr20_expenditure_data', default=f"{GCS_FILE_PATH_RAW}/NTD_Annual_Report_Rural_{this_year}.xlsx")
-    parser.add_argument('--rr20_expenditure_data_lastyr', default=f"{GCS_FILE_PATH_LASTYR}/NTD_Annual_Report_Rural_{last_year}.xlsx")
-
-    args = parser.parse_args()
-    return args
-
-
-def load_excel_data(filename, sheetname):
-    df = pd.read_excel(filename, sheet_name=sheetname,
-                            index_col=None)
+def get_bq_data(client, year, tablename):
+    bq_data_query = f"""SELECT * FROM 
+          (select *,
+          RANK() OVER(PARTITION BY Organization_Legal_Name ORDER BY date_uploaded DESC) rank_date 
+        from `cal-itp-data-infra.blackcat_raw.{year}_{tablename}`) s 
+        WHERE rank_date = 1;
+        """
+    
+    df = client.query(bq_data_query).to_dataframe()
+    df = df.drop_duplicates().drop(['rank_date', 'date_uploaded'], axis=1)
     return df
 
 
@@ -63,10 +50,10 @@ def write_to_log(logfilename):
 
 
 def check_missing_servicedata(df):
-    agencies = df['Organization Legal Name'].unique()
+    agencies = df['Organization_Legal_Name'].unique()
     
-    mask = df['Annual VRM'].isnull() | df['Annual VRH'].isnull() | df['Annual UPT'].isnull() | df['Annual UPT'].isnull() | df["VOMX"].isnull()
-    orgs_missing_data = df[mask]['Organization Legal Name'].unique()
+    mask = df['Annual_VRM'].isnull() | df['Annual_VRH'].isnull() | df['Annual_UPT'].isnull() | df['Annual_UPT'].isnull() | df["VOMX"].isnull()
+    orgs_missing_data = df[mask]['Organization_Legal_Name'].unique()
     orgs_not_missing_data = list(set(agencies) - set(orgs_missing_data))
     
     output = []
@@ -105,39 +92,39 @@ def make_ratio_cols(df, numerator, denominator, col_name, logger, operation="sum
             _col_name = col_name
             
     if operation == "sum":    
-        df = (df.groupby(['Organization Legal Name','Mode', 'Fiscal Year'])
+        df = (df.groupby(['Organization_Legal_Name','Mode', 'Fiscal_Year'])
               .apply(lambda x: x.assign(**{_col_name:
                      lambda x: x[numerator].sum() / x[denominator]}))
                     )
     # else do not sum the numerator columns
     else:
-        df = (df.groupby(['Organization Legal Name','Mode', 'Fiscal Year'])
+        df = (df.groupby(['Organization_Legal_Name','Mode', 'Fiscal_Year'])
               .apply(lambda x: x.assign(**{_col_name:
                      lambda x: x[numerator] / x[denominator]}))
                     )
     return df
 
 def rr20_ratios(df, variable, threshold, this_year, last_year, logger):
-    agencies = df['Organization Legal Name'].unique()
+    agencies = df['Organization_Legal_Name'].unique()
     output = []
     for agency in agencies:
-        agency_df = df[df['Organization Legal Name']==agency]
+        agency_df = df[df['Organization_Legal_Name']==agency]
         logger.info(f"Checking {agency} for {variable} info.")
         if len(agency_df) > 0:
             
             # Check whether data for both years is present
-            if (len(agency_df[agency_df['Fiscal Year']==this_year]) > 0) \
-                & (len(agency_df[agency_df['Fiscal Year']==last_year]) > 0): 
+            if (len(agency_df[agency_df['Fiscal_Year']==this_year]) > 0) \
+                & (len(agency_df[agency_df['Fiscal_Year']==last_year]) > 0): 
 
-                for mode in agency_df[(agency_df['Fiscal Year']==this_year)]['Mode'].unique():
+                for mode in agency_df[(agency_df['Fiscal_Year']==this_year)]['Mode'].unique():
                     value_thisyr = (round(agency_df[(agency_df['Mode']==mode)
-                                          & (agency_df['Fiscal Year'] == this_year)]
+                                          & (agency_df['Fiscal_Year'] == this_year)]
                                   [variable].unique()[0], 2))
-                    if len(agency_df[(agency_df['Mode']==mode) & (agency_df['Fiscal Year'] == last_year)][variable]) == 0:
+                    if len(agency_df[(agency_df['Mode']==mode) & (agency_df['Fiscal_Year'] == last_year)][variable]) == 0:
                         value_lastyr = 0
                     else:
                         value_lastyr = (round(agency_df[(agency_df['Mode']==mode)
-                                          & (agency_df['Fiscal Year'] == last_year)]
+                                          & (agency_df['Fiscal_Year'] == last_year)]
                                   [variable].unique()[0], 2))
                     
                     if (value_lastyr == 0) and (abs(value_thisyr - value_lastyr) >= threshold):
@@ -170,30 +157,30 @@ def rr20_ratios(df, variable, threshold, this_year, last_year, logger):
 
 
 def check_single_number(df, variable, this_year, last_year, logger, threshold=None,):
-    agencies = df['Organization Legal Name'].unique()
+    agencies = df['Organization_Legal_Name'].unique()
     output = []
     for agency in agencies:
 
-        if len(df[df['Organization Legal Name']==agency]) > 0:
+        if len(df[df['Organization_Legal_Name']==agency]) > 0:
             logger.info(f"Checking {agency} for {variable} info.")
             # Check whether data for both years is present, if so perform prior yr comparison.
-            if (len(df[(df['Organization Legal Name']==agency) & (df['Fiscal Year']==this_year)]) > 0) \
-                & (len(df[(df['Organization Legal Name']==agency) & (df['Fiscal Year']==last_year)]) > 0): 
+            if (len(df[(df['Organization_Legal_Name']==agency) & (df['Fiscal_Year']==this_year)]) > 0) \
+                & (len(df[(df['Organization_Legal_Name']==agency) & (df['Fiscal_Year']==last_year)]) > 0): 
 
-                for mode in df[(df['Organization Legal Name'] == agency) & (df['Fiscal Year']==this_year)]['Mode'].unique():
-                    value_thisyr = (round(df[(df['Organization Legal Name'] == agency) 
+                for mode in df[(df['Organization_Legal_Name'] == agency) & (df['Fiscal_Year']==this_year)]['Mode'].unique():
+                    value_thisyr = (round(df[(df['Organization_Legal_Name'] == agency) 
                                           & (df['Mode']==mode)
-                                          & (df['Fiscal Year'] == this_year)]
+                                          & (df['Fiscal_Year'] == this_year)]
                                   [variable].unique()[0], 2))
                     # If there's no data for last yr:
-                    if len(df[(df['Organization Legal Name'] == agency) 
+                    if len(df[(df['Organization_Legal_Name'] == agency) 
                                           & (df['Mode']==mode)
-                                          & (df['Fiscal Year'] == last_year)][variable]) == 0:
+                                          & (df['Fiscal_Year'] == last_year)][variable]) == 0:
                         value_lastyr = 0
                     else:
-                        value_lastyr = (round(df[(df['Organization Legal Name'] == agency) 
+                        value_lastyr = (round(df[(df['Organization_Legal_Name'] == agency) 
                                           & (df['Mode']==mode)
-                                          & (df['Fiscal Year'] == last_year)]
+                                          & (df['Fiscal_Year'] == last_year)]
                                   [variable].unique()[0], 2))
                     
                     if (round(value_thisyr)==0 and round(value_lastyr) != 0) | (round(value_thisyr)!=0 and round(value_lastyr) == 0):
@@ -240,34 +227,41 @@ def check_single_number(df, variable, this_year, last_year, logger, threshold=No
 
 def main():
     # Set up the logger object
-    logger = write_to_log('rr20_checks_log.log')
-
-    #Load data:
+    logger = write_to_log('rr20_servicechecks_log.log')
     this_year=datetime.datetime.now().year
     last_year = this_year-1
     this_date=datetime.datetime.now().date().strftime('%Y-%m-%d') #for suffix on various files
-    
-    args = get_arguments(this_year, last_year)
-    rr20_service =  load_excel_data(args.rr20_service_data, "Service Data")
-    rr20_service_lastyr = load_excel_data(args.rr20_service_data_lastyr, "Service Data")
-    rr20_exp_by_mode = load_excel_data(args.rr20_expenditure_data, "Expenses By Mode")
-    rr20_exp_by_mode_lastyr = load_excel_data(args.rr20_expenditure_data_lastyr, "Expenses By Mode")
-    orgs = pd.read_csv(args.subrecipients)
-    
-    #### Rewrite the above - grab from datasets in the BQ "raw" folder instead.###
 
+    #Load data from BigQuery:
+    # For each org, get the rows with the latest date_uploaded, which is their latest submitted report.
+    client = bigquery.Client()
+    rr20_service = get_bq_data(client, this_year, "rr20_service_data")
+    rr20_exp_by_mode = get_bq_data(client, this_year, "rr20_expenses_by_mode")
+    orgs_q = """SELECT * FROM `cal-itp-data-infra.blackcat_raw.2023_organizations`"""
+    orgs = client.query(orgs_q).to_dataframe().drop_duplicates().drop(['date_uploaded'], axis=1)
+
+    # 2022 data was only uploaded once so has slightly different schema
+    bq_2022_query = f"""SELECT * FROM `cal-itp-data-infra.blackcat_raw.{last_year}_rr20_service_data`"""
+    rr20_service_lastyr = client.query(bq_2022_query).to_dataframe().drop_duplicates()
+    exp_2022_query = f"""SELECT * FROM `cal-itp-data-infra.blackcat_raw.{last_year}_rr20_expenses_by_mode`"""
+    rr20_exp_by_mode_lastyr = client.query(exp_2022_query).to_dataframe().drop_duplicates()
+    
     # Combine datasets into one, on which to run validation checks. Filter down to only subrecipients.
-    data = (rr20_service.merge(orgs, left_on ='Organization Legal Name', right_on = 'Organization', 
-                            indicator=True).query('_merge == "both"').drop(columns=['_merge', 'Organization'])
-                            .merge(rr20_exp_by_mode, on = ['Organization Legal Name', 'Common Name/Acronym/DBA', 'Fiscal Year', 'Mode']))
+    data = (rr20_service.merge(orgs, left_on ='Organization_Legal_Name', right_on = 'Organization', 
+                          indicator=True).query('_merge == "both"').drop(columns=['_merge', 'Organization'])
+                          .merge(rr20_exp_by_mode, on = ['Organization_Legal_Name', 'Common_Name_Acronym_DBA', 'Fiscal_Year', 'Mode']))
 
-    data_lastyear = (rr20_service_lastyr.merge(orgs, left_on ='Organization Legal Name', right_on = 'Organization', 
+    data_lastyear = (rr20_service_lastyr.merge(orgs, left_on ='Organization_Legal_Name', right_on = 'Organization', 
                             indicator=True).query('_merge == "both"').drop(columns=['_merge', 'Organization'])
-                            .merge(rr20_exp_by_mode_lastyr, on = ['Organization Legal Name', 'Common Name/Acronym/DBA', 'Fiscal Year', 'Mode']))
+                            .merge(rr20_exp_by_mode_lastyr, on = ['Organization_Legal_Name', 'Fiscal_Year', 'Mode'])
+                .sort_values(by="Organization_Legal_Name"))
+    # 2022: we use the "Common Name" from the service data, if empty then from the expenses table. If neither empty, still use from the service data
+    data_lastyear['Common_Name_Acronym_DBA'] = data_lastyear['Common_Name_Acronym_DBA_x'].combine_first(data_lastyear['Common_Name_Acronym_DBA_y'])
+    data_lastyear.drop(columns=['Common_Name_Acronym_DBA_x', 'Common_Name_Acronym_DBA_y'], inplace=True)
     allyears = pd.concat([data, data_lastyear], ignore_index = True)
     
     
-#### Extra airflow job and function will save the above datasets into the "parsed" folder. Skipping for now.###
+    #### Extra airflow job and function will save the above datasets into the "parsed" folder. Skipping for now.###
     # # test
     # data_numeric_columns = data.select_dtypes(include=['number']).columns
     # data[data_numeric_columns] = data[data_numeric_columns].fillna(0)
@@ -282,16 +276,16 @@ def main():
     numeric_columns = allyears.select_dtypes(include=['number']).columns
     allyears[numeric_columns] = allyears[numeric_columns].fillna(0)
     
-    allyears = make_ratio_cols(allyears, 'Total Annual Expenses By Mode', 'Annual VRH', 'cost_per_hr', logger)
-    allyears = make_ratio_cols(allyears, 'Annual VRM', 'VOMX', 'miles_per_veh', logger)
-    allyears = make_ratio_cols(allyears, 'Total Annual Expenses By Mode', 'Annual UPT', 'fare_rev_per_trip', logger)
-    allyears = make_ratio_cols(allyears, 'Annual VRM', 'Annual VRH', 'rev_speed', logger, operation = "mean")
-    allyears = make_ratio_cols(allyears,  'Annual UPT', 'Annual VRH', 'trips_per_hr', logger, operation = "mean")
+    allyears = make_ratio_cols(allyears, 'Total_Annual_Expenses_By_Mode', 'Annual_VRH', 'cost_per_hr', logger)
+    allyears = make_ratio_cols(allyears, 'Annual_VRM', 'VOMX', 'miles_per_veh', logger)
+    allyears = make_ratio_cols(allyears, 'Total_Annual_Expenses_By_Mode', 'Annual_UPT', 'fare_rev_per_trip', logger)
+    allyears = make_ratio_cols(allyears, 'Annual_VRM', 'Annual_VRH', 'rev_speed', logger, operation = "mean")
+    allyears = make_ratio_cols(allyears,  'Annual_UPT', 'Annual_VRH', 'trips_per_hr', logger, operation = "mean")
 
     # Run validation checks
     cph_checks = rr20_ratios(allyears, 'cost_per_hr', .30, this_year, last_year, logger)
     mpv_checks = rr20_ratios(allyears, 'miles_per_veh', .20, this_year, last_year, logger)
-    vrm_checks = check_single_number(allyears, 'Annual VRM', this_year, last_year, logger, threshold=.30)
+    vrm_checks = check_single_number(allyears, 'Annual_VRM', this_year, last_year, logger, threshold=.30)
     frpt_checks = rr20_ratios(allyears, 'fare_rev_per_trip', .25, this_year, last_year, logger)
     rev_speed_checks = rr20_ratios(allyears, 'rev_speed', .15, this_year, last_year, logger)
     tph_checks = rr20_ratios(allyears, 'trips_per_hr', .30, this_year, last_year, logger)

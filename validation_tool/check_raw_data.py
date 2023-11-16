@@ -15,6 +15,16 @@ This script:
 
 To run:
 python check_raw_data.py --form_to_check <form-number>
+
+Specific commands to run this data for each form:
+For revenue vehicle inventory, type:
+    python check_raw_data.py --form_to_check "Inventory" --incoming_org_col_name "Organization" --bq_org_col_name "Organization"
+For RR-20, type:
+    python check_raw_data.py --form_to_check "RR-20"
+For A-30, type:
+    python check_raw_data.py --form_to_check "A-30" --incoming_org_col_name "Organization"  --bq_org_col_name "Organization"
+For A-10, type:
+    python check_raw_data.py --form_to_check "A-10"
  '''
 
 def get_arguments(this_year):
@@ -23,6 +33,8 @@ def get_arguments(this_year):
     parser = ArgumentParser(description="Filter and grab most recent raw data file, load into BigQuery")
     parser.add_argument('--subrecipients', default=f"{GCS_FILE_PATH_PARSED}/organizations.csv")
     parser.add_argument('--form_to_check')
+    parser.add_argument('--incoming_org_col_name', default='Organization Legal Name')
+    parser.add_argument('--bq_org_col_name', default='Organization_Legal_Name')
 
     args = parser.parse_args()
     return args
@@ -54,7 +66,8 @@ def get_latest_excel(this_year, form_to_check, bucket, subdir):
     form_to_file_dict = {
         "RR-20": f"NTD_Annual_Report_Rural_{this_year}",
         "A-30": f"A_30_Revenue_Vehicle_Report_{this_year}",
-        "A-10": f"NTD_Stations_and_Maintenace_Facilities_A10_{this_year}"
+        "A-10": f"NTD_Stations_and_Maintenace_Facilities_A10_{this_year}",
+        "Inventory": "RevenueVehicles"
     }
     file_prefix = form_to_file_dict.get(form_to_check)
     all_files = []
@@ -80,18 +93,18 @@ def load_excel_data(filepath, sheetname):
     return df
 
 
-def compare_datasets(form_to_check, form_to_sheets_dict, this_year, latest_file, org, logger, bucket_name):
+def compare_datasets(form_to_check, form_to_sheets_dict, this_year, latest_file, org, logger, bucket_name, incoming_org_col_name, bq_org_col_name):
     excelsheets = form_to_sheets_dict.get(form_to_check) #get Excel sheetnames depending on form
     bq_form_ref = form_to_check.replace("-","").lower() #this is something like "rr20" for the "RR-20" form_to_check
     
     # Load incoming data, worksheet by worksheet
     for sheet in excelsheets:
-        bq_sheet_ref = sheet.replace(" ", "_").replace("/", "_").replace(".", "_").replace("-", "").replace('\W+', '').lower()
+        bq_sheet_ref = sheet.replace(" ", "_").replace("/", "_").replace(".", "_").replace("-", "").replace(")", "").replace('(', "").replace('\W+', '').lower()
         logger.info(f"Checking data for {org} from {bq_form_ref}_{bq_sheet_ref}")
         incoming_df = load_excel_data(f"gs://{bucket_name}/{latest_file}",sheetname=sheet)
-        incoming_org_data = incoming_df[incoming_df['Organization Legal Name']== org].copy()
+        incoming_org_data = incoming_df[incoming_df[incoming_org_col_name]== org].copy()
         
-        # Now we have only 1 org's data. Remove spaces and slashes from col names - - they are illegal in BQ
+        # Now we have only 1 org's data. Remove spaces and slashes from col names - they are illegal in BQ
         incoming_org_data.columns = (incoming_org_data.columns.str.replace(' ', '_', regex=True)
                                     .str.replace('/', '_').str.replace('.', '_', regex=True)
                                      .str.replace('-', '', regex=True)
@@ -101,7 +114,7 @@ def compare_datasets(form_to_check, form_to_sheets_dict, this_year, latest_file,
         
         # Check what data is already in BQ
         existing_data_query = f"""SELECT * from blackcat_raw.{this_year}_{bq_form_ref}_{bq_sheet_ref}
-            WHERE Organization_Legal_Name = '{org}'"""
+            WHERE {bq_org_col_name} = '{org}'"""
         client = bigquery.Client()
         bq_data = client.query(existing_data_query).to_dataframe()
         bq_data = bq_data.drop_duplicates()
@@ -148,7 +161,7 @@ def compare_datasets(form_to_check, form_to_sheets_dict, this_year, latest_file,
             job_service.result()  # Wait for the job to complete.
             table = client.get_table(table_id)     
         
-        logger.info(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id} for {org}")
+        logger.info(f"Loaded {len(incoming_org_data)} rows and {len(table.schema)} columns to {table_id} for {org}")
 
 
 def main():
@@ -164,7 +177,7 @@ def main():
     
     #Get incoming raw data -  get latest file that start with the filename for each particular report (e.g., "NTD_Annual_Report_Rural_2023_.xlsx" for the RR-20)
     latest_filename = get_latest_excel(this_year, args.form_to_check, bucket, subdir) 
-    logger.info(f"The most recent file found is {latest_filename}! Checking it's incoming data.") 
+    logger.info(f"The most recent file found for form {args.form_to_check} is {latest_filename}! Checking it's incoming data.") 
 
     # Get a worksheet name from the latest filename above - so we can get the subrecipients to load data from.
         # if we're checking the RR-20, pull from the 2nd sheet (skip the 1st contacts info since it doesn't reflect who actually submitted something)
@@ -172,7 +185,8 @@ def main():
     form_to_sheets_dict = {
         "RR-20": ['Basics.Contacts', 'Modes', 'Expenses By Mode', 'Revenues By Mode', 'Financials - 2', 'Service Data', 'Safety', 'Other Resources'],
         "A-30": ['A-30 (Rural) RVI'],
-        "A-10": ['PurchaseTranspFacOwnTypes', 'DirectlyOperatedFacOwnTypes']
+        "A-10": ['PurchaseTranspFacOwnTypes', 'DirectlyOperatedFacOwnTypes'],
+        "Inventory": ['Revenue Vehicles']
     }
     if args.form_to_check == "RR-20":
         sheet = form_to_sheets_dict.get(args.form_to_check)[1]
@@ -185,13 +199,14 @@ def main():
     orgs_submitting = orgs['Organization'].unique() 
     orgs_submitting = [x.strip(' ') for x in orgs_submitting] # I see some whitespaces
     # Get list of orgs in the NTD report submittal 
-    orgs_in_file = latest_raw_data['Organization Legal Name'].unique()
+    orgs_in_file = latest_raw_data[args.incoming_org_col_name].unique()
 
     # Check and load the data!
     for org in orgs_in_file:
         if org in orgs_submitting:
             compare_datasets(args.form_to_check, form_to_sheets_dict, 
-                             this_year, latest_filename, org, logger, bucket_name)
+                             this_year, latest_filename, org, logger, bucket_name, 
+                             args.incoming_org_col_name, args.bq_org_col_name)
             
     logger.info("Completed loading the most recent NTD reports from BlackCat!")
 
