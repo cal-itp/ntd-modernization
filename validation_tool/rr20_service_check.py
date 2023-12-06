@@ -1,6 +1,6 @@
-from argparse import ArgumentParser
 from google.cloud import bigquery
 import pandas as pd
+import numpy as np
 import datetime
 import logging
 
@@ -18,7 +18,7 @@ python rr20_service_check.py
 def get_bq_data(client, year, tablename):
     bq_data_query = f"""SELECT * FROM 
           (select *,
-          RANK() OVER(PARTITION BY Organization_Legal_Name ORDER BY date_uploaded DESC) rank_date 
+          RANK() OVER(PARTITION BY Organization_Legal_Name ORDER BY date_uploaded ) rank_date 
         from `cal-itp-data-infra.blackcat_raw.{year}_{tablename}`) s 
         WHERE rank_date = 1;
         """
@@ -60,12 +60,12 @@ def check_missing_servicedata(df):
     for x in agencies:
         if x in orgs_missing_data:
             result = "fail"
-            check_name = "Missing service data check"
+            check_name = "RR20F-179: Missing service data check"
             mode = ""
             description = ("One or more service data values is missing in these columns. Please revise in BlackCat and resubmit.'Annual VRM', 'Annual VRH', 'Annual UPT','Sponsored UPT', 'VOMX'")
         elif x in orgs_not_missing_data:
             result = "pass"
-            check_name = "Missing service data check"
+            check_name = "RR20F-179: Missing service data check"
             mode = ""
             description = ""
         output_line = {"Organization": x,
@@ -80,30 +80,6 @@ def check_missing_servicedata(df):
     return checks
 
 
-def make_ratio_cols(df, numerator, denominator, col_name, logger, operation="sum"):
-    if col_name is not None:
-        # If a user specify a column name, use it
-        # Raise error if the column already exists
-        if col_name in df.columns:
-            logger.info(f"Dataframe already has column '{col_name}'")
-            raise ValueError(f"Dataframe already has column '{col_name}'")
-            
-        else:
-            _col_name = col_name
-            
-    if operation == "sum":    
-        df = (df.groupby(['Organization_Legal_Name','Mode', 'Fiscal_Year'])
-              .apply(lambda x: x.assign(**{_col_name:
-                     lambda x: x[numerator].sum() / x[denominator]}))
-                    )
-    # else do not sum the numerator columns
-    else:
-        df = (df.groupby(['Organization_Legal_Name','Mode', 'Fiscal_Year'])
-              .apply(lambda x: x.assign(**{_col_name:
-                     lambda x: x[numerator] / x[denominator]}))
-                    )
-    return df
-
 def rr20_ratios(df, variable, threshold, this_year, last_year, logger):
     agencies = df['Organization_Legal_Name'].unique()
     output = []
@@ -117,15 +93,16 @@ def rr20_ratios(df, variable, threshold, this_year, last_year, logger):
                 & (len(agency_df[agency_df['Fiscal_Year']==last_year]) > 0): 
 
                 for mode in agency_df[(agency_df['Fiscal_Year']==this_year)]['Mode'].unique():
-                    value_thisyr = (round(agency_df[(agency_df['Mode']==mode)
-                                          & (agency_df['Fiscal_Year'] == this_year)]
-                                  [variable].unique()[0], 2))
+                    value_thisyr = (round(agency_df[(agency_df['Mode']==mode) & 
+                                                    (agency_df['Fiscal_Year'] == this_year)]
+                                                    [variable].unique()[0], 2))
                     if len(agency_df[(agency_df['Mode']==mode) & (agency_df['Fiscal_Year'] == last_year)][variable]) == 0:
                         value_lastyr = 0
                     else:
                         value_lastyr = (round(agency_df[(agency_df['Mode']==mode)
                                           & (agency_df['Fiscal_Year'] == last_year)]
                                   [variable].unique()[0], 2))
+                        print(f"Value last yr = {value_lastyr}")
                     
                     if (value_lastyr == 0) and (abs(value_thisyr - value_lastyr) >= threshold):
                         result = "fail"
@@ -237,6 +214,8 @@ def main():
     client = bigquery.Client()
     rr20_service = get_bq_data(client, this_year, "rr20_service_data")
     rr20_exp_by_mode = get_bq_data(client, this_year, "rr20_expenses_by_mode")
+    rr20_fin = get_bq_data(client, this_year, "rr20_financials__2")
+    rr20_fin2 = rr20_fin[['Organization_Legal_Name', 'Common_Name_Acronym_DBA', 'Fiscal_Year', 'Operating_Capital', 'Fare_Revenues']]
     orgs_q = """SELECT * FROM `cal-itp-data-infra.blackcat_raw.2023_organizations`"""
     orgs = client.query(orgs_q).to_dataframe().drop_duplicates().drop(['date_uploaded'], axis=1)
 
@@ -245,28 +224,35 @@ def main():
     rr20_service_lastyr = client.query(bq_2022_query).to_dataframe().drop_duplicates()
     exp_2022_query = f"""SELECT * FROM `cal-itp-data-infra.blackcat_raw.{last_year}_rr20_expenses_by_mode`"""
     rr20_exp_by_mode_lastyr = client.query(exp_2022_query).to_dataframe().drop_duplicates()
+    fin_2022_query = f"""SELECT * FROM `cal-itp-data-infra.blackcat_raw.{last_year}_rr20_financials__2`"""
+    fin_2022 = client.query(fin_2022_query).to_dataframe().drop_duplicates()
     
     # Combine datasets into one, on which to run validation checks. Filter down to only subrecipients.
-    data = (rr20_service.merge(orgs, left_on ='Organization_Legal_Name', right_on = 'Organization', 
+    service_exp = (rr20_service.merge(orgs, left_on ='Organization_Legal_Name', right_on = 'Organization', 
                           indicator=True).query('_merge == "both"').drop(columns=['_merge', 'Organization'])
                           .merge(rr20_exp_by_mode, on = ['Organization_Legal_Name', 'Common_Name_Acronym_DBA', 'Fiscal_Year', 'Mode']))
+    data = service_exp.merge(rr20_fin2, on =['Organization_Legal_Name', 'Common_Name_Acronym_DBA', 'Fiscal_Year', 'Operating_Capital'],
+                          indicator=True).query('_merge == "both"').drop(columns=['_merge'])
 
     data_lastyear = (rr20_service_lastyr.merge(orgs, left_on ='Organization_Legal_Name', right_on = 'Organization', 
                             indicator=True).query('_merge == "both"').drop(columns=['_merge', 'Organization'])
                             .merge(rr20_exp_by_mode_lastyr, on = ['Organization_Legal_Name', 'Fiscal_Year', 'Mode'])
                 .sort_values(by="Organization_Legal_Name"))
+        
     # 2022: we use the "Common Name" from the service data, if empty then from the expenses table. If neither empty, still use from the service data
     data_lastyear['Common_Name_Acronym_DBA'] = data_lastyear['Common_Name_Acronym_DBA_x'].combine_first(data_lastyear['Common_Name_Acronym_DBA_y'])
     data_lastyear.drop(columns=['Common_Name_Acronym_DBA_x', 'Common_Name_Acronym_DBA_y'], inplace=True)
-    allyears = pd.concat([data, data_lastyear], ignore_index = True)
-    
-    
-    #### Extra airflow job and function will save the above datasets into the "parsed" folder. Skipping for now.###
-    # # test
-    # data_numeric_columns = data.select_dtypes(include=['number']).columns
-    # data[data_numeric_columns] = data[data_numeric_columns].fillna(0)
-    # GCS_FILE_PATH_PARSED2022 = "gs://calitp-ntd-report-validation/blackcat_ntd_reports_2023_parsed"
-    # data.to_csv(f'{GCS_FILE_PATH_PARSED2022}/rr20_service_2023.csv', ignore_index=True) # now write to parsed
+    # Add in 2022 Fare Revenue data
+    data_all_lastyear = data_lastyear.merge(fin_2022, on =['Organization_Legal_Name', 'Fiscal_Year', 'Operating_Capital'],
+                          indicator=True).query('_merge == "both"').drop(columns=['_merge'])
+    data_all_lastyear['Common_Name_Acronym_DBA'] = data_all_lastyear['Common_Name_Acronym_DBA_x'].combine_first(data_all_lastyear['Common_Name_Acronym_DBA_y'])
+    data_all_lastyear.drop(columns=['Common_Name_Acronym_DBA_x', 'Common_Name_Acronym_DBA_y'], inplace=True)
+    data_all_lastyear = data_all_lastyear[['Organization_Legal_Name','Common_Name_Acronym_DBA','Fiscal_Year','Mode',
+                                           'Annual_VRM','Annual_VRH','Annual_UPT','Sponsored_UPT','VOMX','Operating_Capital',
+                                           'Total_Annual_Expenses_By_Mode','Fare_Revenues']]
+
+    # Combine 2022 & 2023
+    allyears = pd.concat([data, data_all_lastyear], ignore_index = True)
 
     # Check for missing data in any of the service data columns. We do this before any other checks...
     # ... because subsequent ones fill NAs with 0's 
@@ -274,22 +260,39 @@ def main():
 
     # Calculate needed ratios, added as new columns
     numeric_columns = allyears.select_dtypes(include=['number']).columns
-    allyears[numeric_columns] = allyears[numeric_columns].fillna(0)
+    allyears[numeric_columns] = allyears[numeric_columns].fillna(value=0, inplace = False, axis=1)
     
-    allyears = make_ratio_cols(allyears, 'Total_Annual_Expenses_By_Mode', 'Annual_VRH', 'cost_per_hr', logger)
-    allyears = make_ratio_cols(allyears, 'Annual_VRM', 'VOMX', 'miles_per_veh', logger)
-    allyears = make_ratio_cols(allyears, 'Total_Annual_Expenses_By_Mode', 'Annual_UPT', 'fare_rev_per_trip', logger)
-    allyears = make_ratio_cols(allyears, 'Annual_VRM', 'Annual_VRH', 'rev_speed', logger, operation = "mean")
-    allyears = make_ratio_cols(allyears,  'Annual_UPT', 'Annual_VRH', 'trips_per_hr', logger, operation = "mean")
+    allyears1 = allyears[allyears['Operating_Capital']=="Operating"]
+    # Cost per hr
+    allyears2 = (allyears1.groupby(['Organization_Legal_Name', 'Common_Name_Acronym_DBA','Mode', 'Fiscal_Year'], dropna=False)
+                       .apply(lambda x: x.assign(cost_per_hr=x['Total_Annual_Expenses_By_Mode']/ x['Annual_VRH']))
+                           .reset_index(drop=True))
+    # Miles per vehicle
+    allyears2 = (allyears2.groupby(['Organization_Legal_Name','Common_Name_Acronym_DBA', 'Mode', 'Fiscal_Year'], dropna=False)
+                 .apply(lambda x: x.assign(miles_per_veh=lambda x: x['Annual_VRM'].sum() / x['VOMX']))
+                 .reset_index(drop=True))
+    # Fare revenues
+    allyears2 = (allyears2.groupby(['Organization_Legal_Name','Common_Name_Acronym_DBA', 'Fiscal_Year'], dropna=False)
+                 .apply(lambda x: x.assign(fare_rev_per_trip=lambda x: x['Fare_Revenues'].sum() / x['Annual_UPT']))
+                 .reset_index(drop=True))
+    # Revenue Speed
+    allyears2 = (allyears2.groupby(['Organization_Legal_Name','Common_Name_Acronym_DBA', 'Fiscal_Year'], dropna=False)
+                 .apply(lambda x: x.assign(rev_speed=lambda x: x['Annual_VRM'] / x['Annual_VRH']))
+                 .reset_index(drop=True))
+    # Trips per hr
+    allyears2 = (allyears2.groupby(['Organization_Legal_Name','Common_Name_Acronym_DBA', 'Fiscal_Year'], dropna=False)
+                 .apply(lambda x: x.assign(trips_per_hr=lambda x: x['Annual_UPT'] / x['Annual_VRH']))
+                 .reset_index(drop=True))
+    
 
     # Run validation checks
-    cph_checks = rr20_ratios(allyears, 'cost_per_hr', .30, this_year, last_year, logger)
-    mpv_checks = rr20_ratios(allyears, 'miles_per_veh', .20, this_year, last_year, logger)
-    vrm_checks = check_single_number(allyears, 'Annual_VRM', this_year, last_year, logger, threshold=.30)
-    frpt_checks = rr20_ratios(allyears, 'fare_rev_per_trip', .25, this_year, last_year, logger)
-    rev_speed_checks = rr20_ratios(allyears, 'rev_speed', .15, this_year, last_year, logger)
-    tph_checks = rr20_ratios(allyears, 'trips_per_hr', .30, this_year, last_year, logger)
-    voms0_check = check_single_number(allyears, 'VOMX', this_year, last_year, logger)
+    cph_checks = rr20_ratios(allyears2, 'cost_per_hr', .30, this_year, last_year, logger)
+    mpv_checks = rr20_ratios(allyears2, 'miles_per_veh', .20, this_year, last_year, logger)
+    vrm_checks = check_single_number(allyears2, 'Annual_VRM', this_year, last_year, logger, threshold=.30)
+    frpt_checks = rr20_ratios(allyears2, 'fare_rev_per_trip', .25, this_year, last_year, logger)
+    rev_speed_checks = rr20_ratios(allyears2, 'rev_speed', .15, this_year, last_year, logger)
+    tph_checks = rr20_ratios(allyears2, 'trips_per_hr', .30, this_year, last_year, logger)
+    voms0_check = check_single_number(allyears2, 'VOMX', this_year, last_year, logger)
 
     # Combine checks into one table
     rr20_checks = pd.concat([missingdata_check, cph_checks, mpv_checks, vrm_checks, 
