@@ -18,7 +18,7 @@ python rr20_service_check.py
 def get_bq_data(client, year, tablename):
     bq_data_query = f"""SELECT * FROM 
           (select *,
-          RANK() OVER(PARTITION BY Organization_Legal_Name ORDER BY date_uploaded ) rank_date 
+          RANK() OVER(PARTITION BY Organization_Legal_Name ORDER BY date_uploaded DESC) rank_date 
         from `cal-itp-data-infra.blackcat_raw.{year}_{tablename}`) s 
         WHERE rank_date = 1;
         """
